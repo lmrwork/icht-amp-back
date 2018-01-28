@@ -4,25 +4,27 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 2.5em;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color: #f9f9f9;
+  padding: 0.3em;
   color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+  box-shadow: 0 0 0.8em #aaa;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/*CardBox*/
+.CardBox {
+  width: 440px;
+  height: 100%;
+  background: lightblue;
+}
+.CardBoxItem {
+  background: #fdfdfd;
 }
