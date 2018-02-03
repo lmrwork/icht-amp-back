@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import { allReducers } from '../redux/reducers/all';
 
 import Header from '../components/Header';
-import Wall from '../components/Wall';
+import Blackboard from '../components/Blackboard';
 
 import 'normalize.css';
 import '../css/basscss.css';
@@ -24,7 +24,7 @@ class App extends PureComponent {
       <Provider store={store}>
         <div className="App">
           <Header />
-          <Wall />
+          <Blackboard />
         </div>
       </Provider>
     );

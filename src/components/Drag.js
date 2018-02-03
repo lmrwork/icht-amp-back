@@ -1,0 +1,51 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { DragSource } from 'react-dnd'
+
+const ItemTypes = {
+  BOX: 'box',
+}
+
+const style = {
+  backgroundColor: 'white',
+  cursor: 'move'
+}
+
+const boxSource = {
+  beginDrag(props) {
+    return {
+      name: props.name,
+    }
+  },
+
+  endDrag(props, monitor) {
+    const item = monitor.getItem();
+    const dropResult = monitor.getDropResult();
+
+    if (dropResult) {
+      alert(`You dropped ${item.name} into ${dropResult.name}!`)
+    }
+  },
+}
+
+@DragSource(ItemTypes.BOX, boxSource, (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging(),
+}))
+export default class Drag extends Component {
+  static propTypes = {
+    connectDragSource: PropTypes.func.isRequired,
+    isDragging: PropTypes.bool.isRequired,
+  }
+
+  render() {
+    const { isDragging, connectDragSource } = this.props;
+    const opacity = isDragging ? 0.5 : 1;
+
+    return connectDragSource(
+      <div style={{ ...style, opacity }}>
+        {this.props.children}
+      </div>
+    )
+  }
+}
