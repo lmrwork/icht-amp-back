@@ -15,7 +15,6 @@ class FrameBox extends PureComponent {
       <div className="FrameBox mx-auto">
         <Drop>
           <div className="iPhone8">
-            xxxx
           </div>
         </Drop>
       </div>

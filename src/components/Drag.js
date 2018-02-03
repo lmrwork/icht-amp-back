@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
 
-const ItemTypes = {
-  BOX: 'box',
-}
-
 const style = {
   cursor: 'move'
 }
@@ -13,7 +9,7 @@ const style = {
 const boxSource = {
   beginDrag(props) {
     return {
-      name: props.name,
+      content: props.children,
     }
   },
 
@@ -22,12 +18,13 @@ const boxSource = {
     const dropResult = monitor.getDropResult();
 
     if (dropResult) {
-      alert(`You dropped ${item.name} into ${dropResult.name}!`);
+      //TODO：放置组件到store
+      alert(`${item.content} todo`);
     }
   },
 }
 
-@DragSource(ItemTypes.BOX, boxSource, (connect, monitor) => ({
+@DragSource('DnD', boxSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging(),
 }))

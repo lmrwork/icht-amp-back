@@ -2,17 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd';
 
-const ItemTypes = {
-  BOX: 'box',
-}
-
-const boxTarget = {
-  drop() {
-    return { name: 'Drop' };
-  },
-}
-
-@DropTarget(ItemTypes.BOX, boxTarget, (connect, monitor) => ({
+@DropTarget('DnD', {}, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver(),
   canDrop: monitor.canDrop(),
