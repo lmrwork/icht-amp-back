@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
 import { Provider } from 'react-redux';
 import { store } from '../redux/store/store';
@@ -9,7 +9,7 @@ import 'normalize.css';
 import '../css/basscss.css';
 import '../css/App.css';
 
-class App extends PureComponent {
+class App extends Component {
   render() {
     return (
       <Provider store={store}>

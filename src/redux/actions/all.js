@@ -1,14 +1,8 @@
-export const test1 = (ok) => ({
-  type: 'TEST',
-  ok: '1#' + ok
-});
-
-export const test2 = (ok) => ({
-  type: 'TEST',
-  ok: '2#' + ok
+export const drop_item = (item) => ({
+  type: 'DROP_ITEM',
+  item
 });
 
 export const actions = {
-  test1,
-  test2
-}
+  drop_item
+};

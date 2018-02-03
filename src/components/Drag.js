@@ -9,17 +9,17 @@ const style = {
 const boxSource = {
   beginDrag(props) {
     return {
-      content: props.children,
+      //content: props.children
     }
   },
 
   endDrag(props, monitor) {
-    const item = monitor.getItem();
+    //const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
 
     if (dropResult) {
       //TODO：放置组件到store
-      alert(`${item.content} todo`);
+      props.drop_item(props.template);
     }
   },
 }

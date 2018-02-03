@@ -1,29 +1,32 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import connect from '../redux/connect';
 import Drag from './Drag';
 
+import ChBanner from './ch/ChBanner';
+import ChH1 from './ch/ChH1';
+import ChH2 from './ch/ChH2';
+
 @connect
-class CardBox extends PureComponent {
-
-  constructor(props) {
-    super(props);
-    this.props.test1('ok???');
-  }
-
+class CardBox extends Component {
   render() {
     return (
       <div>
-        <div className="CardBoxTitle mb2"> 选择组件 {this.props.state.test} </div>
         <div className="CardBox mx-auto py1">
+          <div className="CardBoxTitle"> 必备 </div>
           <div className="flex flex-column">
             <div className="CardBoxItem mx2 my1 p2 relative">
-              <Drag>
-                <header className="flex justify-start items-center pl2 ch-header">
-                  <div role="button" aria-label="open sidebar" tabIndex="0" className="pr2 ch-header-menubar">☰</div>
-                  <div className="my0 mx-auto relative ch-header-banner"> CHINAHIGHLIGHTS<sup>®</sup> </div>
-                  <a className="text-decoration-none mr2 block ch-header-tailormade" data-href="/su-viaje-a-medida/">Viaje A Medida China</a>
-                </header>
+              <Drag {...this.props} template="ChBanner">
+                <ChBanner />
               </Drag>
+              <hr/>
+              <Drag {...this.props} template="ChH1">
+                <ChH1 />
+              </Drag>
+              <hr/>
+              <Drag {...this.props} template="ChH2">
+                <ChH2 />
+              </Drag>
+              <hr/>
             </div>
             <div className="CardBoxItem mx2 my1 p2 relative">轮播图</div>
           </div>
