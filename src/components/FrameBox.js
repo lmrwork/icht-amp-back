@@ -31,13 +31,13 @@ class FrameBox extends Component {
                 let show;
                 switch (el) {
                   case 'ChBanner':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard}><ChBanner onClick={() => this.click(el, idx)}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} ><ChBanner onClick={() => this.click(el, idx)}/></Sort>;
                     break;
                   case 'ChH1':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard}><ChH1 onClick={() => this.click(el, idx)}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} ><ChH1 onClick={() => this.click(el, idx)}/></Sort>;
                     break;
                   case 'ChH2':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard}><ChH2  onClick={() => this.click(el, idx)}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} ><ChH2  onClick={() => this.click(el, idx)}/></Sort>;
                     break;
                   default:
                     show = null;

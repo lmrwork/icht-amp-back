@@ -12,7 +12,7 @@ class CardBox extends Component {
     return (
       <div>
         <div className="CardBox mx-auto py1">
-          <div className="CardBoxTitle"> 必备 </div>
+          <div className="CardBoxTitle"> 常用部件 </div>
           <div className="flex flex-column">
             <div className="CardBoxItem mx2 my1 p2 relative">
               <Drag {...this.props} template="ChBanner">
