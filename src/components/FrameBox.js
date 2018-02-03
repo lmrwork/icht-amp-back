@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import connect from '../redux/connect';
-import Drag from './Drag';
+import Drop from './Drop';
 
 @connect
 class FrameBox extends PureComponent {
@@ -12,10 +12,12 @@ class FrameBox extends PureComponent {
 
   render() {
     return (
-      <div>
-        <div className="FrameBox mx-auto py1">
-        xxx
-        </div>
+      <div className="FrameBox mx-auto">
+        <Drop>
+          <div className="iPhone8">
+            xxxx
+          </div>
+        </Drop>
       </div>
     );
   }

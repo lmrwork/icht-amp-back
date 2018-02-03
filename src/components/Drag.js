@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { DragSource } from 'react-dnd'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { DragSource } from 'react-dnd';
 
 const ItemTypes = {
   BOX: 'box',
 }
 
 const style = {
-  backgroundColor: 'white',
   cursor: 'move'
 }
 
@@ -23,7 +22,7 @@ const boxSource = {
     const dropResult = monitor.getDropResult();
 
     if (dropResult) {
-      alert(`You dropped ${item.name} into ${dropResult.name}!`)
+      alert(`You dropped ${item.name} into ${dropResult.name}!`);
     }
   },
 }
