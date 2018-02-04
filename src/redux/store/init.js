@@ -4,18 +4,48 @@ export const init = {
   dropItems: [],
   //属性配置
   inputConf: {
+
     ChBanner: {
-      linkText: { default: 'Create My Trip !', type: 'text', label: 'Talormade文字' },
-      linkHref: { default: '#', type: 'text', label: 'Talormade链接' }
+      linkText: { 
+        default: 'Create My Trip !', 
+        type: 'string', 
+        ui:'text', 
+        title: 'Talormade文字' 
+      },
+      linkHref: { 
+        default: '#', 
+        type: 'string', 
+        ui:'text', 
+        title: 'Talormade链接' 
+      }
     },
+
     ChH1: {
-      h1: { default: 'Head 1 : <h1>', type: 'text', label: 'H1文本' },
+      h1Text: { 
+        default: 'Head 1 : <h1>', 
+        type: 'string', 
+        ui:'text', 
+        title: 'H1文本' 
+      }
     },
+
     ChH2: {
-      h2: { default: 'Head 2 : <h2>', type: 'text', label: 'H2文本' },
+      h2Text: { 
+        default: 'Head 2 : <h2>', 
+        type: 'string', 
+        ui:'text', 
+        title: 'H2文本'
+      }
     },
+
     ChP: {
-      p: { default: 'Paragraph : <p> # e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', type: 'textarea', label: '段落文本' },
+      pText: { 
+        default: 'Paragraph : <p> # e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
+        type: 'string', 
+        ui:'textarea', 
+        title: '段落文本' 
+      }
     }
+
   }
 };
