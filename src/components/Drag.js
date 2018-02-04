@@ -23,8 +23,6 @@ const boxSource = {
           template: props.template,
           input: props.input ? props.input : null
         });
-      } else {
-        alert(dropResult.name);
       }
     }
   }

@@ -19,7 +19,9 @@ const cardSource = {
     const dropResult = monitor.getDropResult();
 
     if (dropResult) {
-      alert(dropResult.name);
+      if (dropResult.name === 'PropDrop') {
+        props.prop_item(props.index);
+      }
     }
   }
 }

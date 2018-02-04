@@ -2,6 +2,7 @@
 export const init = {
   //拖拉团
   dropItems: [],
+  propIndex: null,
   //属性配置
   inputConf: {
 

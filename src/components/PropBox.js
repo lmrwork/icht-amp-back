@@ -5,21 +5,21 @@ import connect from '../redux/connect';
 import Form from "react-jsonschema-form";
 import Drop from './Drop';
 
-const schema = {
-  title: "ChBanner",
+let schema = {
+  title: "test",
   type: "object",
-  required: ["link"],
+  required: ["text"],
   properties: {
-    link: {type: "string", title: "link text"},
+    text: {type: "string", title: "input"},
   }
 };
 
-const formData = {
-  link: "Create My Trip !",
+let formData = {
+  text: "default text",
 };
 
-const uiSchema =  {
-  link: {
+let uiSchema =  {
+  text: {
     "ui:widget": "text"
   }
 };

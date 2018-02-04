@@ -8,7 +8,13 @@ export const sort_item = (before, after) => ({
   before, after
 });
 
+export const prop_item = (index) => ({
+  type: 'PROP_ITEM',
+  index
+});
+
 export const actions = {
   drop_item,
-  sort_item
+  sort_item,
+  prop_item
 };
