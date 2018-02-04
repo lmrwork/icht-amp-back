@@ -8,15 +8,23 @@ import Drop from './Drop';
 const schema = {
   title: "ChBanner",
   type: "object",
-  required: ["banner"],
+  required: ["link"],
   properties: {
-    banner: {type: "string", title: "banner", default: "Create My Trip !"},
+    link: {type: "string", title: "link text"},
   }
 };
 
 const formData = {
-  banner: "First task",
+  link: "Create My Trip !",
 };
+
+const uiSchema =  {
+  link: {
+    "ui:widget": "text"
+  }
+};
+
+const onSubmit = ({formData}) => console.log("Data submitted: ",  formData);
 
 @connect
 class PropBox extends Component {
@@ -31,8 +39,11 @@ class PropBox extends Component {
                 Drag & Drop here, Come on baby !
               </div>
               <Form schema={schema}
+                    uiSchema={uiSchema}
                     formData={formData}
+                    onSubmit={onSubmit}
                     className="bsform"
+                    action="#"
               />
             </Drop>
           </div>
