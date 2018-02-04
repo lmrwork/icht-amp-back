@@ -14,9 +14,22 @@ const cardSource = {
       index: props.index,
     }
   },
+
+  endDrag(props, monitor) {
+    const dropResult = monitor.getDropResult();
+
+    if (dropResult) {
+      alert(dropResult.name);
+    }
+  }
 }
 
 const cardTarget = {
+
+  canDrop() {
+    return false;
+  },
+
   hover(props, monitor, component) {
     const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
@@ -25,9 +38,13 @@ const cardTarget = {
       return;
     }
 
+    //Determine rectangle on screen
     const hoverBoundingRect = findDOMNode(component).getBoundingClientRect();
+    //Get vertical middle
     const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+    //Determine mouse position
     const clientOffset = monitor.getClientOffset();
+    //Get pixels to the top
     const hoverClientY = clientOffset.y - hoverBoundingRect.top;
 
     if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
@@ -66,7 +83,7 @@ export default class Sort extends Component {
       connectDragSource,
       connectDropTarget,
     } = this.props
-    const opacity = isDragging ? 0 : 1
+    const opacity = isDragging ? 1 : 1;
 
     return connectDragSource(
       connectDropTarget(<div style={{ ...style, opacity }}>{this.props.children}</div>),

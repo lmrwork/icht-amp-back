@@ -5,7 +5,28 @@
 .App hr {
   height:1px;
   border:none;
-  border-top:1px dashed lightblue;
+  border-top:1px dashed #AAA;
+}
+
+.App .device-pos {
+  position: absolute;
+  top: 0;
+  left: -24px;
+  z-index: -9;
+}
+
+.App .bsform {
+  background-color: white;
+  margin: 1em;
+  padding: 1em;
+  border: 2px solid #333;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.App .bsform * {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .App-logo {
@@ -17,7 +38,11 @@
   background-color: #f9f9f9;
   padding: 0.3em;
   color: white;
-  box-shadow: 0 0 5px #aaa;
+  box-shadow: 0 0 5px #AAA;
+}
+
+.App ::-webkit-scrollbar {
+    display: none;
 }
 
 @keyframes App-logo-spin {
@@ -25,30 +50,47 @@
   to { transform: rotate(360deg); }
 }
 
+/*Dustbin*/
+.App .dustbin {
+  position: absolute;
+  width: 5em;
+  height: 5em;
+  background: #eee;
+  top: 0;
+  right: 0;
+}
+
 /*CardBox*/
 .CardBox {
   width: 440px;
   height: 100%;
-  background: lightblue;
+  background: #f7e8dd;
+  border-radius: 5px;
+  border: 2px solid #e4b08a;
 }
 .CardBoxItem {
-  background: #fdfdfd;
+  background: #FFF;
+  border-radius: 5px;
+  border: 2px solid #666;
 }
 .CardBoxTitle {
-  color: floralwhite;
-  font-weight: bold;
-  text-shadow: 0px 0px 5px #000;;
+  color: #333;
+  text-shadow: 0px 0px 2px pink;
 }
 
 /*FrameBox*/
 .FrameBox {
   width: 375px;
   height: 667px;
-  box-shadow: 0px 0px 2px #aaa;
 }
 .iPhone8 {
-  width: 375px;
-  height: 667px;
+  width: 371px;
+  height: 663px;
+  position: relative;
+  top: 104px;
+  left: 0;
+  overflow: scroll;
+  border-radius: 1px;
 }
 
 /*ch-banner*/

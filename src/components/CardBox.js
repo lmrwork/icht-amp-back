@@ -5,6 +5,7 @@ import Drag from './Drag';
 import ChBanner from './ch/ChBanner';
 import ChH1 from './ch/ChH1';
 import ChH2 from './ch/ChH2';
+import ChP from './ch/ChP';
 
 @connect
 class CardBox extends Component {
@@ -12,8 +13,8 @@ class CardBox extends Component {
     return (
       <div>
         <div className="CardBox mx-auto py1">
-          <div className="CardBoxTitle"> 常用部件 </div>
           <div className="flex flex-column">
+            <div className="CardBoxTitle"> 常用部件 </div>
             <div className="CardBoxItem mx2 my1 p2 relative">
               <Drag {...this.props} template="ChBanner">
                 <ChBanner />
@@ -27,7 +28,11 @@ class CardBox extends Component {
                 <ChH2 />
               </Drag>
               <hr/>
+              <Drag {...this.props} template="ChP">
+                <ChP />
+              </Drag>
             </div>
+            <div className="CardBoxTitle"> 可选部件 </div>
             <div className="CardBoxItem mx2 my1 p2 relative">轮播图</div>
           </div>
         </div>

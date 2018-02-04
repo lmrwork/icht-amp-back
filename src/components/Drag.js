@@ -14,14 +14,20 @@ const boxSource = {
   },
 
   endDrag(props, monitor) {
-    //const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
 
     if (dropResult) {
-      //TODO：放置组件到store
-      props.drop_item(props.template);
+      if (dropResult.name === 'FrameDrop') {
+        //TODO：放置组件到store
+        props.drop_item({
+          template: props.template,
+          input: props.input ? props.input : null
+        });
+      } else {
+        alert(dropResult.name);
+      }
     }
-  },
+  }
 }
 
 @DragSource('DnD', boxSource, (connect, monitor) => ({

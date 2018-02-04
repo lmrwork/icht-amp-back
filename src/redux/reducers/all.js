@@ -9,6 +9,8 @@ export const allReducers = (state = init, action) => {
 
   case 'SORT_ITEM':
     //TODO：排序数组 idx，before，after
+    //TEST: { type: 'SORT_ITEM', before: 1, after:2 }
+    state.dropItems.splice(action.before - 1, 1, ...state.dropItems.splice(action.after - 1, 1, state.dropItems[action.before - 1]));
     return {...state};
 
   default:
