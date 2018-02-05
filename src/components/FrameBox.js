@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { findDOMNode } from 'react-dom';
 import connect from '../redux/connect';
 
 import Drop from './Drop';
@@ -14,6 +15,7 @@ class FrameBox extends PureComponent {
 
   click = (el, idx) => {
     this.props.prop_item(idx);
+    console.log(findDOMNode(this.refs.phone).innerHTML);
   }
 
   moveCard = (dragIndex, hoverIndex) => {
@@ -25,7 +27,7 @@ class FrameBox extends PureComponent {
     return (
       <div className="FrameBox mx-auto relative">
         <Drop name="FrameDrop" accepts="DnD">
-          <div className="iPhone8">
+          <div className="iPhone8" ref="phone">
             {
               this.props.state.dropItems.map((el, idx) => {
                 let show;
