@@ -31,16 +31,16 @@ class FrameBox extends PureComponent {
                 let show;
                 switch (el.template) {
                   case 'ChBanner':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} className="bb"><ChBanner onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChBanner onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChH1':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} className="bb"><ChH1 onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH1 onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChH2':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} className="bb"><ChH2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChP':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} className="bb"><ChP  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChP  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   default:
                     show = null;
