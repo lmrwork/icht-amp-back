@@ -7,7 +7,11 @@ import Blackboard from '../components/Blackboard';
 
 import '../css/devices.css';
 import 'normalize.css';
-import '../css/basscss.css';
+
+/*使用整理后的css*/
+//import '../css/basscss.css=';
+import '../css/amp.css';
+
 import '../css/App.css';
 import '../css/form.css';
 
