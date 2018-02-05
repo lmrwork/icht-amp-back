@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import connect from '../redux/connect';
 import Drag from './Drag';
 
@@ -8,7 +8,7 @@ import ChH2 from './ch/ChH2';
 import ChP from './ch/ChP';
 
 @connect
-class CardBox extends Component {
+class CardBox extends PureComponent {
   render() {
     return (
       <div>

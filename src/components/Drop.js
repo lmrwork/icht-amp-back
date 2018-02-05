@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd';
 
@@ -13,7 +13,7 @@ const boxTarget = {
   isOver: monitor.isOver(),
   canDrop: monitor.canDrop(),
 }))
-export default class Drop extends Component {
+export default class Drop extends PureComponent {
 
   static propTypes = {
     connectDropTarget: PropTypes.func.isRequired,

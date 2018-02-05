@@ -18,6 +18,12 @@ export const allReducers = (state = init, action) => {
     //TEST: { type: 'PROP_ITEM', index:1 }
     return {...state, propIndex: action.index};
 
+  case 'DELET_ITEM':
+    //TODO：排序数组 idx，before，after
+    //TEST: { type: 'PROP_ITEM', index:1 }
+    state.dropItems.splice(action.index, 1);
+    return {...state, propIndex: action.index};
+
   default:
     return state;
   }

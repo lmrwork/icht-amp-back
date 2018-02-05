@@ -13,8 +13,14 @@ export const prop_item = (index) => ({
   index
 });
 
+export const delet_item = (index) => ({
+  type: 'DELET_ITEM',
+  index
+});
+
 export const actions = {
   drop_item,
   sort_item,
-  prop_item
+  prop_item,
+  delet_item
 };

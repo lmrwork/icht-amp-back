@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import connect from '../redux/connect';
 
 import Drop from './Drop';
@@ -10,7 +10,7 @@ import ChH2 from './ch/ChH2';
 import ChP from './ch/ChP';
 
 @connect
-class FrameBox extends Component {
+class FrameBox extends PureComponent {
 
   click = (el, idx) => {
     alert('click '+ el.template + ' #' + idx);
