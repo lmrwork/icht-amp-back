@@ -1,28 +1,7 @@
 import React, { PureComponent } from 'react';
-
 import connect from '../redux/connect';
-
 import Form from "react-jsonschema-form";
 import Drop from './Drop';
-
-let schema = {
-  title: "test",
-  type: "object",
-  required: ["text"],
-  properties: {
-    text: {type: "string", title: "input"},
-  }
-};
-
-let formData = {
-  text: "default text",
-};
-
-let uiSchema =  {
-  text: {
-    "ui:widget": "text"
-  }
-};
 
 const onSubmit = ({formData}) => console.log("Data submitted: ",  formData);
 
@@ -42,6 +21,11 @@ class PropBox extends PureComponent {
   }
 
   render() {
+    let item, itemCfg; 
+    item = this.props.state.dropItems[this.props.state.propIndex];
+    if (item) {
+      itemCfg = this.props.state.propConf[item.template];
+    }
     return (
       <div>
         <div className="CardBox mx-auto py1">
@@ -51,10 +35,10 @@ class PropBox extends PureComponent {
               <div className="CardBoxItem mx2 my1 p2 relative">
                 Drag & Drop here, Come on baby !
               </div>
-              { this.props.state.propIndex !== null ?
-              <Form schema={schema}
-                    uiSchema={uiSchema}
-                    formData={formData}
+              { itemCfg ?
+              <Form schema={itemCfg.schema}
+                    uiSchema={itemCfg.uiSchema}
+                    formData={itemCfg.formData}
                     onSubmit={onSubmit}
                     className="bsform"
                     action="#">
