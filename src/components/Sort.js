@@ -88,7 +88,7 @@ export default class Sort extends PureComponent {
     const opacity = isDragging ? 1 : 1;
 
     return connectDragSource(
-      connectDropTarget(<div style={{ ...style, opacity }}>{this.props.children}</div>),
+      connectDropTarget(<div style={{ ...style, opacity }} className={this.props.className}>{this.props.children}</div>),
     )
   }
 }

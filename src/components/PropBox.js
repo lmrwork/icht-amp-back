@@ -7,8 +7,11 @@ class PropBox extends PureComponent {
 
   delete = idx => {
     if (this.props.state.propIndex !== null) {
-      this.props.delet_item(this.props.state.propIndex);
-      this.props.prop_item(null);
+      const yes = window.confirm('确定删除此部件');
+      if (yes) {
+        this.props.delet_item(this.props.state.propIndex);
+        this.props.prop_item(null);
+      }
     } else {
       alert('Can not delete ~');
     }
