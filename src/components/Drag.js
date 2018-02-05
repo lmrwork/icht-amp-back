@@ -20,8 +20,7 @@ const boxSource = {
       if (dropResult.name === 'FrameDrop') {
         //TODO：放置组件到store
         props.drop_item({
-          template: props.template,
-          input: props.input ? props.input : null
+          template: props.template
         });
       }
     }

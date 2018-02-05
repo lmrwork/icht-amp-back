@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
@@ -14,7 +14,7 @@ const cardSource = {
       index: props.index,
     }
   },
-
+  /*
   endDrag(props, monitor) {
     const dropResult = monitor.getDropResult();
 
@@ -23,7 +23,7 @@ const cardSource = {
         props.prop_item(props.index);
       }
     }
-  }
+  }*/
 }
 
 const cardTarget = {
@@ -69,7 +69,7 @@ const cardTarget = {
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging(),
 }))
-export default class Sort extends Component {
+export default class Sort extends PureComponent {
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
     connectDropTarget: PropTypes.func.isRequired,

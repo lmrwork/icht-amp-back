@@ -13,7 +13,7 @@ import ChP from './ch/ChP';
 class FrameBox extends PureComponent {
 
   click = (el, idx) => {
-    alert('click '+ el.template + ' #' + idx);
+    this.props.prop_item(idx);
   }
 
   moveCard = (dragIndex, hoverIndex) => {
@@ -31,16 +31,16 @@ class FrameBox extends PureComponent {
                 let show;
                 switch (el.template) {
                   case 'ChBanner':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChBanner onClick={() => this.click(el, idx)} input={el.input}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChBanner onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChH1':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH1 onClick={() => this.click(el, idx)} input={el.input}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH1 onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChH2':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH2  onClick={() => this.click(el, idx)} input={el.input}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChP':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChP  onClick={() => this.click(el, idx)} input={el.input}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChP  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   default:
                     show = null;

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import connect from '../../redux/connect';
 
-const ch = props => 
-  <p className="left-align px2" {...props}>
-    { props.input ? props.input.pText : 'Paragraph : <p> # e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.' }
-  </p>
+@connect
+class ChP extends PureComponent {
 
-export default ch;
+  render() {
+    const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChP.formData;
+    return (
+      <p className="left-align px2" onClick={this.props.onClick}>
+        { formData.pText }
+      </p>
+    )
+  }
+
+}
+
+export default ChP;

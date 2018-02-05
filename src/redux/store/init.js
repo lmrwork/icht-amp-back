@@ -8,7 +8,7 @@ export const init = {
 
     ChBanner: {
       //Schema
-      Schema: {
+      schema: {
         title: '页顶导航 Banner',
         description: '',
         type: 'object',
@@ -35,7 +35,7 @@ export const init = {
 
     ChH1: {
       //Schema
-      Schema: {
+      schema: {
         title: '标题 H1',
         description: '',
         type: 'object',
@@ -57,7 +57,7 @@ export const init = {
 
     ChH2: {
       //Schema
-      Schema: {
+      schema: {
         title: '标题 H2',
         description: '',
         type: 'object',
@@ -73,13 +73,13 @@ export const init = {
       uiSchema: {},
       //formData
       formData: {
-        h2Text: 'Head 2 : <h1>',
+        h2Text: 'Head 2 : <h2>',
       }
     },
 
     ChP: {
       //Schema
-      Schema: {
+      schema: {
         title: '段落',
         description: '',
         type: 'object',
@@ -92,7 +92,11 @@ export const init = {
         }
       },
       //uiSchema
-      uiSchema: {"ui:widget": "textarea"},
+      uiSchema: {
+        pText: {
+          "ui:widget": "textarea"
+        }
+      },
       //formData
       formData: {
         pText: 'Paragraph : <p> # e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 

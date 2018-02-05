@@ -18,9 +18,15 @@ export const delet_item = (index) => ({
   index
 });
 
+export const update_item = (index, formData) => ({
+  type: 'UPDATE_ITEM',
+  index, formData
+});
+
 export const actions = {
   drop_item,
   sort_item,
   prop_item,
-  delet_item
+  delet_item,
+  update_item
 };

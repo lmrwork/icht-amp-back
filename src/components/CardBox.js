@@ -17,7 +17,7 @@ class CardBox extends PureComponent {
             <div className="CardBoxTitle"> 常用部件 </div>
             <div className="CardBoxItem mx2 my1 p2 relative">
               <Drag {...this.props} template="ChBanner">
-                <ChBanner />
+                <ChBanner form_data={this.props.state.propConf.ChBanner.formData}/>
               </Drag>
               <hr/>
               <Drag {...this.props} template="ChH1">

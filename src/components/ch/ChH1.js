@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import connect from '../../redux/connect';
 
-const ch = props => 
-  <h1 className="h1 left-align px2" {...props}>
-    { props.input ? props.input.h1Text : 'Head 1 : <h1>' }
-  </h1>
+@connect
+class ChH1 extends PureComponent {
 
-export default ch;
+  render() {
+    const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChH1.formData;
+    return (
+      <h1 className="h1 left-align px2" onClick={this.props.onClick}>
+        { formData.h1Text}
+      </h1>
+    )
+  }
+
+}
+
+export default ChH1;
+

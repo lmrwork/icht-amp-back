@@ -1,15 +1,9 @@
 import React, { PureComponent } from 'react';
 import connect from '../redux/connect';
 import Form from "react-jsonschema-form";
-import Drop from './Drop';
-
-const onSubmit = ({formData}) => console.log("Data submitted: ",  formData);
 
 @connect
 class PropBox extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
 
   delete = idx => {
     if (this.props.state.propIndex !== null) {
@@ -18,6 +12,10 @@ class PropBox extends PureComponent {
     } else {
       alert('Can not delete ~');
     }
+  }
+
+  change = ({formData}) => {
+    this.props.update_item(this.props.state.propIndex, formData);
   }
 
   render() {
@@ -31,24 +29,21 @@ class PropBox extends PureComponent {
         <div className="CardBox mx-auto py1">
           <div className="flex flex-column">
             <div className="CardBoxTitle"> 部件属性 </div>
-            <Drop name="PropDrop" accepts="Sort">
               <div className="CardBoxItem mx2 my1 p2 relative">
-                Drag & Drop here, Come on baby !
+                Dancing up ! Come on baby !
               </div>
               { itemCfg ?
               <Form schema={itemCfg.schema}
                     uiSchema={itemCfg.uiSchema}
-                    formData={itemCfg.formData}
-                    onSubmit={onSubmit}
+                    formData={item.formData ? item.formData : itemCfg.formData}
+                    onChange={this.change}
                     className="bsform"
                     action="#">
                   <div className="relative">
-                    <button type="submit" className="btn btn-primary">提交修改</button>
-                    <button type="button" className="btn btn-danger absolute right-0" onClick={this.delete}>删除部件</button>
+                    <button type="button" className="btn btn-danger relative right-0" onClick={this.delete}>删除部件</button>
                   </div>
               </Form>
               : null }
-            </Drop>
           </div>
         </div>
       </div>

@@ -33,9 +33,12 @@ button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button
   border-color: #46b8da;
 }
 .btn-danger {
-    color: #fff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+textarea.form-control {
+  height: 10em;
 }
 legend {
   padding-bottom: 8px;

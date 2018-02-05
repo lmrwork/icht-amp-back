@@ -14,15 +14,16 @@ export const allReducers = (state = init, action) => {
     return {...state};
 
   case 'PROP_ITEM':
-    //TODO：排序数组 idx，before，after
     //TEST: { type: 'PROP_ITEM', index:1 }
     return {...state, propIndex: action.index};
 
   case 'DELET_ITEM':
-    //TODO：排序数组 idx，before，after
-    //TEST: { type: 'PROP_ITEM', index:1 }
     state.dropItems.splice(action.index, 1);
-    return {...state, propIndex: action.index};
+    return {...state};
+
+  case 'UPDATE_ITEM':
+    state.dropItems[action.index].formData = action.formData;
+    return {...state};
 
   default:
     return state;
