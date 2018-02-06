@@ -90,6 +90,12 @@ export const init = {
           pText: {
             type: 'string', 
             title: '段落文本' 
+          },
+          pAlign: {
+            type: 'string',
+            title: '对齐方式',
+            enum: ['left-align', 'center-align', 'right-align'],
+            enumNames: ['左对齐', '居中', '右对齐']
           }
         }
       },
@@ -97,11 +103,15 @@ export const init = {
       uiSchema: {
         pText: {
           "ui:widget": "textarea"
+        },
+        pAlign: {
+          "ui:widget": "select"
         }
       },
       //formData
       formData: {
         pText: 'Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
+        pAlign: 'left-align'
       }
     },
 
