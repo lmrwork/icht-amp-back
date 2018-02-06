@@ -1,8 +1,10 @@
 //初始化状态
 export const init = {
-  //拖拉团
+  //全局
   dropItems: [],
   propIndex: null,
+  html: null,
+  json: null,
   //属性配置
   propConf: {
 
@@ -51,7 +53,7 @@ export const init = {
       uiSchema: {},
       //formData
       formData: {
-        h1Text: 'Head 1 : <h1>',
+        h1Text: 'Head 1',
       }
     },
 
@@ -73,7 +75,7 @@ export const init = {
       uiSchema: {},
       //formData
       formData: {
-        h2Text: 'Head 2 : <h2>',
+        h2Text: 'Head 2',
       }
     },
 
@@ -99,7 +101,7 @@ export const init = {
       },
       //formData
       formData: {
-        pText: 'Paragraph : <p> # e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
+        pText: 'Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
       }
     }
 

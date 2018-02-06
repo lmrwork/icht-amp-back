@@ -42,12 +42,24 @@
 }
 
 .App ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.App .codemirror {
+  text-align: left;
+  width: 100%;
+  height: auto;
+}
+
+.App .coldarea {
+  position: absolute;
+  width: 100%;
+  margin-top: 12em;
 }
 
 /*Dustbin*/

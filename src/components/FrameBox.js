@@ -15,8 +15,16 @@ class FrameBox extends PureComponent {
 
   click = (el, idx) => {
     this.props.prop_item(idx);
-    console.log(findDOMNode(this.refs.phone).innerHTML);
   }
+
+  update_html = () => {
+    if (this.refs.phone) {
+      const allNode = findDOMNode(this.refs.phone).querySelectorAll('[draggable]');
+      let allNodeText = '';
+      allNode.forEach( v => allNodeText += v.innerHTML);
+      this.props.update_html(allNodeText);
+    }
+  } 
 
   moveCard = (dragIndex, hoverIndex) => {
     //TODO:Sort
@@ -58,7 +66,7 @@ class FrameBox extends PureComponent {
             </div>
           </div>
           <div className="device-stripe"></div>
-          <div className="device-header"></div>
+          <div className="device-header" onClick={this.update_html}></div>
           <div className="device-sensors"></div>
           <div className="device-btns"></div>
           <div className="device-power"></div>

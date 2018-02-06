@@ -23,10 +23,16 @@ export const update_item = (index, formData) => ({
   index, formData
 });
 
+export const update_html = (html) => ({
+  type: 'UPDATE_HTML',
+  html
+});
+
 export const actions = {
   drop_item,
   sort_item,
   prop_item,
   delet_item,
-  update_item
+  update_item,
+  update_html
 };

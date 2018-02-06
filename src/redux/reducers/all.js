@@ -25,6 +25,9 @@ export const allReducers = (state = init, action) => {
     state.dropItems[action.index].formData = action.formData;
     return {...state};
 
+  case 'UPDATE_HTML':
+    return {...state, html: action.html, json: JSON.stringify(state.dropItems, null, 2) };
+
   default:
     return state;
   }

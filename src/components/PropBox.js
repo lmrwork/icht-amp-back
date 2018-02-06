@@ -33,7 +33,7 @@ class PropBox extends PureComponent {
           <div className="flex flex-column">
             <div className="CardBoxTitle"> 部件属性 </div>
               <div className="CardBoxItem mx2 my1 p2 relative">
-                Dancing up ! Come on baby !
+                {'<<-- 点击左侧iPhone中的部件，编辑属性'}
               </div>
               { itemCfg ?
               <Form schema={itemCfg.schema}

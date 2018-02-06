@@ -16,6 +16,9 @@ class CardBox extends PureComponent {
           <div className="flex flex-column">
             <div className="CardBoxTitle"> 常用部件 </div>
             <div className="CardBoxItem mx2 my1 p2 relative">
+              {'拖拽部件到右侧iPhone，预览 -->>'}
+            </div>
+            <div className="CardBoxItem mx2 my1 p2 relative">
               <Drag {...this.props} template="ChBanner">
                 <ChBanner form_data={this.props.state.propConf.ChBanner.formData}/>
               </Drag>
@@ -33,7 +36,7 @@ class CardBox extends PureComponent {
               </Drag>
             </div>
             <div className="CardBoxTitle"> 可选部件 </div>
-            <div className="CardBoxItem mx2 my1 p2 relative">轮播图</div>
+            <div className="CardBoxItem mx2 my1 p2 relative">TODO: 轮播图</div>
           </div>
         </div>
       </div>
