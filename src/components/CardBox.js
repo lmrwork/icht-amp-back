@@ -6,6 +6,7 @@ import ChBanner from './ch/ChBanner';
 import ChH1 from './ch/ChH1';
 import ChH2 from './ch/ChH2';
 import ChP from './ch/ChP';
+import ChImg from './ch/ChImg';
 
 @connect
 class CardBox extends PureComponent {
@@ -33,6 +34,10 @@ class CardBox extends PureComponent {
               <hr/>
               <Drag {...this.props} template="ChP">
                 <ChP />
+              </Drag>
+              <hr/>
+              <Drag {...this.props} template="ChImg">
+                <ChImg />
               </Drag>
             </div>
             <div className="CardBoxTitle"> 可选部件 </div>
