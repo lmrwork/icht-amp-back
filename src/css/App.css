@@ -105,6 +105,8 @@
   border-radius: 1px;
 }
 
+/*部件CSS*/
+
 /*ch-banner*/
 .ch-header {background: #a31022; color: #fff; height: 2.7em;}
 .ch-header-menubar {font-size: 1.5em; font-weight: bold; color: #fff;}
@@ -112,4 +114,4 @@
 .ch-header-tailormade {font-size: 0.5em;color: #ddd;padding: 0.5em;border: 1px solid #ddd;border-radius: 3px;}
 
 /*ChImg*/
-.rounded {border-radius: 3px!important;}
+.i-amphtml-layout-size-defined .i-amphtml-fill-content {border-radius: 3px;}
