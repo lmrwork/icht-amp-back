@@ -88,10 +88,12 @@ export const init = {
             properties: {
               'liText': {
                 type: 'string',
+                title: '子项文本',
                 default: 'List item'
               },
               liHref: {
                 type: 'string',
+                title: '子项链接',
                 default: 'list link'
               },
             }
