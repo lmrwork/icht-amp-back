@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import connect from '../redux/connect';
 import Drag from './Drag';
 
-import ChBanner from './ch/ChBanner';
 import ChH1 from './ch/ChH1';
 import ChH2 from './ch/ChH2';
 import ChP from './ch/ChP';
@@ -19,11 +18,7 @@ class CardBox extends PureComponent {
             <div className="CardBoxItem mx2 my1 p2 relative">
               {'拖拽部件到右侧iPhone，预览 -->>'}
             </div>
-            <div className="CardBoxItem mx2 my1 p2 relative">
-              <Drag {...this.props} template="ChBanner">
-                <ChBanner form_data={this.props.state.propConf.ChBanner.formData}/>
-              </Drag>
-              <hr/>
+            <div className="CardBoxItem mx2 my1 pt0 pb3 relative">
               <Drag {...this.props} template="ChH1">
                 <ChH1 />
               </Drag>

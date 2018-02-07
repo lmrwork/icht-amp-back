@@ -14,6 +14,18 @@ import ChImg from './ch/ChImg';
 @connect
 class FrameBox extends PureComponent {
 
+  componentWillMount() {
+    if (this.props.state.dropItems.length === 0) {
+      this.props.state.dropItems.push(
+        {
+          template: 'ChBanner',
+          formData:this.props.state.propConf.ChBanner.formData
+        }
+      );
+    }
+    return true;
+  }
+
   click = (el, idx) => {
     this.props.prop_item(idx);
   }
@@ -42,7 +54,7 @@ class FrameBox extends PureComponent {
                 let show;
                 switch (el.template) {
                   case 'ChBanner':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChBanner onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <ChBanner key={idx} index={idx} onClick={() => {}} form_data={el.formData}/>;
                     break;
                   case 'ChH1':
                     show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH1 onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
