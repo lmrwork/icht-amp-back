@@ -211,7 +211,7 @@ export const init = {
     ChImg: {
       //Schema
       schema: {
-        title: '图片：AMP要求图片必须有宽和高，默认布局为responsive',
+        title: '图片：AMP要求图片必须设置原始宽、高，且布局为responsive',
         description: '',
         type: 'object',
         required: [],
