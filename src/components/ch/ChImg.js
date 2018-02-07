@@ -8,7 +8,13 @@ class ChImg extends PureComponent {
     const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChImg.formData;
     return (
       <div onClick={this.props.onClick} className="ChImg px2">
-        <amp-img src={formData.imgSrc} width={formData.imgWidth} height={formData.imgHeight} layout="responsive" alt={formData.imgAlt} class="rounded"></amp-img>
+      	{ formData.imgHref && formData.imgHref !== '#' ? 
+      	<a data-href={formData.imgHref} class="block">
+      		<amp-img src={formData.imgSrc} width={formData.imgWidth} height={formData.imgHeight} layout="responsive" alt={formData.imgAlt} class="rounded"></amp-img>
+      	</a>  
+      	:
+      	<amp-img src={formData.imgSrc} width={formData.imgWidth} height={formData.imgHeight} layout="responsive" alt={formData.imgAlt} class="rounded"></amp-img>
+      	}
       </div>
     )
   }

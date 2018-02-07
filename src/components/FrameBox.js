@@ -10,6 +10,8 @@ import ChH1 from './ch/ChH1';
 import ChH2 from './ch/ChH2';
 import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
+import ChA from './ch/ChA';
+import ChUl from './ch/ChUl';
 
 @connect
 class FrameBox extends PureComponent {
@@ -47,6 +49,7 @@ class FrameBox extends PureComponent {
   render() {
     return (
       <div className="FrameBox mx-auto relative">
+        <div className="iPhone8Btn" onClick={this.update_html}></div>
         <Drop name="FrameDrop" accepts="DnD">
           <div className="iPhone8" ref="phone">
             {
@@ -68,6 +71,12 @@ class FrameBox extends PureComponent {
                   case 'ChImg':
                     show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChImg  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
+                  case 'ChA':
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChA  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    break;
+                  case 'ChUl':
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChUl  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    break;
                   default:
                     show = null;
                 }
@@ -82,7 +91,7 @@ class FrameBox extends PureComponent {
             </div>
           </div>
           <div className="device-stripe"></div>
-          <div className="device-header" onClick={this.update_html}></div>
+          <div className="device-header"></div>
           <div className="device-sensors"></div>
           <div className="device-btns"></div>
           <div className="device-power"></div>

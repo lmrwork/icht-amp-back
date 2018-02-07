@@ -18,7 +18,7 @@
 .App .bsform {
   background-color: white;
   margin: 1em;
-  padding: 1.5em;
+  padding: 1.2em;
   border: 2px solid #333;
   border-radius: 5px;
   text-align: left;
@@ -26,7 +26,6 @@
 
 .App .bsform * {
   box-sizing: border-box;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .App-logo {
@@ -59,7 +58,17 @@
 .App .coldarea {
   position: absolute;
   width: 100%;
-  margin-top: 12em;
+  margin-top: 5em;
+}
+
+.App .iPhone8Btn {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 9.6em;
+  bottom: -11.4em;
+  cursor: pointer;
+  z-index: 100;
 }
 
 /*Dustbin*/
@@ -84,6 +93,7 @@
   background: #FFF;
   border-radius: 5px;
   border: 2px solid #666;
+  text-align: left;
 }
 .CardBoxTitle {
   color: #333;
@@ -103,6 +113,7 @@
   left: 0;
   overflow: scroll;
   border-radius: 1px;
+  text-align: left;
 }
 
 /*部件CSS*/
@@ -115,3 +126,18 @@
 
 /*ChImg*/
 .i-amphtml-layout-size-defined .i-amphtml-fill-content {border-radius: 3px;}
+
+/*ChA*/
+a.ChA {color:#069; text-decoration: underline;}
+
+/*ChUl*/
+.ChUl ul li {
+  background: url(//data.chinahighlights.com/image/travelguide/culture/index/list-gray.jpg) no-repeat 0 center;
+  padding-left: 1.2em;
+  line-height: 1.7em;
+  font-size: 1em;
+}
+.ChUl p {
+  margin-bottom: -0.5em;
+  font-size: 1.2em;
+}

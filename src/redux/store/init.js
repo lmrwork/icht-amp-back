@@ -79,6 +79,56 @@ export const init = {
       }
     },
 
+    ChUl: {
+      //Schema
+      schema: {
+        definitions: {
+          List: {
+            type: 'object',
+            properties: {
+              'liText': {
+                type: 'string',
+                default: 'List item'
+              },
+              liHref: {
+                type: 'string',
+                default: 'list link'
+              },
+            }
+          }
+        },
+        title: '列表',
+        description: '',
+        type: 'object',
+        required: [],
+        properties: {
+          ulTitle: {
+            type: 'string', 
+            title: '列表标题' 
+          },
+          ulList: {
+            type: 'array', 
+            title: '列表子项',
+            minItems: 1,
+            items: {
+              $ref: '#/definitions/List'
+            }
+          },
+        }
+      },
+      //uiSchema
+      uiSchema: {},
+      //formData
+      formData: {
+        ulTitle: 'Arts and Crafts',
+        ulList: [
+          {liText: 'Chinese Silk', liHref: ''},
+          {liText: 'Chinese Jade Articles', liHref: ''},
+          {liText: 'Chinese Embroidery', liHref: ''},
+        ]
+      }
+    },
+
     ChP: {
       //Schema
       schema: {
@@ -94,7 +144,7 @@ export const init = {
           pAlign: {
             type: 'string',
             title: '对齐方式',
-            enum: ['left-align', 'center-align', 'right-align'],
+            enum: ['left-align', 'center', 'right-align'],
             enumNames: ['左对齐', '居中', '右对齐']
           }
         }
@@ -112,6 +162,47 @@ export const init = {
       formData: {
         pText: 'Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
         pAlign: 'left-align'
+      }
+    },
+
+    ChA: {
+      //Schema
+      schema: {
+        title: '超文本链接',
+        description: '',
+        type: 'object',
+        required: [],
+        properties: {
+          aText: {
+            type: 'string', 
+            title: '链接文本' 
+          },
+          aHref: {
+            type: 'string',
+            title: '链接URL',
+          },
+          aAlign: {
+            type: 'string',
+            title: '对齐方式',
+            enum: ['left-align', 'center', 'right-align'],
+            enumNames: ['左对齐', '居中', '右对齐']
+          }
+        }
+      },
+      //uiSchema
+      uiSchema: {
+        aHref: {
+          'ui:placeholder': '/tours/tibet.htm'
+        },
+        aAlign: {
+          "ui:widget": "select"
+        }
+      },
+      //formData
+      formData: {
+        aText: 'A hypertext link', 
+        aHref: '',
+        aAlign: 'left-align'
       }
     },
 
@@ -142,6 +233,10 @@ export const init = {
           imgAlt: {
             type: 'string', 
             title: '图片Alt文字' 
+          },
+          imgHref: {
+            type: 'string', 
+            title: '图片链接' 
           }
         }
       },
@@ -152,6 +247,9 @@ export const init = {
         },
         imgHeight: {
           'ui:widget': 'range'
+        },
+        imgHref: {
+          'ui:placeholder': '/tours/tibet.htm'
         }
       },
       //formData
@@ -159,7 +257,8 @@ export const init = {
         imgSrc: 'https://imagenes.viaje-a-china.com/allpicture/2018/01/cd20c1fc6bd44966b7daaf27.jpg', 
         imgWidth: 360,
         imgHeight: 240,
-        imgAlt: 'Viajes Lhasa 2018',
+        imgAlt: 'Lhasa tour 2018',
+        imgHref: ''
       }
     }
 

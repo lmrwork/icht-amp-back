@@ -6,6 +6,8 @@ import ChH1 from './ch/ChH1';
 import ChH2 from './ch/ChH2';
 import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
+import ChA from './ch/ChA';
+import ChUl from './ch/ChUl';
 
 @connect
 class CardBox extends PureComponent {
@@ -29,6 +31,14 @@ class CardBox extends PureComponent {
               <hr/>
               <Drag {...this.props} template="ChP">
                 <ChP />
+              </Drag>
+              <hr/>
+              <Drag {...this.props} template="ChA">
+                <ChA />
+              </Drag>
+              <hr/>
+              <Drag {...this.props} template="ChUl">
+                <ChUl />
               </Drag>
               <hr/>
               <Drag {...this.props} template="ChImg">
