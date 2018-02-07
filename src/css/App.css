@@ -160,6 +160,12 @@ body {
   text-align: left;
 }
 
+.CodeMirror {
+    border: 1px solid #eee;
+    height: 600px;
+}
+
+
 /*部件CSS*/
 
 /*ch-banner*/
