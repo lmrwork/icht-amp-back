@@ -1,3 +1,7 @@
+body {
+  background-color: #fefefe;
+}
+
 .App {
   text-align: center;
 }
@@ -26,6 +30,46 @@
 
 .App .bsform * {
   box-sizing: border-box;
+}
+.bsform {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1em;
+}
+.bsform label {
+  font-size: 0.8em;
+  color: #089;
+}
+.bsform legend {
+  font-size: 0.9em;
+  position: relative;
+  top:7px;
+}
+.bsform .array-item {
+  box-shadow: 0 0 3px #999;
+  margin: 0 1em 1em;
+  padding: 0.5em 0.5em 0;
+}
+.bsform .array-item .array-item-toolbox {
+  top: 30px;
+}
+.bsform .array-item .form-group {
+  margin-bottom: 8px;
+}
+.bsform .array-item:last-child {
+  margin-bottom: 0;
+}
+.bsform .array-item:after {
+   content:""; 
+   display: block; 
+   clear:both; 
+}
+#root__title {
+  font-size: 1em;
+  text-shadow: 0 0 1px gold;
+  color: #777;
+}
+.panel.panel-danger.errors {
+  color: red;
 }
 
 .App-logo {

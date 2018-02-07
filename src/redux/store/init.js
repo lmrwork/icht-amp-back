@@ -88,13 +88,13 @@ export const init = {
             properties: {
               'liText': {
                 type: 'string',
-                title: '子项文本',
+                title: '文本',
                 default: 'List item'
               },
               liHref: {
                 type: 'string',
-                title: '子项链接',
-                default: 'list link'
+                title: '链接',
+                default: '#List link'
               },
             }
           }
@@ -111,22 +111,22 @@ export const init = {
           ulList: {
             type: 'array', 
             title: '列表子项',
-            minItems: 1,
             items: {
+              title: '子项属性',
               $ref: '#/definitions/List'
             }
           },
         }
       },
       //uiSchema
-      uiSchema: {},
+      uiSchema: {
+      },
       //formData
       formData: {
-        ulTitle: 'Arts and Crafts',
+        ulTitle: 'This is a List.',
         ulList: [
-          {liText: 'Chinese Silk', liHref: ''},
-          {liText: 'Chinese Jade Articles', liHref: ''},
-          {liText: 'Chinese Embroidery', liHref: ''},
+          {liText: 'Here is list item1.', liHref: ''},
+          {liText: 'Here is list item2.', liHref: ''},
         ]
       }
     },
@@ -211,7 +211,7 @@ export const init = {
     ChImg: {
       //Schema
       schema: {
-        title: '图片',
+        title: '图片：AMP要求图片必须有宽和高，默认布局为responsive',
         description: '',
         type: 'object',
         required: [],
@@ -239,6 +239,10 @@ export const init = {
           imgHref: {
             type: 'string', 
             title: '图片链接' 
+          },
+          imgTitle: {
+            type: 'string', 
+            title: '图片描述' 
           }
         }
       },
@@ -260,7 +264,8 @@ export const init = {
         imgWidth: 360,
         imgHeight: 240,
         imgAlt: 'Lhasa tour 2018',
-        imgHref: ''
+        imgHref: '',
+        imgTitle: 'Boy in red robe'
       }
     }
 
