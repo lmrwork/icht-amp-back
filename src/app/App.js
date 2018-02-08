@@ -7,6 +7,7 @@ import Blackboard from '../components/Blackboard';
 
 import '../css/devices.css';
 import 'normalize.css';
+import '../../node_modules/hover.css/css/hover.css';
 
 /*使用整理后的css*/
 //import '../css/basscss.css=';

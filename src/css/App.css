@@ -64,9 +64,9 @@ body {
    clear:both; 
 }
 #root__title {
-  font-size: 1em;
-  text-shadow: 0 0 1px gold;
-  color: #777;
+  font-size: 1.1em;
+  color: #000;
+  line-height: 1.7em;
 }
 .panel.panel-danger.errors {
   color: red;
@@ -106,13 +106,15 @@ body {
 }
 
 .App .iPhone8Btn {
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   position: absolute;
-  left: 9.6em;
-  bottom: -11.4em;
+  left: 159px;
+  bottom: -176px;
   cursor: pointer;
   z-index: 100;
+  border-radius: 50%;
+  background: none;
 }
 
 /*Dustbin*/
@@ -165,7 +167,15 @@ body {
     height: 600px;
 }
 
-
+.hvr-radial-out:before {
+  background: #f7e8dd;
+}
+.hvr-border-fade {
+  box-shadow: inset 0 0 0 4px #f7e8dd, 0 0 1px transparent;
+}
+.hvr-border-fade:hover, .hvr-border-fade:focus, .hvr-border-fade:active {
+  /*box-shadow: inset 0 0 0 4px #073, 0 0 1px transparent;*/
+}
 /*部件CSS*/
 
 /*ch-banner*/

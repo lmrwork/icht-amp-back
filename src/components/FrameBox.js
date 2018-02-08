@@ -49,7 +49,7 @@ class FrameBox extends PureComponent {
   render() {
     return (
       <div className="FrameBox mx-auto relative">
-        <div className="iPhone8Btn" onClick={this.update_html}></div>
+        <div className="iPhone8Btn hvr-border-fade" onClick={this.update_html}></div>
         <Drop name="FrameDrop" accepts="DnD">
           <div className="iPhone8" ref="phone">
             {
