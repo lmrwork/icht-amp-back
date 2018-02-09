@@ -8,6 +8,7 @@ import Sort from './Sort';
 import ChBanner from './ch/ChBanner';
 import ChH1 from './ch/ChH1';
 import ChH2 from './ch/ChH2';
+import ChH3 from './ch/ChH3';
 import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
 import ChA from './ch/ChA';
@@ -64,6 +65,9 @@ class FrameBox extends PureComponent {
                     break;
                   case 'ChH2':
                     show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    break;
+                  case 'ChH3':
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH3  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChP':
                     show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChP  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;

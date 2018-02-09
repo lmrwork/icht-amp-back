@@ -79,6 +79,28 @@ export const init = {
       }
     },
 
+    ChH3: {
+      //Schema
+      schema: {
+        title: '标题 H3',
+        description: '',
+        type: 'object',
+        required: [],
+        properties: {
+          h3Text: {
+            type: 'string', 
+            title: 'H3文本' 
+          }
+        }
+      },
+      //uiSchema
+      uiSchema: {},
+      //formData
+      formData: {
+        h3Text: 'Head 3',
+      }
+    },
+
     ChUl: {
       //Schema
       schema: {
@@ -108,6 +130,12 @@ export const init = {
             type: 'string', 
             title: '列表标题' 
           },
+          listStyle: {
+            type: 'string', 
+            title: '前置标志',
+            enum: ['listSytleDefault', 'listSytleNumber'],
+            enumNames: ['默认', '数字']
+          },
           ulList: {
             type: 'array', 
             title: '列表子项',
@@ -120,10 +148,14 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
+        listStyle: {
+          'ui:widget': 'select'
+        }
       },
       //formData
       formData: {
         ulTitle: 'This is a List.',
+        listStyle: 'listSytleDefault',
         ulList: [
           {liText: 'Here is list item1.', liHref: ''},
           {liText: 'Here is list item2.', liHref: ''},
@@ -154,10 +186,10 @@ export const init = {
       //uiSchema
       uiSchema: {
         pText: {
-          "ui:widget": "textarea"
+          'ui:widget': 'textarea'
         },
         pAlign: {
-          "ui:widget": "select"
+          'ui:widget': 'select'
         }
       },
       //formData
@@ -197,7 +229,7 @@ export const init = {
           'ui:placeholder': '/tours/tibet.htm'
         },
         aAlign: {
-          "ui:widget": "select"
+          'ui:widget': 'select'
         }
       },
       //formData
@@ -242,7 +274,7 @@ export const init = {
           },
           imgTitle: {
             type: 'string', 
-            title: '图片描述' 
+            title: '图片下方描述' 
           }
         }
       },

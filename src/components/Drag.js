@@ -23,6 +23,7 @@ const boxSource = {
           template: props.template,
           formData: props.state.propConf[props.template].formData
         });
+        window.saveDropItems(props.state.dropItems);
       }
     }
   }

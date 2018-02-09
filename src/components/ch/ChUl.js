@@ -12,9 +12,9 @@ class ChUl extends PureComponent {
         <ul className="list-reset">
           {formData.ulList ? formData.ulList.map( (i, idx) => {
             if (i.liHref) {
-              return <li key={idx}><a data-href={i.liHref}>{i.liText}</a></li>;
+              return <li key={idx} className={formData.listStyle}><a data-href={i.liHref}>{i.liText}</a></li>;
             } else {
-              return <li key={idx}>{i.liText}</li>;
+              return <li key={idx} className={formData.listStyle}>{i.liText}</li>;
           }}) : null}
         </ul>
        </div>

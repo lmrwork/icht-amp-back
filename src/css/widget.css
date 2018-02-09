@@ -1,0 +1,27 @@
+/*部件CSS*/
+/*ch-banner*/
+.ch-header {background: #a31022; color: #fff; height: 2.7em;}
+.ch-header-menubar {font-size: 1.5em; font-weight: bold; color: #fff;}
+.ch-header-banner {right: 0.5em;top: 2px;}
+.ch-header-tailormade {font-size: 0.5em;color: #ddd;padding: 0.5em;border: 1px solid #ddd;border-radius: 3px;}
+/*ChImg*/
+.i-amphtml-layout-size-defined .i-amphtml-fill-content {border-radius: 3px;}
+/*ChA*/
+a.ChA {color:#069; text-decoration: underline;}
+/*ChUl*/
+.ChUl ul li {
+  background: url(//data.chinahighlights.com/image/travelguide/culture/index/list-gray.jpg) no-repeat 0 center;
+  padding-left: 1.2em;
+  line-height: 1.7em;
+  font-size: 1em;
+}
+.ChUl ul li.listSytleNumber {
+  list-style: decimal;
+  list-style-position: inside;
+  padding-left: 0;
+  background-image: none;
+}
+.ChUl p {
+  margin-bottom: -0.5em;
+  font-size: 1.2em;
+}
