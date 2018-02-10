@@ -181,3 +181,54 @@ body {
 .hvr-border-fade:hover, .hvr-border-fade:focus, .hvr-border-fade:active {
   /*box-shadow: inset 0 0 0 4px #073, 0 0 1px transparent;*/
 }
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 26px;
+  top: 0.8em;
+  right: 2em;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #07c;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #000;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #f9f9f9;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #a31022;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.bm-menu-wrap {
+  top: 0;
+}

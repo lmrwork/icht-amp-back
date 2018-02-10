@@ -28,6 +28,14 @@ export const allReducers = (state = init, action) => {
   case 'UPDATE_HTML':
     return {...state, html: action.html, json: JSON.stringify(state.dropItems, null, 2) };
 
+  case 'SAVE_HISTORY':
+    let histories = window.loadDropItems();
+    if (!histories) {
+      histories = [];
+    }
+    window.saveDropItems(action.action, state.dropItems);
+    return {...state, saveid:state.saveid + 1 };
+
   default:
     return state;
   }

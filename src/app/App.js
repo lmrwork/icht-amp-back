@@ -3,9 +3,8 @@ import { Provider } from 'react-redux';
 import { store } from '../redux/store/store';
 import Header from '../components/Header';
 import Blackboard from '../components/Blackboard';
-import Portal from '../components/Portal';
 //本地存储
-import '../utils/logStorage';
+import '../utils/Storage';
 
 import '../css/devices.css';
 import 'normalize.css';
@@ -25,7 +24,6 @@ class App extends Component {
         <div className="App">
           <Header />
           <Blackboard />
-          <Portal />
         </div>
       </Provider>
     );

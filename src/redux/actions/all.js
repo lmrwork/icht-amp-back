@@ -28,11 +28,17 @@ export const update_html = (html) => ({
   html
 });
 
+export const save_history = (action) => ({
+  type: 'SAVE_HISTORY',
+  action
+});
+
 export const actions = {
   drop_item,
   sort_item,
   prop_item,
   delet_item,
   update_item,
-  update_html
+  update_html,
+  save_history
 };
