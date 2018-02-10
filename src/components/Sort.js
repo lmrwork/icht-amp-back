@@ -15,17 +15,17 @@ const cardSource = {
     }
   },
   endDrag(props, monitor) {
-    const dropResult = monitor.getDropResult();
-    if (dropResult) {
+    //const dropResult = monitor.getDropResult();
+    //if (dropResult) {
       props.save_history('交换');
-    }
+    //}
   }
 }
 
 const cardTarget = {
 
   canDrop() {
-    return { name: 'sort' };
+    return false;
   },
 
   hover(props, monitor, component) {
