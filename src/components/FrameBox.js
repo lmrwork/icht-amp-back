@@ -6,9 +6,7 @@ import Drop from './Drop';
 import Sort from './Sort';
 
 import ChBanner from './ch/ChBanner';
-import ChH1 from './ch/ChH1';
-import ChH2 from './ch/ChH2';
-import ChH3 from './ch/ChH3';
+import ChHead from './ch/ChHead';
 import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
 import ChA from './ch/ChA';
@@ -60,14 +58,8 @@ class FrameBox extends PureComponent {
                   case 'ChBanner':
                     show = <ChBanner key={idx} index={idx} onClick={() => {}} form_data={el.formData}/>;
                     break;
-                  case 'ChH1':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChH1 onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
-                    break;
-                  case 'ChH2':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChH2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
-                    break;
-                  case 'ChH3':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChH3  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                  case 'ChHead':
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChHead onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChP':
                     show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChP  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;

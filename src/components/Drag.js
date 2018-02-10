@@ -23,7 +23,7 @@ const boxSource = {
           template: props.template,
           formData: props.state.propConf[props.template].formData
         });
-        props.save_history('Drag');
+        props.save_history('放置');
       }
     }
   }

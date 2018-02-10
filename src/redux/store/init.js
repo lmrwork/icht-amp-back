@@ -35,6 +35,38 @@ export const init = {
       }
     },
 
+    ChHead: {
+      //Schema
+      schema: {
+        title: '标题',
+        description: '',
+        type: 'object',
+        required: [],
+        properties: {
+          headText: {
+            type: 'string', 
+            title: '标题文本' 
+          },
+          headType: {
+            type: 'string',
+            title: '标题 H(x) ？',
+            enum: ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
+          }
+        }
+      },
+      //uiSchema
+      uiSchema: {
+        headType: {
+          'ui:widget': 'select'
+        }
+      },
+      //formData
+      formData: {
+        headText: '标题 H1~H6',
+        headType: 'H1'
+      }
+    },
+
     ChH1: {
       //Schema
       schema: {

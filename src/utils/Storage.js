@@ -9,9 +9,14 @@ window.saveDropItems = (action, json) => {
   if (!histories) {
     histories = [];
   }
-  while(window.localStorage.getItem('dropItems').length > 5000000) {
-    histories.pop();
+
+  //判断web存储的剩余，通常为5.2mb
+  if (histories.length) {
+    while(window.localStorage.getItem('dropItems').length > 5000000) {
+      histories.pop();
+    }
   }
+
   histories.unshift({'time': new Date().toLocaleString(), action: action, 'json': json});
   window.localStorage.setItem('dropItems', JSON.stringify(histories));
 }

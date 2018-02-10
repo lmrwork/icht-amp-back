@@ -21,7 +21,9 @@ class Header extends PureComponent {
         <div className="pb2">点击可以加载历史记录：（~5w字符）</div>
         {
           histories ? histories.map( (i, n) => (
-            <a key={i} id="home" className="menu-item py1 left-align" onClick={() => this.onClick(n)} style={{cursor:'pointer'}}> {`（${n+1}）${i.time}`}</a>
+            <a key={i} id="home" className="menu-item py1 left-align" onClick={() => this.onClick(n)} style={{cursor:'pointer'}}> 
+            {`（${n+1}）${i.time} [操作: ${i.action}]`}
+            </a>
           )) : null
         }
         </Menu>

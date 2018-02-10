@@ -2,13 +2,12 @@ import React, { PureComponent } from 'react';
 import connect from '../redux/connect';
 import Drag from './Drag';
 
-import ChH1 from './ch/ChH1';
-import ChH2 from './ch/ChH2';
-import ChH3 from './ch/ChH3';
+import ChHead from './ch/ChHead';
 import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
 import ChA from './ch/ChA';
 import ChUl from './ch/ChUl';
+
 
 @connect
 class CardBox extends PureComponent {
@@ -22,16 +21,8 @@ class CardBox extends PureComponent {
               {'拖拽部件到右侧iPhone，预览 -->>'}
             </div>
             <div className="CardBoxItem mx2 my1 pt0 pb3 relative">
-              <Drag {...this.props} template="ChH1">
-                <ChH1 />
-              </Drag>
-              <hr/>
-              <Drag {...this.props} template="ChH2">
-                <ChH2 />
-              </Drag>
-              <hr/>
-              <Drag {...this.props} template="ChH3">
-                <ChH3 />
+              <Drag {...this.props} template="ChHead">
+                <ChHead />
               </Drag>
               <hr/>
               <Drag {...this.props} template="ChP">
