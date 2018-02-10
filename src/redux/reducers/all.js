@@ -26,7 +26,7 @@ export const allReducers = (state = init, action) => {
     return {...state};
 
   case 'UPDATE_HTML':
-    return {...state, html: action.html, json: JSON.stringify(state.dropItems, null, 2) };
+    return {...state, html: action.html, json: JSON.stringify(state.dropItems.slice(1), null, 2) };
 
   case 'SAVE_HISTORY':
     let histories = window.loadDropItems();
