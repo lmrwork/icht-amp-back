@@ -34,21 +34,21 @@ class PropBox extends PureComponent {
         <div className="CardBox mx-auto py1">
           <div className="flex flex-column">
             <div className="CardBoxTitle"> 部件属性 </div>
-              <div className="CardBoxItem mx2 my1 p2 relative">
-                {'<<-- 点击左侧iPhone中的部件，编辑属性'}
-              </div>
-              { itemCfg ?
-              <Form schema={itemCfg.schema}
-                    uiSchema={itemCfg.uiSchema}
-                    formData={item.formData ? item.formData : itemCfg.formData}
-                    onChange={this.change}
-                    className="bsform"
-                    action="#">
-                  <div className="relative">
-                    <button type="button" className="btn btn-danger relative right-0" onClick={this.delete}>删除部件</button>
-                  </div>
-              </Form>
-              : null }
+            <div className="CardBoxItem mx2 my1 p2 relative">
+              {'<<-- 点击左侧iPhone中的部件，编辑属性'}
+            </div>
+            { itemCfg ?
+            <Form schema={itemCfg.schema}
+                  uiSchema={itemCfg.uiSchema}
+                  formData={item.formData ? item.formData : itemCfg.formData}
+                  onChange={this.change}
+                  className="bsform"
+                  action="#">
+                <div className="relative">
+                  <button type="button" className="btn btn-danger relative right-0" onClick={this.delete}>删除部件</button>
+                </div>
+            </Form>
+            : null }
           </div>
         </div>
       </div>

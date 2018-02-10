@@ -9,6 +9,7 @@ import '../utils/Storage';
 import '../css/devices.css';
 import 'normalize.css';
 import '../../node_modules/hover.css/css/hover.css';
+import 'react-tabs/style/react-tabs.css';
 
 /*使用整理后的css*/
 //import '../css/basscss.css=';
