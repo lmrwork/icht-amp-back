@@ -34,7 +34,11 @@ export const allReducers = (state = init, action) => {
       histories = [];
     }
     window.saveDropItems(action.action, state.dropItems);
-    return {...state, saveid:state.saveid + 1 };
+    return {...state};
+
+  case 'LOAD_HISTORY':
+    const dropItemsJson = window.loadDropItemsJson(action.id)
+    return {...state, dropItems: dropItemsJson};
 
   default:
     return state;

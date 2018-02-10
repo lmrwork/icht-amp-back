@@ -8,7 +8,8 @@ window.saveDropItems = (action, json) => {
   let histories = window.loadDropItems();
   if (!histories) {
     histories = [];
-  } else if (histories.length > 100) {
+  }
+  while(window.localStorage.getItem('dropItems').length > 5000000) {
     histories.pop();
   }
   histories.unshift({'time': new Date().toLocaleString(), action: action, 'json': json});
@@ -20,7 +21,12 @@ window.loadDropItems = () => {
   return JSON.parse(window.localStorage.getItem('dropItems'));
 }
 
-//加载制定历史
-window.loadDropItem = (id) => {
-  return JSON.parse(window.localStorage.getItem('dropItems'));
+//加载指定历史
+window.loadDropItemsJson = (id) => {
+  const histories = JSON.parse(window.localStorage.getItem('dropItems'));
+  let dropItemsJson = null;
+  if (histories) {
+    dropItemsJson = histories[id].json;
+  }
+  return dropItemsJson;
 }

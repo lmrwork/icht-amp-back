@@ -61,25 +61,25 @@ class FrameBox extends PureComponent {
                     show = <ChBanner key={idx} index={idx} onClick={() => {}} form_data={el.formData}/>;
                     break;
                   case 'ChH1':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH1 onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChH1 onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChH2':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChH2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChH3':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChH3  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChH3  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChP':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChP  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChP  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChImg':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChImg  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChA':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChA  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChA  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   case 'ChUl':
-                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item}><ChUl  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+                    show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChUl  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
                     break;
                   default:
                     show = null;

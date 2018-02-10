@@ -5,7 +5,6 @@ export const init = {
   propIndex: null,
   html: null,
   json: null,
-  saveid: 0,
   //属性配置
   propConf: {
 

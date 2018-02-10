@@ -11,6 +11,7 @@ class PropBox extends PureComponent {
       if (yes) {
         this.props.delet_item(this.props.state.propIndex);
         this.props.prop_item(null);
+        this.props.save_history();
       }
     } else {
       alert('Can not delete ~');
@@ -19,6 +20,7 @@ class PropBox extends PureComponent {
 
   change = ({formData}) => {
     this.props.update_item(this.props.state.propIndex, formData);
+    this.props.save_history();
   }
 
   render() {

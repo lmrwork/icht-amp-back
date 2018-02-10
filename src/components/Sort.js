@@ -14,22 +14,18 @@ const cardSource = {
       index: props.index,
     }
   },
-  /*
   endDrag(props, monitor) {
     const dropResult = monitor.getDropResult();
-
     if (dropResult) {
-      if (dropResult.name === 'PropDrop') {
-        props.prop_item(props.index);
-      }
+      props.save_history('Sort');
     }
-  }*/
+  }
 }
 
 const cardTarget = {
 
   canDrop() {
-    return false;
+    return { name: 'sort' };
   },
 
   hover(props, monitor, component) {

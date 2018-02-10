@@ -33,6 +33,11 @@ export const save_history = (action) => ({
   action
 });
 
+export const load_history = (id) => ({
+  type: 'LOAD_HISTORY',
+  id
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -40,5 +45,6 @@ export const actions = {
   delet_item,
   update_item,
   update_html,
-  save_history
+  save_history,
+  load_history
 };
