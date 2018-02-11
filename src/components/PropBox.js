@@ -19,8 +19,14 @@ class PropBox extends PureComponent {
   }
 
   change = ({formData}) => {
-    console.log(formData);
-    //this.props.update_item(this.props.state.propIndex, formData);
+    if (formData.imageList) {
+      console.log(formData);
+      console.log(this.props.state.propIndex);
+      this.props.delet_item(this.props.state.propIndex);
+      //todo：再次添加主键
+    } else {
+      this.props.update_item(this.props.state.propIndex, formData);
+    }
     this.props.save_history('属性');
   }
 
