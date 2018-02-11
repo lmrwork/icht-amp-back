@@ -12,8 +12,6 @@ import ChImg from './ch/ChImg';
 import ChA from './ch/ChA';
 import ChUl from './ch/ChUl';
 
-let pureHtml;
-
 @connect
 class FrameBox extends PureComponent {
 
@@ -48,7 +46,6 @@ class FrameBox extends PureComponent {
   }
 
   render() {
-    pureHtml = null; 
     const html = this.props.state.dropItems.map((el, idx) => {
       let show;
       switch (el.template) {
