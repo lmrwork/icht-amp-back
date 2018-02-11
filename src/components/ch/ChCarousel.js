@@ -11,9 +11,9 @@ class ChCarousel extends PureComponent {
       	<amp-carousel layout="responsive" width="450" height="300" type="slides" autoplay delay="3000" loop className={'hi-'+formData.imageList.length}>
           {formData.imageList ? formData.imageList.map( (v, id) => {
             if (v.imgHref) {
-              return <div key={id}><a data-href={v.imgHref}><amp-img src={v.imgSrc} width="450" height="300"></amp-img></a></div>;
+              return <a key={id} data-href={v.imgHref}><amp-img src={v.imgSrc} width="450" height="300"></amp-img></a>;
             } else {
-              return <div key={id}><amp-img src={v.imgSrc} width="450" height="300"></amp-img></div>;
+              return <amp-img key={id} src={v.imgSrc} width="450" height="300"></amp-img>;
             }
           }) : null}
         </amp-carousel>

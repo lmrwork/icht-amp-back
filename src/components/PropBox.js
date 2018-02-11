@@ -19,11 +19,11 @@ class PropBox extends PureComponent {
   }
 
   change = ({formData}) => {
-    if (formData.imageList) {
+    if (formData.imageList) { //轮播组件~fix
       //先删除JS部件
       this.props.delet_item(this.props.state.propIndex);
-      //todo：再次添加JS部件
-      this.props.state.dropItems.push({
+      //再次添加JS部件
+      this.props.state.dropItems.splice(this.props.state.propIndex, 0, {
         'template': 'ChCarousel',
         'formData': formData
       });
