@@ -82,8 +82,7 @@ class FrameBox extends PureComponent {
         </Frame>
         <div className="device device-iphone-8 device-gold device-pos">
           <div className="device-frame">
-            <div className="device-content">
-            </div>
+            <div className="device-content"></div>
           </div>
           <div className="device-stripe"></div>
           <div className="device-header"></div>
