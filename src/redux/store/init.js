@@ -140,15 +140,15 @@ export const init = {
           List: {
             type: 'object',
             properties: {
-              'liText': {
+              liText: {
                 type: 'string',
                 title: '文本',
-                default: 'List item'
+                default: '子项'
               },
               liHref: {
                 type: 'string',
                 title: '链接',
-                default: '#List link'
+                default: '#'
               },
             }
           }
@@ -330,6 +330,54 @@ export const init = {
         imgAlt: 'Lhasa tour 2018',
         imgHref: '',
         imgTitle: 'Boy in red robe'
+      }
+    },
+
+    ChCarousel: {
+      //Schema
+      schema: {
+        definitions: {
+          Image: {
+            type: 'object',
+            properties: {
+              imgSrc: {
+                type: 'string',
+                title: '图片源地址',
+                default: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image3.jpg'
+              },
+              imgHref: {
+                type: 'string',
+                title: '图片链接',
+                default: ''
+              },
+            }
+          }
+        },
+        title: '轮播图',
+        description: '',
+        type: 'object',
+        required: [],
+        properties: {
+          imageList: {
+            type: 'array', 
+            title: '图片集',
+            items: {
+              title: '图片',
+              $ref: '#/definitions/Image'
+            }
+          },
+        }
+      },
+      //uiSchema
+      uiSchema: {
+      },
+      //formData
+      formData: {
+        imageList:[
+          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image1.jpg', imgHref: ''},
+          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image2.jpg', imgHref: ''},
+          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image3.jpg', imgHref: ''},
+        ]
       }
     }
 

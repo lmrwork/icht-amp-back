@@ -20,7 +20,7 @@ class Blackboard extends PureComponent {
     return (
       <DragDropContextProvider backend={HTML5Backend}>
         <div className="relative" id="Blackboard">
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap" style={{minHeight:'60em'}}>
             <div className="col-4 my3 relative"><CardBox /></div>
             <div className="col-4 my3 relative"><FrameBox /></div>
             <div className="col-4 my3 relative"><PropBox /></div>

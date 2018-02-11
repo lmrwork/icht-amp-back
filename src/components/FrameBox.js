@@ -10,6 +10,7 @@ import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
 import ChA from './ch/ChA';
 import ChUl from './ch/ChUl';
+import ChCarousel from './ch/ChCarousel';
 
 @connect
 class FrameBox extends PureComponent {
@@ -65,6 +66,9 @@ class FrameBox extends PureComponent {
           break;
         case 'ChUl':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChUl  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+          break;
+        case 'ChCarousel':
+          show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChCarousel  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           break;
         default:
           show = null;

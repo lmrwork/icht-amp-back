@@ -19,7 +19,8 @@ class PropBox extends PureComponent {
   }
 
   change = ({formData}) => {
-    this.props.update_item(this.props.state.propIndex, formData);
+    console.log(formData);
+    //this.props.update_item(this.props.state.propIndex, formData);
     this.props.save_history('属性');
   }
 
