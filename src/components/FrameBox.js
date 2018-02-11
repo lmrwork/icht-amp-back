@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
+import Frame from 'react-frame-component';
 import connect from '../redux/connect';
-
 import Drop from './Drop';
 import Sort from './Sort';
-
 import ChBanner from './ch/ChBanner';
 import ChHead from './ch/ChHead';
 import ChP from './ch/ChP';
@@ -76,8 +75,11 @@ class FrameBox extends PureComponent {
       <div className="FrameBox mx-auto relative">
         <div className="iPhone8Btn hvr-border-fade" onClick={this.update_html}></div>
         <Drop name="FrameDrop" accepts="DnD">
-          <div className="iPhone8" ref="phone">{html}</div>
+          <div className="iPhone8">{html}</div>
         </Drop>
+        <Frame className="hidden pureHtml" ref="pureHtml">
+          <div ref="phone">{html}</div>
+        </Frame>
         <div className="device device-iphone-8 device-gold device-pos">
           <div className="device-frame">
             <div className="device-content">
