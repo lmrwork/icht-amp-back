@@ -24,7 +24,6 @@ class FrameBox extends PureComponent {
         }
       );
     }
-    return true;
   }
 
   click = (el, idx) => {
