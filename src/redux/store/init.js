@@ -345,13 +345,11 @@ export const init = {
                 title: '图片源地址',
                 default: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image3.jpg'
               },
-              /* 暂时不开放链接
               imgHref: {
                 type: 'string',
                 title: '图片链接',
                 default: ''
               },
-              */
             }
           }
         },

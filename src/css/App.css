@@ -251,3 +251,38 @@ body {
   color: gray;
   font-size: 0.8em;
 }
+
+.ChCarouselNext,.ChCarouselPrev {
+  background-color: #000;
+  width: 1.5em;
+  height: 1.5em;
+  color: #fff;
+  text-align: center;
+  padding-top: 0.08em;
+  font-size: 2em;
+  opacity: 0.7;
+  position: absolute;
+  border-radius: 0.2em;
+  border: 2px solid #eee;
+  top: 40%;
+}
+.ChCarouselPrev {
+  left: 0.5em;
+}
+.ChCarouselNext {
+  right: 0.5em;
+}
+.ChCarouseCount {
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  padding-top: 0.8em;
+  width: 3em;
+  height: 3em;
+  top: 40%;
+  left: 44%;
+  border-radius: 50%;
+  opacity: 0.8;
+  border: 2px solid #eee;
+}
