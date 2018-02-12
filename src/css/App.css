@@ -47,7 +47,7 @@ body {
 .bsform .array-item {
   box-shadow: 0 0 3px #999;
   margin: 0 1em 1em;
-  padding: 0.5em 0.5em 0;
+  padding: 0.5em 0.5em 0 0;
 }
 .bsform .array-item .array-item-toolbox {
   top: 30px;
