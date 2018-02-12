@@ -212,6 +212,16 @@ export const init = {
             title: '对齐方式',
             enum: ['left-align', 'center', 'right-align'],
             enumNames: ['左对齐', '居中', '右对齐']
+          },
+          pSize: {
+            type: 'integer', 
+            title: '段落字号（em）',
+            minimum: 1,
+            maximum: 50,
+          },
+          pColor: {
+            type: 'string', 
+            title: '段落颜色'
           }
         }
       },
@@ -222,12 +232,20 @@ export const init = {
         },
         pAlign: {
           'ui:widget': 'select'
+        },
+        pSize: {
+          'ui:widget': 'updown'
+        },
+        pColor: {
+          'ui:widget': 'color'
         }
       },
       //formData
       formData: {
         pText: 'Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
-        pAlign: 'left-align'
+        pAlign: 'left-align',
+        pSize: 1,
+        pColor: 'inherit',
       }
     },
 
@@ -286,13 +304,13 @@ export const init = {
           },
           imgWidth: {
             type: 'integer', 
-            title: '图片宽度',
+            title: '图片宽度（px）',
             minimum: 0,
             maximum: 960
           },
           imgHeight: {
             type: 'integer', 
-            title: '图片高度',
+            title: '图片高度（px）',
             minimum: 0,
             maximum: 640
           },
@@ -313,10 +331,10 @@ export const init = {
       //uiSchema
       uiSchema: {
         imgWidth: {
-          'ui:widget': 'range'
+          'ui:widget': 'updown'
         },
         imgHeight: {
-          'ui:widget': 'range'
+          'ui:widget': 'updown'
         },
         imgHref: {
           'ui:placeholder': '/tours/tibet.htm'
@@ -358,6 +376,18 @@ export const init = {
         type: 'object',
         required: [],
         properties: {
+          imageWidth: {
+            type: 'integer',
+            title: '图片宽度（px）',
+            minimum: 0,
+            maximum: 960
+          },
+          imageHeight: {
+            type: 'integer',
+            title: '图片高度（px）',
+            minimum: 0,
+            maximum: 640
+          },
           imageList: {
             type: 'array', 
             title: '图片集',
@@ -370,14 +400,20 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
-        'ui:autofocus': true
+        imageWidth: {
+          'ui:widget': 'updown'
+        },
+        imageHeight: {
+          'ui:widget': 'updown'
+        }
       },
       //formData
       formData: {
+        imageWidth: 450,
+        imageHeight: 300,
         imageList:[
           {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image1.jpg', imgHref: ''},
           {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image2.jpg', imgHref: ''},
-          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image3.jpg', imgHref: ''},
         ]
       }
     }

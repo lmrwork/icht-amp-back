@@ -12,7 +12,7 @@ window.saveDropItems = (action, json) => {
 
   //判断web存储的剩余，通常为5.2mb
   if (histories.length) {
-    while(JSON.stringify(histories).length > 50000) {
+    while(JSON.stringify(histories).length > 500000) {
       histories.pop();
     }
   }
