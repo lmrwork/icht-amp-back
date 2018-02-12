@@ -6,9 +6,11 @@ import Drag from './Drag';
 import ChHead from './ch/ChHead';
 import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
+import ChImg2 from './ch/ChImg2';
 import ChA from './ch/ChA';
 import ChUl from './ch/ChUl';
 import ChCarousel from './ch/ChCarousel';
+import ChTour from './ch/ChTour';
 
 @connect
 class CardBox extends PureComponent {
@@ -24,7 +26,8 @@ class CardBox extends PureComponent {
             <Tabs>
               <TabList>
                 <Tab>常用部件</Tab>
-                <Tab>可选部件</Tab>
+                <Tab>线路部件</Tab>
+                <Tab>图片部件</Tab>
               </TabList>
 
               <TabPanel>
@@ -52,8 +55,19 @@ class CardBox extends PureComponent {
               </TabPanel>
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 p2 relative">
+                  <Drag {...this.props} template="ChTour">
+                    <ChTour />
+                  </Drag>
+                </div>
+              </TabPanel>
+              <TabPanel>
+                <div className="CardBoxItem mx2 my1 p2 relative">
                   <Drag {...this.props} template="ChCarousel">
                     <ChCarousel />
+                  </Drag>
+                  <hr/>
+                  <Drag {...this.props} template="ChImg2">
+                    <ChImg2 />
                   </Drag>
                 </div>
               </TabPanel>

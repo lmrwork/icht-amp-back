@@ -116,6 +116,11 @@ body {
   background: none;
 }
 
+.App .iPhone8, .CardBoxItem  {
+  color: #545454;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
 /*Dustbin*/
 .App .dustbin {
   position: absolute;

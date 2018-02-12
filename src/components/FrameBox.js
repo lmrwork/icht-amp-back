@@ -8,10 +8,12 @@ import ChBanner from './ch/ChBanner';
 import ChHead from './ch/ChHead';
 import ChP from './ch/ChP';
 import ChImg from './ch/ChImg';
+import ChImg2 from './ch/ChImg2';
 import ChA from './ch/ChA';
 import ChUl from './ch/ChUl';
 import ChCarousel from './ch/ChCarousel';
 import ChCarouselAmp from './ch/ChCarouselAmp';
+import ChTour from './ch/ChTour';
 
 @connect
 class FrameBox extends PureComponent {
@@ -66,6 +68,10 @@ class FrameBox extends PureComponent {
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           showHtml = show;
           break;
+        case 'ChImg2':
+          show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+          showHtml = show;
+          break;
         case 'ChA':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChA  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           showHtml = show;
@@ -77,6 +83,10 @@ class FrameBox extends PureComponent {
         case 'ChCarousel':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChCarousel  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChCarouselAmp  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;;
+          break;
+        case 'ChTour':
+          show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChTour  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+          showHtml = show;
           break;
         default:
           show = null;

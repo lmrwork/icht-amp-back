@@ -13,7 +13,7 @@ class ChP extends PureComponent {
       dangerouslySetInnerHTML={{__html: formData.pText}}
       style={{
       	color: formData.pColor,
-      	fontSize: `${formData.pSize/10}em`
+      	fontSize: `${formData.pSize/10}rem`
       }}
       />
     )
