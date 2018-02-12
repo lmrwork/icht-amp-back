@@ -215,8 +215,8 @@ export const init = {
           },
           pSize: {
             type: 'integer', 
-            title: '段落字号（em）',
-            minimum: 1,
+            title: '段落字号',
+            minimum: 5,
             maximum: 50,
           },
           pColor: {
@@ -244,7 +244,7 @@ export const init = {
       formData: {
         pText: 'Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
         pAlign: 'left-align',
-        pSize: 1,
+        pSize: 10,
         pColor: 'inherit',
       }
     },
