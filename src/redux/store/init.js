@@ -509,15 +509,25 @@ export const init = {
             type: 'string', 
             title: '图片Alt文字' 
           },
-          imgTitle: {
+          tourTitle: {
             type: 'string', 
-            title: '图片下方描述' 
+            title: '线路名称' 
           },
-          textSize: {
-            type: 'integer', 
-            title: '段落字号',
-            minimum: 5,
-            maximum: 50,
+          tourCities: {
+            type: 'string', 
+            title: '经过城市' 
+          },
+          tourDesc: {
+            type: 'string', 
+            title: '线路简述' 
+          },
+          tourUrl: {
+            type: 'string', 
+            title: '线路URL' 
+          },
+          tourBtn: {
+            type: 'string', 
+            title: '线路按钮文字' 
           },
         }
       },
@@ -531,16 +541,23 @@ export const init = {
         },
         textSize: {
           'ui:widget': 'updown'
+        },
+        tourDesc: {
+          'ui:widget': 'textarea'
         }
       },
       //formData
       formData: {
-        imgSrc: 'https://data.chinahighlights.com/amp-img/homepage/mobile-home-brand.jpg',
+        imgSrc: 'https://data.chinahighlights.com/amp-img/homepage/great-wall.jpg',
         imgWidth: 500,
-        imgHeight: 300,
-        imgAlt: 'China tour 2018',
-        imgTitle: 'China Highlights - Featured on 50+ Media and Press',
-        textSize: 11
+        imgHeight: 320,
+        imgAlt: 'The Great Wall of China',
+        tourTitle: 'Classic Wonders - 11 Days',
+        tourCities: 'Beijing - Xi\'an - Guilin/Yangshuo -  Shanghai',
+        tourDesc: 'Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.',
+        textSize: 11,
+        tourUrl: '#',
+        tourBtn: 'View Details',
       }
     },
 

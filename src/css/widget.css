@@ -1,7 +1,7 @@
 /*部件CSS*/
 
-.App .iPhone8, .CardBoxItem  {
-  color: #545454;
+body {
+  color: #333;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
@@ -64,13 +64,14 @@ a.ChA {color:#069; text-decoration: underline;}
 }
 
 /*ChTour*/
-.homeTours amp-img {
+.homeTours amp-img, .homeTours .i-amphtml-layout-size-defined .i-amphtml-fill-content {
     border-radius: 4px 4px 0 0;
 }
 .tourPackage {
     background: #f4f4f4;
     padding: 1rem 1.2rem;
     border-radius: 0 0 6px 6px;
+    border: 1px solid #d6d6d6;
 }
 .tourPackage h3 {
     margin: 0.3rem 0 0.5rem;
@@ -78,7 +79,7 @@ a.ChA {color:#069; text-decoration: underline;}
 }
 .tourPackage .destinations {
     display: block;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0rem;
     color: #777;
     overflow: hidden;
     font-size: 0.9rem;
