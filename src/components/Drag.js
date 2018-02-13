@@ -16,13 +16,13 @@ const boxSource = {
 
   endDrag(props, monitor) {
     const dropResult = monitor.getDropResult();
-    console.log(props);
+    //console.log(props);
     if (dropResult) {
       if (dropResult.name === 'FrameDrop') {
         //放置组件到store
         props.drop_item({
           template: props.template,
-          formData: props.state.propConf[props.template].formData
+          formData: props.state.propConf[props.template].formData,
         });
         props.save_history('放置');
       }
