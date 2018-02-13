@@ -4,8 +4,9 @@ export const allReducers = (state = init, action) => {
   switch (action.type) {
 
   case 'DROP_ITEM':
-    if (localStorage.getItem('insertID')) {
-      state.dropItems.splice(localStorage.getItem('insertID'), 0, action.item);
+    let pos = parseInt(localStorage.getItem('insertID'), 10);
+    if (pos) {
+      state.dropItems.splice(pos + 1, 0, action.item);
       localStorage.removeItem('insertID');
     } else {
       state.dropItems.push(action.item);
