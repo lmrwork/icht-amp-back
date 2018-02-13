@@ -29,10 +29,22 @@ const cardTarget = {
   },
 
   hover(props, monitor, component) {
+
     const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
 
+    //console.log(`${dragIndex} === ${hoverIndex} from ${props.from}`);
+
+    //表示从cardbox过来
+    if (dragIndex === 0) {
+      if (hoverIndex !== localStorage.getItem('insertID')) {
+        localStorage.setItem('insertID', hoverIndex);
+      }
+      return;
+    }
+
     if (dragIndex === hoverIndex) {
+      //console.log('dragIndex === hoverIndex');
       return;
     }
 
@@ -46,10 +58,12 @@ const cardTarget = {
     const hoverClientY = clientOffset.y - hoverBoundingRect.top;
 
     if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+      //console.log('dragIndex < hoverIndex && hoverClientY < hoverMiddleY');
       return;
     }
 
     if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+      //console.log('dragIndex > hoverIndex && hoverClientY > hoverMiddleY');
       return;
     }
 

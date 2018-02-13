@@ -8,7 +8,7 @@ const boxTarget = {
   },
 }
 
-@DropTarget(props => props.accepts, boxTarget, (connect, monitor) => ({
+@DropTarget('Sort', boxTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver(),
   canDrop: monitor.canDrop(),

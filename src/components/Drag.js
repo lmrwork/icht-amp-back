@@ -9,16 +9,17 @@ const style = {
 const boxSource = {
   beginDrag(props) {
     return {
-      //content: props.children
+      id: 0,
+      index: 0,
     }
   },
 
   endDrag(props, monitor) {
     const dropResult = monitor.getDropResult();
-
+    console.log(props);
     if (dropResult) {
       if (dropResult.name === 'FrameDrop') {
-        //TODO：放置组件到store
+        //放置组件到store
         props.drop_item({
           template: props.template,
           formData: props.state.propConf[props.template].formData
@@ -29,7 +30,7 @@ const boxSource = {
   }
 }
 
-@DragSource('DnD', boxSource, (connect, monitor) => ({
+@DragSource('Sort', boxSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging(),
 }))

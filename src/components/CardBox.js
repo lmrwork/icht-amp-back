@@ -32,41 +32,41 @@ class CardBox extends PureComponent {
 
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 pt0 pb3 relative">
-                  <Drag {...this.props} template="ChHead">
+                  <Drag {...this.props} from="cardBox" template="ChHead">
                     <ChHead />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} template="ChP">
+                  <Drag {...this.props} from="cardBox" template="ChP">
                     <ChP />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} template="ChA">
+                  <Drag {...this.props} from="cardBox" template="ChA">
                     <ChA />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} template="ChUl">
+                  <Drag {...this.props} from="cardBox" template="ChUl">
                     <ChUl />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} template="ChImg">
+                  <Drag {...this.props} from="cardBox" template="ChImg">
                     <ChImg />
                   </Drag>
                 </div>
               </TabPanel>
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 p2 relative">
-                  <Drag {...this.props} template="ChTour">
+                  <Drag {...this.props} from="cardBox" template="ChTour">
                     <ChTour />
                   </Drag>
                 </div>
               </TabPanel>
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 p2 relative">
-                  <Drag {...this.props} template="ChCarousel">
+                  <Drag {...this.props} from="cardBox" template="ChCarousel">
                     <ChCarousel />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} template="ChImg2">
+                  <Drag {...this.props} from="cardBox" template="ChImg2">
                     <ChImg2 />
                   </Drag>
                 </div>
