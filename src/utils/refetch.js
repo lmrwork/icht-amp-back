@@ -5,7 +5,8 @@ export default connect( props => {
     post: html => ({
       postResponse: {
         //url: 'http://202.103.68.62:9093/i.php',
-        url: 'http://202.103.68.62:3001/',
+        //url: 'http://202.103.68.62:3001/',
+        url: 'http://192.168.199.170:3001/',
         method: 'POST',
         force: true,
         headers: {

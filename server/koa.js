@@ -1,10 +1,10 @@
 const Koa = require('koa');
-const koaBody = require('koa-body');
-const cors = require('koa-cors');
+const cors = require('koa2-cors');
+const bodyParser = require('koa-bodyparser');
 const app = new Koa();
 
 app.use(cors());
-app.use(koaBody());
+app.use(bodyParser());
 
 const main = async (ctx) => {
   const body = ctx.request.body;

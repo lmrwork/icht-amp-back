@@ -4,7 +4,7 @@ import { store } from '../redux/store/store';
 import Header from '../components/Header';
 import Blackboard from '../components/Blackboard';
 //本地存储
-import '../utils/Storage';
+import '../utils/storage';
 
 import '../css/devices.css';
 import 'normalize.css';
