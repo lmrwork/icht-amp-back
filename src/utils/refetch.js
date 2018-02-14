@@ -5,13 +5,13 @@ export default connect( props => {
   return {
     post: html => ({
       postResponse: {
-        url: '/test/',
+        url: 'http://202.103.68.62:9093/i.php',
         method: 'POST',
         force: true,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: JSON.stringify({ html })
+        body: `html=${html}`
       }
     })
   }
