@@ -18,6 +18,8 @@ app.engine('.html', ejs.__express)
 app.set('views',path.join(__dirname , 'views'))
 app.set('view engine', 'html'); 
 
+app.use('/amp_cache', express.static(amp_cache_path));
+
 app.post('/', (req, res) => {
   //console.log(req.body.html);
   var page = res.render('amp', { html: req.body.html }, (err, text) => {
@@ -26,7 +28,7 @@ app.post('/', (req, res) => {
     } else {
       var cache_file = 'test.html'
       var cache_file_path = path.join(amp_cache_path, cache_file)
-      fs.writeFileSync(cache_file, text)
+      fs.writeFileSync(cache_file_path, text)
       res.send(text)
     }
   })
