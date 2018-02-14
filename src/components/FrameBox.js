@@ -62,7 +62,7 @@ class FrameBox extends PureComponent {
       } else if (postResponse.rejected) {
         console.log('rejected');
       } else if (postResponse.fulfilled) {
-        console.log(postResponse.value);
+        console.log('fulfilled');
       }
     }
     //load drop items
