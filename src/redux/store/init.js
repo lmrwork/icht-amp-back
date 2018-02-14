@@ -31,7 +31,7 @@ export const init = {
       //formData
       formData: {
         linkText: 'Create My Trip !',
-        linkHref: '#'
+        linkHref: ''
       }
     },
 
@@ -148,7 +148,7 @@ export const init = {
               liHref: {
                 type: 'string',
                 title: '链接',
-                default: '#'
+                default: ''
               },
             }
           }
@@ -556,7 +556,7 @@ export const init = {
         tourCities: 'Beijing - Xi\'an - Guilin/Yangshuo -  Shanghai',
         tourDesc: 'Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.',
         textSize: 11,
-        tourUrl: '#',
+        tourUrl: '',
         tourBtn: 'View Details',
       }
     },

@@ -1,14 +1,21 @@
 import { connect } from 'react-refetch'
 
-export default connect(props => ({
-  post: subject => ({
-    postResponse: {
-      url: '/test/',
-      method: 'POST',
-      body: JSON.stringify(subject)
-    }
-  })
-}))
+export default connect( props => {
+  //let formData = new formData();
+  return {
+    post: html => ({
+      postResponse: {
+        url: '/test/',
+        method: 'POST',
+        force: true,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+        },
+        body: JSON.stringify({ html })
+      }
+    })
+  }
+})
 
 /*
 export default connect( 

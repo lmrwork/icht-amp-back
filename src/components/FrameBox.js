@@ -42,8 +42,9 @@ class FrameBox extends PureComponent {
       const allNode = findDOMNode(this.refs.phone).querySelectorAll('[draggable]');
       let allNodeText = '';
       allNode.forEach( v => allNodeText += v.innerHTML);
+      allNodeText = allNodeText.replace('data-href', 'href');
       this.props.update_html(allNodeText);
-      this.props.post([{a:Math.random()}]);
+      this.props.post(allNodeText);
     }
   } 
 
