@@ -1,7 +1,6 @@
 import { connect } from 'react-refetch'
 
 export default connect( props => {
-  //let formData = new formData();
   return {
     post: html => ({
       postResponse: {
