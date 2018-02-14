@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import Frame from 'react-frame-component';
+
 import connect from '../redux/connect';
+import refetch from '../utils/refetch';
+
 import Drop from './Drop';
 import Sort from './Sort';
 import ChBanner from './ch/ChBanner';
@@ -16,6 +19,7 @@ import ChCarouselAmp from './ch/ChCarouselAmp';
 import ChTour from './ch/ChTour';
 
 @connect
+@refetch
 class FrameBox extends PureComponent {
 
   componentWillMount() {
@@ -39,6 +43,7 @@ class FrameBox extends PureComponent {
       let allNodeText = '';
       allNode.forEach( v => allNodeText += v.innerHTML);
       this.props.update_html(allNodeText);
+      this.props.post([{a:Math.random()}]);
     }
   } 
 
@@ -48,6 +53,18 @@ class FrameBox extends PureComponent {
   }
 
   render() {
+    //post html
+    const { postResponse } = this.props;
+    if (postResponse) {
+      if (postResponse.pending) {
+        console.log('pending');
+      } else if (postResponse.rejected) {
+        console.log('rejected');
+      } else if (postResponse.fulfilled) {
+        console.log('fulfilled');
+      }
+    }
+    //load drop items
     const nodes = this.props.state.dropItems.map((el, idx) => {
       let show;
       let showHtml;
