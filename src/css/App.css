@@ -286,3 +286,7 @@ body {
   opacity: 0.8;
   border: 2px solid #eee;
 }
+.i-amphtml-layout-size-defined .i-amphtml-fill-content {border-radius: 3px;}
+.homeTours .i-amphtml-layout-size-defined .i-amphtml-fill-content {
+    border-radius: 4px 4px 0 0;
+}
