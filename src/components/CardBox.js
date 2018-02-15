@@ -12,8 +12,10 @@ import ChUl from './ch/ChUl';
 import ChCarousel from './ch/ChCarousel';
 import ChTour from './ch/ChTour';
 
+
 @connect
 class CardBox extends PureComponent {
+
   render() {
     return (
       <div>
@@ -32,41 +34,41 @@ class CardBox extends PureComponent {
 
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 pt0 pb3 relative">
-                  <Drag {...this.props} from="cardBox" template="ChHead">
+                  <Drag {...this.props} template="ChHead">
                     <ChHead />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} from="cardBox" template="ChP">
+                  <Drag {...this.props} template="ChP">
                     <ChP />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} from="cardBox" template="ChA">
+                  <Drag {...this.props} template="ChA">
                     <ChA />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} from="cardBox" template="ChUl">
+                  <Drag {...this.props} template="ChUl">
                     <ChUl />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} from="cardBox" template="ChImg">
+                  <Drag {...this.props} template="ChImg">
                     <ChImg />
                   </Drag>
                 </div>
               </TabPanel>
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 p2 relative">
-                  <Drag {...this.props} from="cardBox" template="ChTour">
+                  <Drag {...this.props} template="ChTour">
                     <ChTour />
                   </Drag>
                 </div>
               </TabPanel>
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 p2 relative">
-                  <Drag {...this.props} from="cardBox" template="ChCarousel">
+                  <Drag {...this.props} template="ChCarousel">
                     <ChCarousel />
                   </Drag>
                   <hr/>
-                  <Drag {...this.props} from="cardBox" template="ChImg2">
+                  <Drag {...this.props} template="ChImg2">
                     <ChImg2 />
                   </Drag>
                 </div>

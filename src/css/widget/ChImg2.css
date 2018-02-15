@@ -1,0 +1,11 @@
+/*ChImg2*/
+.homeBrand span {
+    background: #d1d1d1;
+    text-align: center;
+    padding: 0.6em 0.5rem;
+    display: block;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    box-shadow: 0 0 6px #000;
+    color: #555;
+}

@@ -13,10 +13,21 @@ import 'react-tabs/style/react-tabs.css';
 
 /*使用整理后的css*/
 //import '../css/basscss.css=';
-import '../css/amp.css';
 import '../css/App.css';
 import '../css/form.css';
-import '../css/widget.css';
+import '../css/widget/Amp.css';
+import '../css/widget/Global.css';
+
+//widget
+//import '../css/widget/ChA.css';
+//import '../css/widget/ChBanner.css';
+//import '../css/widget/ChCarousel.css';
+//import '../css/widget/ChImg.css';
+//import '../css/widget/ChImg2.css';
+//import '../css/widget/ChP.css';
+//import '../css/widget/ChTour.css';
+//import '../css/widget/ChUl.css';
+
 
 class App extends Component {
   render() {

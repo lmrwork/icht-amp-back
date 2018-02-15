@@ -44,7 +44,7 @@ class FrameBox extends PureComponent {
       allNode.forEach( v => allNodeText += v.innerHTML);
       allNodeText = allNodeText.replace('data-href', 'href');
       this.props.update_html(allNodeText);
-      this.props.post(allNodeText);
+      this.props.post({html:allNodeText, items:this.props.state.dropItems});
     }
   } 
 
@@ -62,7 +62,7 @@ class FrameBox extends PureComponent {
       } else if (postResponse.rejected) {
         console.log('rejected');
       } else if (postResponse.fulfilled) {
-        console.log('fulfilled');
+        console.log(postResponse.value);
       }
     }
     //load drop items

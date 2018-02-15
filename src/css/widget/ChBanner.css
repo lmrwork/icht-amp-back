@@ -1,0 +1,5 @@
+/*ChBanner*/
+.ch-header {background: #a31022; color: #fff; height: 2.7rem;}
+.ch-header-menubar {font-size: 1.5rem; font-weight: bold; color: #fff;}
+.ch-header-banner {right: 0.5rem; top: 2px;}
+.ch-header-tailormade {font-size: 0.5rem;color: #ddd;padding: 0.4rem;border: 1px solid #ddd; border-radius: 3px;}

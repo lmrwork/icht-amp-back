@@ -2,7 +2,7 @@ import { connect } from 'react-refetch'
 
 export default connect( props => {
   return {
-    post: html => ({
+    post: data => ({
       postResponse: {
         //url: 'http://202.103.68.62:9093/i.php',
         //url: 'http://202.103.68.62:3001/',
@@ -12,7 +12,7 @@ export default connect( props => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `html=${html}`
+        body: `html=${data.html}&items=${JSON.stringify(data.items)}`
       }
     })
   }

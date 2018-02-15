@@ -16,6 +16,19 @@ import pretty from 'pretty';
 
 @connect
 class Blackboard extends PureComponent {
+
+  componentWillMount() {
+    //动态加载所有部件样式
+    const csskey = Object.keys(this.props.state.propConf);
+    csskey.forEach( i => {
+      try {
+        require(`../css/widget/${i}.css`);
+      } catch (e) {
+        //console.log(e);
+      }
+    });
+  }
+
   render() {
     return (
       <DragDropContextProvider backend={HTML5Backend}>

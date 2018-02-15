@@ -1,11 +1,11 @@
-var express = require('express')
-var cors = require('cors')
-var bodyParser = require('body-parser')
-var path = require('path')
-var ejs = require('ejs')
-var fs = require("fs")
-var app = express()
-var amp_cache_path = path.join(__dirname, 'amp_cache')
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const path = require('path')
+const ejs = require('ejs')
+const fs = require("fs")
+const app = express()
+const amp_cache_path = path.join(__dirname, 'amp_cache')
 
 //cors
 app.use(cors());
@@ -18,18 +18,30 @@ app.engine('.html', ejs.__express)
 app.set('views',path.join(__dirname , 'views'))
 app.set('view engine', 'html'); 
 
-app.use('/amp_cache', express.static(amp_cache_path));
+app.use('/amp_cache', express.static(amp_cache_path))
 
 app.post('/', (req, res) => {
+  //get css
+  const items = JSON.parse(req.body.items);
+  let css = fs.readFileSync('./src/css/widget/Amp.css')
+  css += "\n\r"+fs.readFileSync('./src/css/widget/Global.css')
+  css += "\n\r"+fs.readFileSync('./src/css/widget/ChBanner.css')
+  items.forEach( i => {
+    try {
+      css += "\n\r"+fs.readFileSync(`./src/css/widget/${i.template}.css`)
+    } catch(e) {
+      //console.log(e);
+    }
+  })
   //console.log(req.body.html);
-  var page = res.render('amp', { html: req.body.html }, (err, text) => {
+  const page = res.render('amp', { html: req.body.html, css: css }, (err, text) => {
     if (err) {
       res.send({err})
     } else {
-      var cache_file = 'test.html'
+      var cache_file = `test-${new Date().getTime()}.html`
       var cache_file_path = path.join(amp_cache_path, cache_file)
       fs.writeFileSync(cache_file_path, text)
-      res.send(text)
+      res.send({succ: `http://${req.hostname}:3001/amp_cache/${cache_file}`})
     }
   })
 })
