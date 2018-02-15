@@ -5,6 +5,8 @@ const path = require('path')
 const ejs = require('ejs')
 const fs = require("fs")
 const app = express()
+const CleanCSS = require('clean-css')
+
 const amp_cache_path = path.join(__dirname, 'amp_cache')
 
 //cors
@@ -33,6 +35,9 @@ app.post('/', (req, res) => {
       //console.log(e);
     }
   })
+  const opt1 = {level:2}
+  css = new CleanCSS(opt1).minify(css).styles
+
   //console.log(req.body.html);
   const page = res.render('amp', { html: req.body.html, css: css }, (err, text) => {
     if (err) {
