@@ -11,7 +11,7 @@ class ChTour extends PureComponent {
         <a data-href={formData.tourUrl}><amp-img src={formData.imgSrc} alt={formData.imgAlt} layout="responsive" width={formData.imgWidth} height={formData.imgHeight}></amp-img></a>
         <div className="tourPackage">
           <h3>{formData.tourTitle}</h3>
-          <span className="destinations">{formData.tourCities}</span>
+          {formData.tourCities ? <span className="destinations">{formData.tourCities}</span> : null}
           <p dangerouslySetInnerHTML={{__html: formData.tourDesc}}></p>
           <div className="viewDetail"><a data-href={formData.tourUrl}>{formData.tourBtn}</a></div>
         </div>
