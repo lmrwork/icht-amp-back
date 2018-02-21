@@ -11,7 +11,8 @@ export default connect( props => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `html=${data.html}&items=${JSON.stringify(data.items)}`
+        body: `html=${data.html}&items=${JSON.stringify(data.items)}`,
+        then: value => { props.save_qrcode(value) }
       }
     })
   }

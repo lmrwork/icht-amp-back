@@ -38,6 +38,11 @@ export const load_history = (id) => ({
   id
 });
 
+export const save_qrcode = (qrCode) => ({
+  type: 'SAVE_QRCODE',
+  qrCode
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -46,5 +51,6 @@ export const actions = {
   update_item,
   update_html,
   save_history,
-  load_history
+  load_history,
+  save_qrcode
 };

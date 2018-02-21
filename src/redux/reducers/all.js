@@ -46,6 +46,9 @@ export const allReducers = (state = init, action) => {
     const dropItemsJson = window.loadDropItemsJson(action.id)
     return {...state, dropItems: dropItemsJson};
 
+  case 'SAVE_QRCODE':
+    return {...state, qrCode: action.qrCode};
+
   default:
     return state;
   }

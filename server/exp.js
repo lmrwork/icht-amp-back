@@ -6,6 +6,8 @@ const ejs = require('ejs')
 const fs = require("fs")
 const app = express()
 const CleanCSS = require('clean-css')
+const crypto = require('crypto');
+
 
 const amp_cache_path = path.join(__dirname, 'amp_cache')
 
@@ -43,8 +45,9 @@ app.post('/', (req, res) => {
     if (err) {
       res.send({err})
     } else {
-      var cache_file = `test-${new Date().getTime()}.html`
-      var cache_file_path = path.join(amp_cache_path, cache_file)
+      let md5 = crypto.createHash('md5');
+      let cache_file = `test-${md5.update(req.ip).digest('hex')}.html`
+      let cache_file_path = path.join(amp_cache_path, cache_file)
       fs.writeFileSync(cache_file_path, text)
       res.send({succ: `http://${req.hostname}:3001/amp_cache/${cache_file}`})
     }

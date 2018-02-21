@@ -55,6 +55,7 @@ class FrameBox extends PureComponent {
 
   render() {
     //post html
+    /*
     const { postResponse } = this.props;
     if (postResponse) {
       if (postResponse.pending) {
@@ -65,6 +66,7 @@ class FrameBox extends PureComponent {
         console.log(postResponse.value);
       }
     }
+    */
     //load drop items
     const nodes = this.props.state.dropItems.map((el, idx) => {
       let show;

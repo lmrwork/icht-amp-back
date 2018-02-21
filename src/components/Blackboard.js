@@ -3,6 +3,8 @@ import { DragDropContextProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import connect from '../redux/connect';
 
+import QRCode from 'qrcode.react';
+
 import CardBox from './CardBox';
 import FrameBox from './FrameBox';
 import PropBox from './PropBox';
@@ -30,6 +32,10 @@ class Blackboard extends PureComponent {
   }
 
   render() {
+    let showQr = null;
+    if (this.props.state.qrCode && this.props.state.qrCode.succ) {
+      showQr =  this.props.state.qrCode.succ;
+    }
     return (
       <DragDropContextProvider backend={HTML5Backend}>
         <div className="relative" id="Blackboard">
@@ -40,7 +46,13 @@ class Blackboard extends PureComponent {
           </div>
           <div className="flex flex-wrap coldarea">
             <div className="col-12">
-              <p>{'# 点击iPhone的 "Home" 按钮，查看数据结构。'}</p>
+              <p>{'# 点击iPhone的 "Home" 按钮，手机扫描二维码测试。'}</p>
+              <div className="QRCode">
+                { showQr ? <QRCode value={showQr} /> : null }
+                <br/>
+                <a href={showQr} target="_blank"> {showQr} </a>
+              </div>
+
             </div>
             <div className="col-6 my3">
               <CodeMirror className="codemirror"
