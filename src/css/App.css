@@ -50,8 +50,13 @@ body {
   padding: 0.5em 0.5em 0 0;
 }
 .bsform .array-item .array-item-toolbox {
-  top: 30px;
+  top: 20px;
+  right: 8px;
 }
+
+.field.field-array {padding: 0;}
+.field.field-array legend {padding-bottom: 5px;}
+
 .bsform .array-item .form-group {
   margin-bottom: 8px;
 }

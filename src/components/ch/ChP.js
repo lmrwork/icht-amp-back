@@ -8,13 +8,9 @@ class ChP extends PureComponent {
     const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChP.formData;
     return (
       <p 
-      className={"ChP px2 "+formData.pAlign} 
+      className={`ChP px2 ${formData.pAlign} ${formData.pColor} pSize${formData.pSize}`} 
       onClick={this.props.onClick} 
       dangerouslySetInnerHTML={{__html: formData.pText}}
-      style={{
-      	color: formData.pColor,
-      	fontSize: `${formData.pSize/10}rem`
-      }}
       />
     )
   }

@@ -216,12 +216,15 @@ export const init = {
           pSize: {
             type: 'integer', 
             title: '段落字号',
-            minimum: 5,
-            maximum: 50,
+            minimum: 8,
+            maximum: 30,
+            multipleOf: 2
           },
           pColor: {
-            type: 'string', 
-            title: '段落颜色'
+            type: 'string',
+            title: '颜色',
+            enum: ['cGray', 'cRed', 'cBlue'],
+            enumNames: ['灰色', '中国红', '深蓝']
           }
         }
       },
@@ -234,10 +237,10 @@ export const init = {
           'ui:widget': 'select'
         },
         pSize: {
-          'ui:widget': 'updown'
+          'ui:widget': 'range'
         },
         pColor: {
-          'ui:widget': 'color'
+          'ui:widget': 'select'
         }
       },
       //formData
@@ -386,8 +389,9 @@ export const init = {
           textSize: {
             type: 'integer', 
             title: '段落字号',
-            minimum: 5,
-            maximum: 50,
+            minimum: 8,
+            maximum: 30,
+            multipleOf: 2
           },
         }
       },
@@ -400,7 +404,7 @@ export const init = {
           'ui:widget': 'updown'
         },
         textSize: {
-          'ui:widget': 'updown'
+          'ui:widget': 'range'
         }
       },
       //formData
@@ -410,7 +414,7 @@ export const init = {
         imgHeight: 300,
         imgAlt: 'China tour 2018',
         imgTitle: 'China Highlights - Featured on 50+ Media and Press',
-        textSize: 11
+        textSize: 10
       }
     },
 

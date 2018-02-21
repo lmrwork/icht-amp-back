@@ -8,12 +8,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  line-height: 1.7rem;
+  line-height: 1.6rem;
 }
 
 a {
   color:#069;
 }
+
+.pSize8 {font-size: 0.8rem; line-height: 1.2rem;}
+.pSize10 {font-size: 1rem;}
+.pSize12 {font-size: 1.2rem; line-height: 1.8rem}
+.pSize14 {font-size: 1.4rem; line-height: 2rem;}
+.pSize16 {font-size: 1.6em; line-height: 2.2rem;}
+.pSize18 {font-size: 1.8em; line-height: 2.4rem;}
+.pSize20 {font-size: 2rem; line-height: 2.6rem;}
+.pSize22 {font-size: 2.2em; line-height: 2.8rem;}
+.pSize24 {font-size: 2.4rem; line-height: 3rem;}
+.pSize26 {font-size: 2.6em; line-height: 3.2rem;}
+.pSize28 {font-size: 2.8em; line-height: 3.4rem;}
+.pSize30 {font-size: 3rem; line-height: 3.6rem;}
+
+.cGray {color: #888}
+.cRed {color: #a31022}
+.cBlue {color: #069}
 
 .ampstart-sidebar {
   width: 15rem;
