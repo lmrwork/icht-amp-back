@@ -16,8 +16,10 @@ a {
 }
 
 .pSize8 {font-size: 0.8rem; line-height: 1.2rem;}
-.pSize10 {font-size: 1rem;}
-.pSize12 {font-size: 1.2rem; line-height: 1.8rem}
+.pSize9 {font-size: 0.9rem; line-height: 1.3rem;}
+.pSize10 {font-size: 1rem; line-height: 1.6rem;}
+.pSize11 {font-size: 1.1rem; line-height: 1.7rem;}
+.pSize12 {font-size: 1.2rem; line-height: 1.8rem;}
 .pSize14 {font-size: 1.4rem; line-height: 2rem;}
 .pSize16 {font-size: 1.6em; line-height: 2.2rem;}
 .pSize18 {font-size: 1.8em; line-height: 2.4rem;}

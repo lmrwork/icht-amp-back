@@ -304,7 +304,7 @@ export const init = {
         properties: {
           imgSrc: {
             type: 'string', 
-            title: '图片源地址' 
+            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
           },
           imgWidth: {
             type: 'integer', 
@@ -365,7 +365,7 @@ export const init = {
         properties: {
           imgSrc: {
             type: 'string', 
-            title: '图片源地址' 
+            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
           },
           imgWidth: {
             type: 'integer', 
@@ -419,6 +419,70 @@ export const init = {
       }
     },
 
+    ChImg3: {
+      //Schema
+      schema: {
+        title: '图片：AMP要求图片必须设置原始宽、高，且布局为responsive',
+        description: '',
+        type: 'object',
+        required: [],
+        properties: {
+          imgSrc: {
+            type: 'string', 
+            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
+          },
+          imgWidth: {
+            type: 'integer', 
+            title: '图片宽度（px）',
+            minimum: 0,
+            maximum: 960
+          },
+          imgHeight: {
+            type: 'integer', 
+            title: '图片高度（px）',
+            minimum: 0,
+            maximum: 640
+          },
+          imgAlt: {
+            type: 'string', 
+            title: '图片Alt文字' 
+          },
+          imgTitle: {
+            type: 'string', 
+            title: '图片下方描述' 
+          },
+          textSize: {
+            type: 'integer', 
+            title: '段落字号',
+            minimum: 8,
+            maximum: 10,
+            multipleOf: 1
+          },
+        }
+      },
+      //uiSchema
+      uiSchema: {
+        imgWidth: {
+          'ui:widget': 'updown'
+        },
+        imgHeight: {
+          'ui:widget': 'updown'
+        },
+        textSize: {
+          'ui:widget': 'range'
+        }
+      },
+      //formData
+      formData: {
+        imgSrc: 'https://data.chinahighlights.com/amp-img/homepage/mobile-home-brand.jpg',
+        imgWidth: 100,
+        imgHeight: 75,
+        imgAlt: 'China tour 2018',
+        imgTitle: 'China Highlights - Featured on 50+ Media and Press',
+        textSize: 10
+      }
+    },
+
     ChCarousel: {
       //Schema
       schema: {
@@ -428,7 +492,7 @@ export const init = {
             properties: {
               imgSrc: {
                 type: 'string',
-                title: '图片源地址',
+                title: '图片源地址（更新后，需交换部件位置刷新图片）',
                 default: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image3.jpg'
               },
               imgHref: {
@@ -496,7 +560,7 @@ export const init = {
         properties: {
           imgSrc: {
             type: 'string', 
-            title: '图片源地址' 
+            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
           },
           imgWidth: {
             type: 'integer', 
