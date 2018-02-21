@@ -474,11 +474,11 @@ export const init = {
       },
       //formData
       formData: {
-        imgSrc: 'https://data.chinahighlights.com/amp-img/homepage/mobile-home-brand.jpg',
+        imgSrc: 'https://data.chinahighlights.com/image/homepage/plan-a-sirst-trip-to-china-step-by-step.jpg',
         imgWidth: 100,
         imgHeight: 75,
         imgAlt: 'China tour 2018',
-        imgTitle: 'China Highlights - Featured on 50+ Media and Press',
+        imgTitle: 'How to Plan a First Trip to China — Step by Step',
         textSize: 9
       }
     },

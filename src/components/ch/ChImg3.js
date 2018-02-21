@@ -9,7 +9,7 @@ class ChImg3 extends PureComponent {
     return (
       <div className="ChImg3 my1 mx2 pt1 clearfix" onClick={this.props.onClick}> 
         <a className={`pt1 pSize${formData.textSize}`} data-href="/tour/year.htm"> 
-          <amp-img src="https://data.chinahighlights.com/image/homepage/plan-your-2018-china-tour.jpg" width={formData.imgWidth} height={formData.imgHeight} alt={formData.imgAlt}></amp-img> 
+          <amp-img src={formData.imgSrc} width={formData.imgWidth} height={formData.imgHeight} alt={formData.imgAlt}></amp-img> 
           {formData.imgTitle}
         </a> 
       </div>
