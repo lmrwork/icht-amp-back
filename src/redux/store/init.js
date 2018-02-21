@@ -63,7 +63,7 @@ export const init = {
       },
       //formData
       formData: {
-        headText: '标题 H1~H6',
+        headText: 'Head H1~H6',
         headType: 'H1'
       }
     },
