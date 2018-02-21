@@ -12,7 +12,7 @@ class ChTour extends PureComponent {
         <div className="tourPackage">
           <h3>{formData.tourTitle}</h3>
           <span className="destinations">{formData.tourCities}</span>
-          <p>{formData.tourDesc}</p>
+          <p dangerouslySetInnerHTML={{__html: formData.tourDesc}}></p>
           <div className="viewDetail"><a data-href={formData.tourUrl}>{formData.tourBtn}</a></div>
         </div>
       </div>
