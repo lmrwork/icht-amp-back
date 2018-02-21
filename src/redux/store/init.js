@@ -479,7 +479,7 @@ export const init = {
         imgHeight: 75,
         imgAlt: 'China tour 2018',
         imgTitle: 'China Highlights - Featured on 50+ Media and Press',
-        textSize: 10
+        textSize: 9
       }
     },
 
