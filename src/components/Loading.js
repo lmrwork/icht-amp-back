@@ -1,12 +1,12 @@
 import React, {PureComponent} from 'react';
 import connect from '../redux/connect';
-import { get_info } from '../utils/refetch';
+import { load_amp } from '../utils/refetch';
 import queryString from 'query-string';
 import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
 
 @connect
-@get_info
+@load_amp
 class Loading extends PureComponent {
 
   constructor(props) {
