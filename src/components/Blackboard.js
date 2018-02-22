@@ -46,7 +46,7 @@ class Blackboard extends PureComponent {
           </div>
           <div className="flex flex-wrap coldarea">
             <div className="col-12">
-              <p>{'# 点击iPhone的 "Home" 按钮，手机扫描二维码测试。'}</p>
+              <p>{'# 点击iPhone的 "Home" 按钮，连接公司WIFI，手机扫描二维码测试。'}</p>
               <div className="QRCode">
                 { showQr ? <QRCode value={showQr} /> : null }
                 <br/>

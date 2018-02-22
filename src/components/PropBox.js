@@ -36,7 +36,7 @@ class PropBox extends PureComponent {
       itemCfg = this.props.state.propConf[item.template];
     }
     return (
-      <div>
+      <div id="CardBox">
         <div className="CardBox mx-auto py1">
           <div className="flex flex-column">
             <div className="CardBoxTitle"> 部件属性 </div>

@@ -22,7 +22,7 @@ body {
 .App .bsform {
   background-color: white;
   margin: 1em;
-  padding: 1em;
+  padding: 0.5em;
   border: 2px solid #333;
   border-radius: 5px;
   text-align: left;
@@ -302,7 +302,12 @@ body {
 .row.array-item-list .array-item > .col-xs-3 {
   width: 100%;
   position: relative;
-  top: 0.6rem;
-  right: 3.5rem;
+  top: 0.4rem;
+  right: 3.3rem;
   float: none;
+}
+
+.array-item .form-group.field.field-object > fieldset {
+  padding-left: 3px;
+  padding-right: 0;
 }
