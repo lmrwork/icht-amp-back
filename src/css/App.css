@@ -22,7 +22,7 @@ body {
 .App .bsform {
   background-color: white;
   margin: 1em;
-  padding: 1.2em;
+  padding: 1em;
   border: 2px solid #333;
   border-radius: 5px;
   text-align: left;
@@ -294,4 +294,15 @@ body {
 .i-amphtml-layout-size-defined .i-amphtml-fill-content {border-radius: 3px;}
 .homeTours .i-amphtml-layout-size-defined .i-amphtml-fill-content {
     border-radius: 4px 4px 0 0;
+}
+
+.row.array-item-list .array-item > .col-xs-9 {
+  width: 100%;
+}
+.row.array-item-list .array-item > .col-xs-3 {
+  width: 100%;
+  position: relative;
+  top: 0.6rem;
+  right: 3.5rem;
+  float: none;
 }

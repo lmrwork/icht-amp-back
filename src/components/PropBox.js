@@ -18,6 +18,12 @@ class PropBox extends PureComponent {
     }
   }
 
+  update_item = () => {
+    this.props.save_history('重载');
+    this.props.clear_dropitems();
+    window.requestAnimationFrame(()=>this.props.load_history(0));
+  }
+
   change = ({formData}) => {
     this.props.update_item(this.props.state.propIndex, formData);
     this.props.save_history('属性');
@@ -44,8 +50,9 @@ class PropBox extends PureComponent {
                   onChange={this.change}
                   className="bsform"
                   action="#">
-                <div className="relative">
-                  <button type="button" className="btn btn-danger relative right-0" onClick={this.delete}>删除部件</button>
+                <div className="relative clearfix px1">
+                  <button type="button" className="btn btn-danger left" onClick={this.delete}>删除部件</button>
+                  <button type="button" className="btn btn-info right" onClick={this.update_item}>更新图片</button>
                 </div>
             </Form>
             : null }

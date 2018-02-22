@@ -304,7 +304,7 @@ export const init = {
         properties: {
           imgSrc: {
             type: 'string', 
-            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
+            title: '图片源地址（更换后，需要点击下方的 “更新图片”）' 
           },
           imgWidth: {
             type: 'integer', 
@@ -365,7 +365,7 @@ export const init = {
         properties: {
           imgSrc: {
             type: 'string', 
-            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
+            title: '图片源地址（更换后，需要点击下方的 “更新图片”）' 
           },
           imgWidth: {
             type: 'integer', 
@@ -429,7 +429,7 @@ export const init = {
         properties: {
           imgSrc: {
             type: 'string', 
-            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
+            title: '图片源地址（更换后，需要点击下方的 “更新图片”）' 
           },
           imgWidth: {
             type: 'integer', 
@@ -492,7 +492,7 @@ export const init = {
             properties: {
               imgSrc: {
                 type: 'string',
-                title: '图片源地址（更新后，需交换部件位置刷新图片）',
+                title: '图片源地址',
                 default: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image3.jpg'
               },
               imgHref: {
@@ -560,7 +560,7 @@ export const init = {
         properties: {
           imgSrc: {
             type: 'string', 
-            title: '图片源地址（更新后，需交换部件位置刷新图片）' 
+            title: '图片源地址（更换后，需要点击下方的 “更新图片”）' 
           },
           imgWidth: {
             type: 'integer', 
@@ -617,7 +617,7 @@ export const init = {
       },
       //formData
       formData: {
-        imgSrc: 'https://data.chinahighlights.com/amp-img/homepage/great-wall.jpg',
+        imgSrc: 'https://images.arachina.com/allpicture/2016/11/bf0ee703cd7e478190d1396e.jpg',
         imgWidth: 500,
         imgHeight: 320,
         imgAlt: 'The Great Wall of China',

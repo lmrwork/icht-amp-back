@@ -49,6 +49,9 @@ export const allReducers = (state = init, action) => {
   case 'SAVE_QRCODE':
     return {...state, qrCode: action.qrCode};
 
+  case 'CLEAR_DROPITEMS':
+    return {...state, dropItems: []};
+
   default:
     return state;
   }

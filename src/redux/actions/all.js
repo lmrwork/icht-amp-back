@@ -43,6 +43,10 @@ export const save_qrcode = (qrCode) => ({
   qrCode
 });
 
+export const clear_dropitems = () => ({
+  type: 'CLEAR_DROPITEMS'
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -52,5 +56,6 @@ export const actions = {
   update_html,
   save_history,
   load_history,
-  save_qrcode
+  save_qrcode,
+  clear_dropitems
 };
