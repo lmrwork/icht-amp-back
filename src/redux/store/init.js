@@ -451,6 +451,10 @@ export const init = {
             type: 'string', 
             title: '图片下方描述' 
           },
+          imgHref: {
+            type: 'string', 
+            title: '图片链接' 
+          },
           textSize: {
             type: 'integer', 
             title: '段落字号',
@@ -479,7 +483,8 @@ export const init = {
         imgHeight: 75,
         imgAlt: 'China tour 2018',
         imgTitle: 'How to Plan a First Trip to China — Step by Step',
-        textSize: 9
+        textSize: 9,
+        imgHref: '/tours/top-to-do.htm'
       }
     },
 
