@@ -2,9 +2,7 @@ import React, {PureComponent} from 'react';
 import { DragDropContextProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import connect from '../redux/connect';
-
 import QRCode from 'qrcode.react';
-
 import CardBox from './CardBox';
 import FrameBox from './FrameBox';
 import PropBox from './PropBox';
@@ -25,9 +23,7 @@ class Blackboard extends PureComponent {
     csskey.forEach( i => {
       try {
         require(`../css/widget/${i}.css`);
-      } catch (e) {
-        //console.log(e);
-      }
+      } catch (e) { /* console.log(e); */ }
     });
   }
 

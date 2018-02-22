@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom';
 import Frame from 'react-frame-component';
 
 import connect from '../redux/connect';
-import refetch from '../utils/refetch';
+import { build_amp } from '../utils/refetch';
 
 import Drop from './Drop';
 import Sort from './Sort';
@@ -20,7 +20,7 @@ import ChCarouselAmp from './ch/ChCarouselAmp';
 import ChTour from './ch/ChTour';
 
 @connect
-@refetch
+@build_amp
 class FrameBox extends PureComponent {
 
   componentWillMount() {
