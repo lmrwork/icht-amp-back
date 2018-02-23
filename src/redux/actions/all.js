@@ -57,6 +57,11 @@ export const loading_status = (status) => ({
   status
 });
 
+export const amp_status = (status) => ({
+  type: 'AMP_STATUS',
+  status
+});
+
 export const load_items = (dropItems) => ({
   type: 'LOAD_ITEMS',
   dropItems
@@ -75,5 +80,6 @@ export const actions = {
   clear_dropitems,
   saving_status,
   loading_status,
+  amp_status,
   load_items
 };

@@ -319,4 +319,13 @@ body {
   display: inline-block;
   margin: auto 0;
   color: #0099cc;
+  height: 5rem;
+}
+
+.switchbar {}
+.switchbar span {
+  font-size: 1.5rem;
+  color: #054;
+  vertical-align: top;
+  padding-right: 0.3rem;
 }

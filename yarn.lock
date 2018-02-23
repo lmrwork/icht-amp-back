@@ -5872,6 +5872,12 @@ react-refetch@^1.0.4:
     lodash "^4.2.0"
     warning "^3.0.0"
 
+react-switch@^2.3.0:
+  version "2.3.0"
+  resolved "http://registry.npm.taobao.org/react-switch/download/react-switch-2.3.0.tgz#5fc452960c028ae8b071418d084b51e512f671c1"
+  dependencies:
+    prop-types "^15.6.0"
+
 react-tabs@^2.2.1:
   version "2.2.1"
   resolved "http://registry.npm.taobao.org/react-tabs/download/react-tabs-2.2.1.tgz#0331d26173c56e7af4fdbfb6225e62683cfdda52"

@@ -8,6 +8,7 @@ export const init = {
   qrCode: null,
   saving: null,
   loading: null,
+  amp_status: 0,
   //属性配置
   propConf: {
 

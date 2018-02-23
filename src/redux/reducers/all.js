@@ -11,13 +11,13 @@ export const allReducers = (state = init, action) => {
     } else {
       state.dropItems.push(action.item);
     }
-    return {...state};
+    return {...state, qrCode: null};
 
   case 'SORT_ITEM':
     //TODO：排序数组 idx，before，after
     //TEST: { type: 'SORT_ITEM', before: 1, after:2 }
     state.dropItems.splice(action.before - 1, 1, ...state.dropItems.splice(action.after - 1, 1, state.dropItems[action.before - 1]));
-    return {...state};
+    return {...state, qrCode: null};
 
   case 'PROP_ITEM':
     //TEST: { type: 'PROP_ITEM', index:1 }
@@ -25,11 +25,11 @@ export const allReducers = (state = init, action) => {
 
   case 'DELET_ITEM':
     state.dropItems.splice(action.index, 1);
-    return {...state};
+    return {...state, qrCode: null};
 
   case 'UPDATE_ITEM':
     state.dropItems[action.index].formData = action.formData;
-    return {...state};
+    return {...state, qrCode: null};
 
   case 'UPDATE_HTML':
     return {...state, html: action.html, json: JSON.stringify(state.dropItems.slice(1), null, 2) };
@@ -44,19 +44,22 @@ export const allReducers = (state = init, action) => {
 
   case 'LOAD_HISTORY':
     const dropItemsJson = window.loadDropItemsJson(action.id)
-    return {...state, dropItems: dropItemsJson};
+    return {...state, dropItems: dropItemsJson, qrCode: null};
 
   case 'SAVE_QRCODE':
     return {...state, qrCode: action.qrCode};
 
   case 'CLEAR_DROPITEMS':
-    return {...state, dropItems: []};
+    return {...state, dropItems: [], qrCode: null};
 
   case 'SAVING_STATUS':
     return {...state, saving: action.status};
 
   case 'LOADING_STATUS':
     return {...state, loading: action.status};
+
+  case 'AMP_STATUS':
+    return {...state, amp_status: action.status};
 
   case 'LOAD_ITEMS':
     state.dropItems = state.dropItems.concat(action.dropItems);
