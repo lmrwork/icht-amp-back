@@ -6,6 +6,8 @@ export const init = {
   html: null,
   json: null,
   qrCode: null,
+  saving: null,
+  loading: null,
   //属性配置
   propConf: {
 

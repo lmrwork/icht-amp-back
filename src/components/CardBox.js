@@ -13,7 +13,6 @@ import ChUl from './ch/ChUl';
 import ChCarousel from './ch/ChCarousel';
 import ChTour from './ch/ChTour';
 
-
 @connect
 class CardBox extends PureComponent {
 

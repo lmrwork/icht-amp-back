@@ -52,6 +52,16 @@ export const allReducers = (state = init, action) => {
   case 'CLEAR_DROPITEMS':
     return {...state, dropItems: []};
 
+  case 'SAVING_STATUS':
+    return {...state, saving: action.status};
+
+  case 'LOADING_STATUS':
+    return {...state, loading: action.status};
+
+  case 'LOAD_ITEMS':
+    state.dropItems = state.dropItems.concat(action.dropItems);
+    return {...state};
+
   default:
     return state;
   }

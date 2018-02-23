@@ -6,6 +6,7 @@ import QRCode from 'qrcode.react';
 import CardBox from './CardBox';
 import FrameBox from './FrameBox';
 import PropBox from './PropBox';
+import Saving from './Saving';
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -42,11 +43,15 @@ class Blackboard extends PureComponent {
           </div>
           <div className="flex flex-wrap coldarea">
             <div className="col-12">
-              <p>{'# 点击iPhone的 "Home" 按钮，连接公司WIFI，手机扫描二维码测试。'}</p>
+              <p># 点击iPhone的 "Home" 生成AMP（用手机扫描二维码测试）</p>
               <div className="QRCode">
-                { showQr ? <QRCode value={showQr} /> : null }
-                <br/>
-                <a href={showQr} target="_blank"> {showQr} </a>
+                { showQr ? 
+                <div>
+                  <QRCode value={showQr} />
+                  <p><a href={showQr} target="_blank"> {showQr} </a></p>
+                  <Saving />
+                </div> 
+                : null }
               </div>
 
             </div>

@@ -313,3 +313,10 @@ body {
 }
 
 #loading {}
+#Saving {
+  width: 15rem;
+  font-size: 0.7rem;
+  display: inline-block;
+  margin: auto 0;
+  color: #0099cc;
+}

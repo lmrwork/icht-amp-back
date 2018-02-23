@@ -47,6 +47,21 @@ export const clear_dropitems = () => ({
   type: 'CLEAR_DROPITEMS'
 });
 
+export const saving_status = (status) => ({
+  type: 'SAVING_STATUS',
+  status
+});
+
+export const loading_status = (status) => ({
+  type: 'LOADING_STATUS',
+  status
+});
+
+export const load_items = (dropItems) => ({
+  type: 'LOAD_ITEMS',
+  dropItems
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -57,5 +72,8 @@ export const actions = {
   save_history,
   load_history,
   save_qrcode,
-  clear_dropitems
+  clear_dropitems,
+  saving_status,
+  loading_status,
+  load_items
 };

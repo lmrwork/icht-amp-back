@@ -2,9 +2,8 @@ import { connect } from 'react-refetch'
 
 export const build_amp = connect( props => {
   return {
-    post: data => ({
+    build_amp: data => ({
       postResponse: {
-        //url: 'http://202.103.68.62:3001/',
         url: 'http://202.103.68.62:3001/',
         method: 'POST',
         force: true,
@@ -21,36 +20,49 @@ export const build_amp = connect( props => {
 //save amp
 export const save_amp = connect( props => {
   return {
-    post: data => ({
+    save_amp: data => ({
       postResponse: {
-        //url: 'http://202.103.68.62:3001/',
-        url: 'http://202.103.68.62:3001/',
+        url: 'http://202.103.68.62:9000/info.php/info_amp/save_amp',
         method: 'POST',
         force: true,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `html=${data.html}&items=${JSON.stringify(data.items)}`,
-        then: value => { props.save_qrcode(value) }
+        body: `icid=${data.icid}&json=${data.json}&html=${data.html}&status=${data.status}`,
+        then: value => {
+          if (!value.succ) {
+            props.saving_status('error');
+          } else {
+            props.saving_status('success');
+          }
+        }
       }
     })
   }
 })
 
-//save amp
+//load amp
 export const load_amp = connect( props => {
   return {
-    post: data => ({
+    load_amp: icid => ({
       postResponse: {
-        //url: 'http://202.103.68.62:3001/',
-        url: 'http://202.103.68.62:3001/',
+        url: 'http://202.103.68.62:9000/info.php/info_amp/load_amp',
         method: 'POST',
         force: true,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `html=${data.html}&items=${JSON.stringify(data.items)}`,
-        then: value => { props.save_qrcode(value) }
+        body: `icid=${icid}`,
+        then: value => {
+          if (!value.succ) {
+            alert(value.message);
+          } else if (!value.json || value.json==='null') {
+            alert('信息平台无AMP数据');
+          } else {
+            props.load_items(JSON.parse(value.json));
+            props.loading_status(100);
+          }
+        }
       }
     })
   }
