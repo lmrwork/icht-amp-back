@@ -5,6 +5,7 @@ export const init = {
   propIndex: null,
   html: null,
   json: null,
+  css: null,
   qrCode: null,
   saving: null,
   loading: null,

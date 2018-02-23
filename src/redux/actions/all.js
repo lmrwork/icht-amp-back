@@ -43,6 +43,11 @@ export const save_qrcode = (qrCode) => ({
   qrCode
 });
 
+export const save_css = (css) => ({
+  type: 'SAVE_CSS',
+  css
+});
+
 export const clear_dropitems = () => ({
   type: 'CLEAR_DROPITEMS'
 });
@@ -81,5 +86,6 @@ export const actions = {
   saving_status,
   loading_status,
   amp_status,
+  save_css,
   load_items
 };

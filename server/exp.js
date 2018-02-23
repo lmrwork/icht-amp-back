@@ -49,7 +49,10 @@ app.post('/', (req, res) => {
       let cache_file = `test-${md5.update(req.ip).digest('hex')}.html`
       let cache_file_path = path.join(amp_cache_path, cache_file)
       fs.writeFileSync(cache_file_path, text)
-      res.send({succ: `http://${req.hostname}:3001/amp_cache/${cache_file}`})
+      res.send({
+        succ: `http://${req.hostname}:3001/amp_cache/${cache_file}`,
+        css: css
+      })
     }
   })
 })

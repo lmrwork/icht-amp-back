@@ -39,8 +39,8 @@ class Blackboard extends PureComponent {
 
   render() {
     let showQr = null;
-    if (this.props.state.qrCode && this.props.state.qrCode.succ) {
-      showQr =  this.props.state.qrCode.succ;
+    if (this.props.state.qrCode) {
+      showQr =  this.props.state.qrCode;
     }
     return (
       <DragDropContextProvider backend={HTML5Backend}>

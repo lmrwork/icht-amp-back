@@ -18,7 +18,8 @@ class Saving extends PureComponent {
         icid: parsed.icid,
         html: this.props.state.html,
         json: this.props.state.json,
-        status: this.props.state.amp_status,
+        css: this.props.state.css,
+        status: this.props.state.amp_status
       });
     }
   }
