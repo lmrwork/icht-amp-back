@@ -228,7 +228,7 @@ export const init = {
           pColor: {
             type: 'string',
             title: '颜色',
-            enum: ['cBlack', 'cRed', 'cBlue'],
+            enum: ['cBlack', 'cGray', 'cRed', 'cBlue'],
             enumNames: ['黑色', '灰色', '中国红', '深蓝']
           }
         }
@@ -289,7 +289,7 @@ export const init = {
           aColor: {
             type: 'string',
             title: '颜色',
-            enum: ['cBlack', 'cRed', 'cBlue'],
+            enum: ['cBlack', 'cGray', 'cRed', 'cBlue'],
             enumNames: ['黑色', '灰色', '中国红', '深蓝']
           }
         }
