@@ -14,7 +14,7 @@ class ChUl extends PureComponent {
             if (i.liHref) {
               return <li key={idx} className={formData.listStyle}><a data-href={i.liHref}>{i.liText}</a></li>;
             } else {
-              return <li key={idx} className={formData.listStyle}>{i.liText}</li>;
+              return <li key={idx} className={formData.listStyle} dangerouslySetInnerHTML={{__html: i.liText}}></li>;
           }}) : null}
         </ul>
        </div>

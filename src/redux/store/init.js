@@ -228,8 +228,8 @@ export const init = {
           pColor: {
             type: 'string',
             title: '颜色',
-            enum: ['cGray', 'cRed', 'cBlue'],
-            enumNames: ['灰色', '中国红', '深蓝']
+            enum: ['cBlack', 'cRed', 'cBlue'],
+            enumNames: ['黑色', '灰色', '中国红', '深蓝']
           }
         }
       },
@@ -273,11 +273,24 @@ export const init = {
             type: 'string',
             title: '链接URL',
           },
+          aSize: {
+            type: 'integer',
+            title: '链接字号',
+            minimum: 8,
+            maximum: 16,
+            multipleOf: 1
+          },
           aAlign: {
             type: 'string',
             title: '对齐方式',
             enum: ['left-align', 'center', 'right-align'],
             enumNames: ['左对齐', '居中', '右对齐']
+          },
+          aColor: {
+            type: 'string',
+            title: '颜色',
+            enum: ['cBlack', 'cRed', 'cBlue'],
+            enumNames: ['黑色', '灰色', '中国红', '深蓝']
           }
         }
       },
@@ -288,13 +301,21 @@ export const init = {
         },
         aAlign: {
           'ui:widget': 'select'
+        },
+        aSize: {
+          'ui:widget': 'range'
+        },
+        aColor: {
+          'ui:widget': 'select'
         }
       },
       //formData
       formData: {
         aText: 'A hypertext link', 
         aHref: '',
-        aAlign: 'left-align'
+        aAlign: 'left-align',
+        aSize: 10,
+        aColor: 'inherit',
       }
     },
 

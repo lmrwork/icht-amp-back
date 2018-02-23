@@ -35,6 +35,7 @@ class Blackboard extends PureComponent {
         require(`../css/widget/${i}.css`);
       } catch (e) { /* console.log(e); */ }
     });
+    require('../css/widget/Global.css');
   }
 
   render() {

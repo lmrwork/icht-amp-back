@@ -20,7 +20,9 @@ a {
 .pSize10 {font-size: 1rem; line-height: 1.6rem;}
 .pSize11 {font-size: 1.1rem; line-height: 1.7rem;}
 .pSize12 {font-size: 1.2rem; line-height: 1.8rem;}
+.pSize13 {font-size: 1.3rem; line-height: 1.9rem;}
 .pSize14 {font-size: 1.4rem; line-height: 2rem;}
+.pSize15 {font-size: 1.5rem; line-height: 2.1rem;}
 .pSize16 {font-size: 1.6em; line-height: 2.2rem;}
 .pSize18 {font-size: 1.8em; line-height: 2.4rem;}
 .pSize20 {font-size: 2rem; line-height: 2.6rem;}
@@ -33,6 +35,7 @@ a {
 .cGray {color: #888}
 .cRed {color: #a31022}
 .cBlue {color: #069}
+.cBlack {color: inherit;}
 
 .ampstart-sidebar {
   width: 15rem;

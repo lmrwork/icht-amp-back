@@ -17,7 +17,7 @@ import 'react-tabs/style/react-tabs.css';
 import '../css/App.css';
 import '../css/form.css';
 import '../css/widget/Amp.css';
-import '../css/widget/Global.css';
+//import '../css/widget/Global.css';
 
 class App extends PureComponent {
   render() {

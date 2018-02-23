@@ -28,7 +28,6 @@ app.post('/', (req, res) => {
   //get css
   const items = JSON.parse(req.body.items);
   let css = fs.readFileSync('./src/css/widget/Amp.css')
-  css += "\n\r"+fs.readFileSync('./src/css/widget/Global.css')
   css += "\n\r"+fs.readFileSync('./src/css/widget/ChBanner.css')
   items.forEach( i => {
     try {
@@ -37,6 +36,7 @@ app.post('/', (req, res) => {
       //console.log(e);
     }
   })
+  css += "\n\r"+fs.readFileSync('./src/css/widget/Global.css')
   const opt1 = {level:2}
   css = new CleanCSS(opt1).minify(css).styles
 
