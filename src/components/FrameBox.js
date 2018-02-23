@@ -44,9 +44,6 @@ class FrameBox extends PureComponent {
       let allNodeText = '';
       allNode.forEach( v => allNodeText += v.innerHTML);
       allNodeText = allNodeText.replace('data-href', 'href');
-      allNodeText = allNodeText.replace(' undefined ', '');
-      allNodeText = allNodeText.replace('undefined ', '');
-      allNodeText = allNodeText.replace(' undefined', '');
       allNodeText = allNodeText.replace('undefined', '');
       this.props.update_html(allNodeText);
       this.props.build_amp({html:allNodeText, items:this.props.state.dropItems});

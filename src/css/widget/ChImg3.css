@@ -1,5 +1,5 @@
 /*ChImg3*/
-.ChImg3 { background: #dfdfdf; border-radius:0 4px 4px 0; padding-right:0.4rem; }
+.ChImg3 { background: #dfdfdf; border-radius:0.1rem; padding-right:0.4rem; }
 .ChImg3 a { color:#333; }
 .ChImg3 a:hover {text-decoration:none;}
 .ChImg3 amp-img { margin-top: -0.5rem; margin-right: 0.8rem; float: left; border-radius: 4px 0 0 4px }
