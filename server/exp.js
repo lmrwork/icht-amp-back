@@ -8,7 +8,6 @@ const app = express()
 const CleanCSS = require('clean-css')
 const crypto = require('crypto');
 
-
 const amp_cache_path = path.join(__dirname, 'amp_cache')
 
 //cors
