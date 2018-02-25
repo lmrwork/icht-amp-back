@@ -10,13 +10,13 @@ class Loading extends PureComponent {
   componentDidMount() {
     const parsed = queryString.parse(window.location.search);
     if (parsed.icid) {
+      //加载进度条
+      this.props.drop_item({
+        template: 'ChLoading',
+        formData: {}
+      });
       this.props.load_amp(parsed.icid);
     }
-      //加载进度条
-    this.props.drop_item({
-      template: 'ChLoading',
-      formData: {}
-    });
   }
 
   render() {

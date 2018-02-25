@@ -21,11 +21,11 @@ export const init = {
         type: 'object',
         required: [],
         properties: {
-          linkText: {
+          text: {
             type: 'string', 
             title: 'Talormade文字' 
           },
-          linkHref: { 
+          href: { 
             type: 'string', 
             title: 'Talormade链接' 
           }
@@ -35,8 +35,8 @@ export const init = {
       uiSchema: {},
       //formData
       formData: {
-        linkText: 'Create My Trip !',
-        linkHref: ''
+        text: 'Create My Trip !',
+        href: ''
       }
     },
 
@@ -48,11 +48,11 @@ export const init = {
         type: 'object',
         required: [],
         properties: {
-          headText: {
+          text: {
             type: 'string', 
             title: '标题文本' 
           },
-          headType: {
+          head: {
             type: 'string',
             title: '标题 H(x) ？',
             enum: ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
@@ -61,80 +61,14 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
-        headType: {
+        head: {
           'ui:widget': 'select'
         }
       },
       //formData
       formData: {
-        headText: 'Head H1~H6',
-        headType: 'H1'
-      }
-    },
-
-    ChH1: {
-      //Schema
-      schema: {
-        title: '标题 H1',
-        description: '',
-        type: 'object',
-        required: [],
-        properties: {
-          h1Text: {
-            type: 'string', 
-            title: 'H1文本' 
-          }
-        }
-      },
-      //uiSchema
-      uiSchema: {},
-      //formData
-      formData: {
-        h1Text: 'Head 1',
-      }
-    },
-
-    ChH2: {
-      //Schema
-      schema: {
-        title: '标题 H2',
-        description: '',
-        type: 'object',
-        required: [],
-        properties: {
-          h2Text: {
-            type: 'string', 
-            title: 'H2文本' 
-          }
-        }
-      },
-      //uiSchema
-      uiSchema: {},
-      //formData
-      formData: {
-        h2Text: 'Head 2',
-      }
-    },
-
-    ChH3: {
-      //Schema
-      schema: {
-        title: '标题 H3',
-        description: '',
-        type: 'object',
-        required: [],
-        properties: {
-          h3Text: {
-            type: 'string', 
-            title: 'H3文本' 
-          }
-        }
-      },
-      //uiSchema
-      uiSchema: {},
-      //formData
-      formData: {
-        h3Text: 'Head 3',
+        text: 'Head H1~H6',
+        head: 'H1'
       }
     },
 
@@ -145,12 +79,12 @@ export const init = {
           List: {
             type: 'object',
             properties: {
-              liText: {
+              text: {
                 type: 'string',
                 title: '文本',
                 default: '子项'
               },
-              liHref: {
+              href: {
                 type: 'string',
                 title: '链接',
                 default: ''
@@ -163,7 +97,7 @@ export const init = {
         type: 'object',
         required: [],
         properties: {
-          ulTitle: {
+          title: {
             type: 'string', 
             title: '列表标题' 
           },
@@ -173,7 +107,7 @@ export const init = {
             enum: ['listSytleDefault', 'listSytleNumber'],
             enumNames: ['默认', '数字']
           },
-          ulList: {
+          list: {
             type: 'array', 
             title: '列表子项',
             items: {
@@ -191,11 +125,11 @@ export const init = {
       },
       //formData
       formData: {
-        ulTitle: 'This is a List.',
+        title: 'This is a List.',
         listStyle: 'listSytleDefault',
-        ulList: [
-          {liText: 'Here is list item1.', liHref: ''},
-          {liText: 'Here is list item2.', liHref: ''},
+        list: [
+          {text: 'Here is list item1.', href: ''},
+          {text: 'Here is list item2.', href: ''},
         ]
       }
     },
@@ -208,24 +142,24 @@ export const init = {
         type: 'object',
         required: [],
         properties: {
-          pText: {
+          text: {
             type: 'string', 
             title: '段落文本' 
           },
-          pAlign: {
+          align: {
             type: 'string',
             title: '对齐方式',
             enum: ['left-align', 'center', 'right-align'],
             enumNames: ['左对齐', '居中', '右对齐']
           },
-          pSize: {
+          size: {
             type: 'integer', 
             title: '段落字号',
             minimum: 8,
             maximum: 30,
             multipleOf: 2
           },
-          pColor: {
+          color: {
             type: 'string',
             title: '颜色',
             enum: ['cBlack', 'cGray', 'cRed', 'cBlue'],
@@ -235,25 +169,25 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
-        pText: {
+        text: {
           'ui:widget': 'textarea'
         },
-        pAlign: {
+        align: {
           'ui:widget': 'select'
         },
-        pSize: {
+        size: {
           'ui:widget': 'range'
         },
-        pColor: {
+        color: {
           'ui:widget': 'select'
         }
       },
       //formData
       formData: {
-        pText: 'Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
-        pAlign: 'left-align',
-        pSize: 10,
-        pColor: 'inherit',
+        text: 'Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.', 
+        align: 'left-align',
+        size: 10,
+        color: 'inherit',
       }
     },
 
@@ -265,28 +199,28 @@ export const init = {
         type: 'object',
         required: [],
         properties: {
-          aText: {
+          text: {
             type: 'string', 
             title: '链接文本' 
           },
-          aHref: {
+          href: {
             type: 'string',
             title: '链接URL',
           },
-          aSize: {
+          size: {
             type: 'integer',
             title: '链接字号',
             minimum: 8,
             maximum: 16,
             multipleOf: 1
           },
-          aAlign: {
+          align: {
             type: 'string',
             title: '对齐方式',
             enum: ['left-align', 'center', 'right-align'],
             enumNames: ['左对齐', '居中', '右对齐']
           },
-          aColor: {
+          color: {
             type: 'string',
             title: '颜色',
             enum: ['cBlack', 'cGray', 'cRed', 'cBlue'],
@@ -296,26 +230,26 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
-        aHref: {
+        href: {
           'ui:placeholder': '/tours/tibet.htm'
         },
-        aAlign: {
+        align: {
           'ui:widget': 'select'
         },
-        aSize: {
+        size: {
           'ui:widget': 'range'
         },
-        aColor: {
+        color: {
           'ui:widget': 'select'
         }
       },
       //formData
       formData: {
-        aText: 'A hypertext link', 
-        aHref: '',
-        aAlign: 'left-align',
-        aSize: 10,
-        aColor: 'inherit',
+        text: 'A hypertext link', 
+        href: '',
+        align: 'left-align',
+        size: 10,
+        color: 'inherit',
       }
     },
 
@@ -347,11 +281,11 @@ export const init = {
             type: 'string', 
             title: '图片Alt文字' 
           },
-          imgHref: {
+          href: {
             type: 'string', 
             title: '图片链接' 
           },
-          imgTitle: {
+          title: {
             type: 'string', 
             title: '图片下方描述' 
           }
@@ -365,7 +299,7 @@ export const init = {
         imgHeight: {
           'ui:widget': 'updown'
         },
-        imgHref: {
+        href: {
           'ui:placeholder': '/tours/tibet.htm'
         }
       },
@@ -375,8 +309,8 @@ export const init = {
         imgWidth: 360,
         imgHeight: 240,
         imgAlt: 'Lhasa tour 2018',
-        imgHref: '',
-        imgTitle: 'Boy in red robe'
+        href: '',
+        title: 'Boy in red robe'
       }
     },
 
@@ -408,13 +342,13 @@ export const init = {
             type: 'string', 
             title: '图片Alt文字' 
           },
-          imgTitle: {
+          title: {
             type: 'string', 
             title: '图片下方描述' 
           },
-          textSize: {
+          size: {
             type: 'integer', 
-            title: '段落字号',
+            title: '文字字号',
             minimum: 8,
             maximum: 30,
             multipleOf: 2
@@ -429,7 +363,7 @@ export const init = {
         imgHeight: {
           'ui:widget': 'updown'
         },
-        textSize: {
+        size: {
           'ui:widget': 'range'
         }
       },
@@ -439,8 +373,8 @@ export const init = {
         imgWidth: 500,
         imgHeight: 300,
         imgAlt: 'China tour 2018',
-        imgTitle: 'China Highlights - Featured on 50+ Media and Press',
-        textSize: 10
+        title: 'China Highlights - Featured on 50+ Media and Press',
+        size: 10
       }
     },
 
@@ -472,15 +406,15 @@ export const init = {
             type: 'string', 
             title: '图片Alt文字' 
           },
-          imgTitle: {
+          title: {
             type: 'string', 
             title: '图片下方描述' 
           },
-          imgHref: {
+          href: {
             type: 'string', 
             title: '图片链接' 
           },
-          textSize: {
+          size: {
             type: 'integer', 
             title: '段落字号',
             minimum: 8,
@@ -497,7 +431,7 @@ export const init = {
         imgHeight: {
           'ui:widget': 'updown'
         },
-        textSize: {
+        size: {
           'ui:widget': 'range'
         }
       },
@@ -507,9 +441,9 @@ export const init = {
         imgWidth: 100,
         imgHeight: 75,
         imgAlt: 'China tour 2018',
-        imgTitle: 'How to Plan a First Trip to China — Step by Step',
-        textSize: 9,
-        imgHref: '/tours/top-to-do.htm'
+        title: 'How to Plan a First Trip to China — Step by Step',
+        size: 9,
+        href: '/tours/top-to-do.htm'
       }
     },
 
@@ -525,7 +459,7 @@ export const init = {
                 title: '图片源地址',
                 default: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image3.jpg'
               },
-              imgHref: {
+              href: {
                 type: 'string',
                 title: '图片链接',
                 default: ''
@@ -538,19 +472,19 @@ export const init = {
         type: 'object',
         required: [],
         properties: {
-          imageWidth: {
+          imgWidth: {
             type: 'integer',
             title: '图片宽度（px）',
             minimum: 0,
             maximum: 960
           },
-          imageHeight: {
+          imgHeight: {
             type: 'integer',
             title: '图片高度（px）',
             minimum: 0,
             maximum: 640
           },
-          imageList: {
+          imgList: {
             type: 'array', 
             title: '图片集',
             items: {
@@ -562,20 +496,20 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
-        imageWidth: {
+        imgWidth: {
           'ui:widget': 'updown'
         },
-        imageHeight: {
+        imgHeight: {
           'ui:widget': 'updown'
         }
       },
       //formData
       formData: {
-        imageWidth: 450,
-        imageHeight: 300,
-        imageList:[
-          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image1.jpg', imgHref: ''},
-          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image2.jpg', imgHref: ''},
+        imgWidth: 450,
+        imgHeight: 300,
+        imgList:[
+          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image1.jpg', href: ''},
+          {imgSrc: 'https://ampproject-b5f4c.firebaseapp.com/examples/images/image2.jpg', href: ''},
         ]
       }
     },
@@ -638,9 +572,6 @@ export const init = {
         imgHeight: {
           'ui:widget': 'updown'
         },
-        textSize: {
-          'ui:widget': 'updown'
-        },
         tourDesc: {
           'ui:widget': 'textarea'
         }
@@ -654,7 +585,6 @@ export const init = {
         tourTitle: 'Classic Wonders - 11 Days',
         tourCities: 'Beijing - Xi\'an - Guilin/Yangshuo -  Shanghai',
         tourDesc: 'Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.',
-        textSize: 11,
         tourUrl: '',
         tourBtn: 'View Details',
       }
