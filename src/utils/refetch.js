@@ -14,7 +14,10 @@ export const build_amp = connect( props => {
         then: value => { 
           props.save_qrcode(value.succ);
           props.save_css(value.css);
-        }
+        },
+        catch: ( reason => {
+          alert('本地express4未启动');
+        })
       }
     })
   }
@@ -38,7 +41,11 @@ export const save_amp = connect( props => {
           } else {
             props.saving_status('success');
           }
-        }
+        },
+        catch: ( reason => {
+          props.saving_status('error');
+          alert('请求服务器失败');
+        })
       }
     })
   }
@@ -66,7 +73,10 @@ export const load_amp = connect( props => {
             props.amp_status(parseInt(value.status, 10));
             props.loading_status(100);
           }
-        }
+        },
+        catch: ( reason => {
+          alert('请求服务器失败');
+        })
       }
     })
   }
