@@ -7,7 +7,7 @@ import queryString from 'query-string';
 @load_amp
 class Loading extends PureComponent {
 
-  componentWillMount() {
+  componentDidMount() {
     const parsed = queryString.parse(window.location.search);
     if (parsed.icid) {
       //加载进度条
@@ -17,7 +17,8 @@ class Loading extends PureComponent {
 
   render() {
     return (
-      <div id="loading"></div>
+      <div id="loading" className="align-left">
+      </div>
     )
   }
 }
