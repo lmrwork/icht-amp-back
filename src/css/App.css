@@ -136,6 +136,11 @@ body {
   margin: 0 auto;
 }
 
+.App .ChLoading {
+  width: 120px;
+  margin: 10rem auto 0; 
+}
+
 /*CardBox*/
 .CardBox {
   width: 440px;

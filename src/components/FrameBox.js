@@ -7,6 +7,7 @@ import { build_amp } from '../utils/refetch';
 
 import Drop from './Drop';
 import Sort from './Sort';
+import ChLoading from './ch/ChLoading';
 import ChBanner from './ch/ChBanner';
 import ChHead from './ch/ChHead';
 import ChP from './ch/ChP';
@@ -74,6 +75,10 @@ class FrameBox extends PureComponent {
       let show;
       let showHtml;
       switch (el.template) {
+        case 'ChLoading':
+          show = <ChLoading key={idx} index={idx} />;
+          showHtml = show;
+          break;
         case 'ChBanner':
           show = <ChBanner key={idx} index={idx} onClick={() => {}} form_data={el.formData}/>;
           showHtml = show;

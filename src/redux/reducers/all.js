@@ -65,6 +65,8 @@ export const allReducers = (state = init, action) => {
     return {...state, amp_status: action.status};
 
   case 'LOAD_ITEMS':
+    //移除loading
+    state.dropItems.pop(); 
     state.dropItems = state.dropItems.concat(action.dropItems);
     return {...state};
 
