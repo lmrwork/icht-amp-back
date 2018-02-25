@@ -7,7 +7,7 @@ class ChTour extends PureComponent {
   render() {
     const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChTour.formData;
     return (
-      <div className="ChTour homeTours px2 pb3" onClick={this.props.onClick}>
+      <div className="ChTour homeTours px2 my2" onClick={this.props.onClick}>
         <a data-href={formData.tourUrl}><amp-img src={formData.imgSrc} alt={formData.imgAlt} layout="responsive" width={formData.imgWidth} height={formData.imgHeight}></amp-img></a>
         <div className="tourPackage">
           <h3>{formData.tourTitle}</h3>
