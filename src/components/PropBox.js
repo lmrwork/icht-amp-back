@@ -39,7 +39,7 @@ class PropBox extends PureComponent {
       <div id="CardBox">
         <div className="CardBox mx-auto py1">
           <div className="flex flex-column">
-            <div className="CardBoxTitle"> 部件属性 </div>
+            <div className="CardBoxTitle"> AMP部件属性 </div>
             <div className="CardBoxItem mx2 my1 p2 relative">
               {'<<-- 点击左侧iPhone中的部件，编辑属性'}
             </div>

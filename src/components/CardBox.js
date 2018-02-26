@@ -21,7 +21,7 @@ class CardBox extends PureComponent {
       <div>
         <div className="CardBox mx-auto py1">
           <div className="flex flex-column">
-            <div className="CardBoxTitle"> 部件仓库 </div>
+            <div className="CardBoxTitle"> AMP部件仓库 </div>
             <div className="CardBoxItem mx2 mt1 mb2 p2 relative">
               {'拖拽部件到右侧iPhone，预览 -->>'}
             </div>
