@@ -6,9 +6,7 @@ const ejs = require('ejs')
 const fs = require("fs")
 const app = express()
 const CleanCSS = require('clean-css')
-const crypto = require('crypto');
-
-const amp_cache_path = path.join(__dirname, 'amp_cache')
+const crypto = require('crypto'); //md5
 
 //cors
 app.use(cors());
@@ -21,6 +19,7 @@ app.engine('.html', ejs.__express)
 app.set('views',path.join(__dirname , 'views'))
 app.set('view engine', 'html'); 
 
+const amp_cache_path = path.join(__dirname, 'amp_cache')
 app.use('/amp_cache', express.static(amp_cache_path))
 
 app.post('/', (req, res) => {
@@ -55,6 +54,5 @@ app.post('/', (req, res) => {
     }
   })
 })
-
 
 app.listen(3001)
