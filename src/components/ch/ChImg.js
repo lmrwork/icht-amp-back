@@ -15,7 +15,7 @@ class ChImg extends PureComponent {
       	:
       	<amp-img src={formData.imgSrc} width={formData.imgWidth} height={formData.imgHeight} layout="responsive" alt={formData.imgAlt} class="rounded"></amp-img>
       	}
-        { formData.title ? <div className="center pt1">{formData.title}</div> : null }
+        { formData.title ? <div className={`pt1 ${formData.align} ${formData.titleStyle}`}>{formData.title}</div> : null }
       </div>
     )
   }

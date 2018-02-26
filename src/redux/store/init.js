@@ -288,7 +288,19 @@ export const init = {
           title: {
             type: 'string', 
             title: '图片下方描述' 
-          }
+          },
+          titleStyle: {
+            type: 'string', 
+            title: '图片描述样式',
+            enum: ['inherit', 'titleStyleCh'],
+            enumNames: ['默认', '斜体（ch）']
+          },
+          align: {
+            type: 'string',
+            title: '图片描述对齐方式',
+            enum: ['left-align', 'center', 'right-align'],
+            enumNames: ['左对齐', '居中', '右对齐']
+          },
         }
       },
       //uiSchema
@@ -310,7 +322,9 @@ export const init = {
         imgHeight: 240,
         imgAlt: 'Lhasa tour 2018',
         href: '',
-        title: 'Boy in red robe'
+        title: 'Boy in red robe',
+        titleStyle: 'inherit',
+        align: 'center'
       }
     },
 

@@ -40,3 +40,8 @@ a {
 .ampstart-sidebar {
   width: 15rem;
 }
+
+.titleStyle {
+	font-style: italic;
+    font-size: 0.9rem;
+}
