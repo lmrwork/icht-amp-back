@@ -196,10 +196,10 @@ body {
   font-size: 0.9em;
 }
 .react-tabs__tab-list {
-  border-color: #999;
+  border-color: #000;
 }
 .react-tabs__tab--selected {
-  border-color: #999;
+  border-color: #000;
   background: #f7e8dd;
   color: #333;
   text-shadow: 0px 0px 10px darkorange;
