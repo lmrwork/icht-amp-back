@@ -172,9 +172,6 @@ export const init = {
         text: {
           'ui:widget': 'textarea'
         },
-        align: {
-          'ui:widget': 'select'
-        },
         size: {
           'ui:widget': 'range'
         },
@@ -232,9 +229,6 @@ export const init = {
       uiSchema: {
         href: {
           'ui:placeholder': '/tours/tibet.htm'
-        },
-        align: {
-          'ui:widget': 'select'
         },
         size: {
           'ui:widget': 'range'
