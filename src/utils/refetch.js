@@ -108,6 +108,7 @@ export const load_info = connect( props => {
           } else {
             const json = convert(value.info);
             props.pop_items();
+            //添加H1标签
             props.drop_item({
               template: 'ChHead',
               formData: {

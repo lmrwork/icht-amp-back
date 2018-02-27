@@ -8,7 +8,7 @@ class ChUl extends PureComponent {
     const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChUl.formData;
     return (
       <div className="ChUl px2 my1" onClick={this.props.onClick}>
-        <p>{formData.title}</p>
+        { formData.title ? <p>{formData.title}</p> : null }
         <ul className="list-reset">
           {formData.list ? formData.list.map( (i, idx) => {
             if (i.href) {

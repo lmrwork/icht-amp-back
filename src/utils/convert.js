@@ -47,6 +47,25 @@ const convert = (html) => {
           }
         })
         break;
+      //ChUl
+      case 'ul':
+        const lists = [];
+        $(el).find('li').each((idx, el) => {
+          lists.push({
+            text: safe($(el).html().trim()),
+            href: ''
+          });
+        });
+        console.log(lists);
+        drops.push({
+          template: 'ChUl',
+          formData: {
+            title: '',
+            listStyle: 'listSytleDefault',
+            list: lists
+          }
+        })
+        break;
       default:
         break;
     }
