@@ -29,6 +29,22 @@ const convert = (html) => {
           }
         })
         break;
+      //ChImg
+      case 'img':
+        drops.push({
+          template: 'ChImg',
+          formData: {
+            imgSrc: $(el).attr('src'), 
+            imgWidth: 360,
+            imgHeight: 240,
+            imgAlt: $(el).attr('alt'),
+            href: '',
+            title: $(el).attr('alt'),
+            titleStyle: 'inherit',
+            align: 'center'
+          }
+        })
+        break;
       default:
         break;
     }
