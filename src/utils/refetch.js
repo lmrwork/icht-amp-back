@@ -28,7 +28,8 @@ export const save_amp = connect( props => {
   return {
     save_amp: data => ({
       postResponse: {
-        url: 'http://europe.chtcdn.com/info.php/info_amp/save_amp',
+        //url: 'http://europe.chtcdn.com/info.php/info_amp/save_amp',
+        url: 'http://200.103.68.62:9000/info.php/info_amp/save_amp',
         method: 'POST',
         force: true,
         headers: {
@@ -56,7 +57,8 @@ export const load_amp = connect( props => {
   return {
     load_amp: icid => ({
       postResponse: {
-        url: 'http://europe.chtcdn.com/info.php/info_amp/load_amp',
+        //url: 'http://europe.chtcdn.com/info.php/info_amp/load_amp',
+        url: 'http://202.103.68.62:9000/info.php/info_amp/load_amp',
         method: 'POST',
         force: true,
         headers: {
