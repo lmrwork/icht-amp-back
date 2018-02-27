@@ -170,7 +170,8 @@ export const init = {
       //uiSchema
       uiSchema: {
         text: {
-          'ui:widget': 'textarea'
+          'ui:widget': 'textarea',
+          'ui:options': { rows: 12 }
         },
         size: {
           'ui:widget': 'range'

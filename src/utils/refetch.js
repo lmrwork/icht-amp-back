@@ -108,6 +108,13 @@ export const load_info = connect( props => {
           } else {
             const json = convert(value.info);
             props.pop_items();
+            props.drop_item({
+              template: 'ChHead',
+              formData: {
+                text: value.title,
+                type: 'H1'
+              }
+            });
             props.load_items(json);
           }
         },

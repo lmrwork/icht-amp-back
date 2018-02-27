@@ -14,7 +14,7 @@ button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button
 
 /*lmr*/
 textarea.form-control {
-  height: 10em;
+  min-height: 10em;
 }
 legend {
   padding-bottom: 8px;
