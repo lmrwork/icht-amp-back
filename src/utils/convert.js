@@ -1,4 +1,6 @@
 import cheerio from 'cheerio';
+import he from 'he'; 
+
 //HTML TO AMP
 const convert = (html) => {
   const $ = cheerio;
@@ -37,9 +39,9 @@ const convert = (html) => {
             imgSrc: $(el).attr('src'), 
             imgWidth: 360,
             imgHeight: 240,
-            imgAlt: $(el).attr('alt'),
+            imgAlt: safe($(el).attr('alt')),
             href: '',
-            title: $(el).attr('alt'),
+            title: safe($(el).attr('alt')),
             titleStyle: 'inherit',
             align: 'center'
           }
@@ -53,7 +55,9 @@ const convert = (html) => {
 }
 
 const safe = str => {
-  return str.replace(/href=/ig, 'data-href=');
+  str = he.decode(str);
+  str = str.replace(/href=/ig, 'data-href=');
+  return str;
 }
 
 export default convert;
