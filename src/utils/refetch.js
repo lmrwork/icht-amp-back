@@ -1,4 +1,5 @@
-import { connect } from 'react-refetch'
+import { connect } from 'react-refetch';
+import convert from './convert';
 
 export const build_amp = connect( props => {
   return {
@@ -67,7 +68,7 @@ export const load_amp = connect( props => {
         body: `icid=${icid}`,
         then: value => {
           if (!value.succ) {
-            alert(`信息平台无AMP数据: ${value.message}`);
+            //alert(`信息平台无AMP数据: ${value.message}`);
           } else if (!value.json || value.json==='null') {
             alert('信息平台无AMP数据');
           } else {
@@ -75,6 +76,39 @@ export const load_amp = connect( props => {
             props.load_items(JSON.parse(value.json));
             props.amp_status(parseInt(value.status, 10));
             props.loading_status(100);
+          }
+        },
+        catch: ( reason => {
+          alert('请求服务器失败');
+        })
+      }
+    })
+  }
+})
+
+//load info
+export const load_info = connect( props => {
+  return {
+    load_info: icid => ({
+      postResponse: {
+        //url: 'http://europe.chtcdn.com/info.php/info_amp/load_amp',
+        url: 'http://202.103.68.62:9000/info.php/info_amp/load_info',
+        method: 'POST',
+        force: true,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+        },
+        body: `icid=${icid}`,
+        then: value => {
+          if (!value.succ) {
+            alert(`信息平台无AMP数据: ${value.message}`);
+          } else if (!value.info || value.info==='null') {
+            alert('信息平台无AMP数据');
+          } else {
+            const json = convert(value.info);
+            props.pop_items();
+            props.load_items(json);
+            console.log(json);
           }
         },
         catch: ( reason => {

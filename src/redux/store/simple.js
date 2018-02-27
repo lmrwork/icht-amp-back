@@ -1,4 +1,4 @@
-export const simple = [
+const simple = [
   {
     name: '测试模板',
     json: [
