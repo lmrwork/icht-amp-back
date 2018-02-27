@@ -341,3 +341,11 @@ body {
   vertical-align: top;
   padding-right: 0.3rem;
 }
+
+img[layout=responsive] {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ChImg3 img { margin-top: -0.5rem; margin-right: 0.8rem; float: left; border-radius: 4px 0 0 4px }

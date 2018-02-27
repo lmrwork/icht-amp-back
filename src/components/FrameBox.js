@@ -26,7 +26,7 @@ class FrameBox extends PureComponent {
 
   componentWillMount() {
     if (this.props.state.dropItems.length === 0) {
-      this.props.drop_item(
+      this.props.state.dropItems.push(
         {
           template: 'ChBanner',
           formData:this.props.state.propConf.ChBanner.formData
@@ -93,7 +93,7 @@ class FrameBox extends PureComponent {
           break;
         case 'ChImg':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
-          showHtml = show;
+          showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;;
           break;
         case 'ChImg2':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;

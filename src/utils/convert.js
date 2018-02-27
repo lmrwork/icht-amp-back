@@ -3,8 +3,9 @@ import he from 'he';
 
 //HTML TO AMP
 const convert = (html) => {
-  const $ = cheerio;
-  const items = $.load(html)('h1, h2, h3, h4, h5, h6, p, img, ul');
+  const $ = cheerio.load(html);
+  $('table').remove();
+  const items = $('h1, h2, h3, h4, h5, h6, p, img, ul');
   const drops = [];
   items.each((idx, el) => {
     switch (el.name) {
@@ -14,7 +15,7 @@ const convert = (html) => {
         drops.push({
           template: 'ChHead',
           formData: {
-            text: safe($(el).html().trim()),
+            text: safe(cheerio(el).html().trim()),
             head: el.name.toUpperCase()
           }
         })
@@ -24,7 +25,7 @@ const convert = (html) => {
         drops.push({
           template: 'ChP',
           formData: {
-            text: safe($(el).html().trim()),
+            text: safe(cheerio(el).html().trim()),
             align: 'left-align',
             size: 10,
             color: 'inherit',
@@ -36,12 +37,12 @@ const convert = (html) => {
         drops.push({
           template: 'ChImg',
           formData: {
-            imgSrc: $(el).attr('src'), 
-            imgWidth: 360,
-            imgHeight: 240,
-            imgAlt: safe($(el).attr('alt')),
+            imgSrc: cheerio(el).attr('src'), 
+            imgWidth: cheerio(el).attr('width') || 360,
+            imgHeight: cheerio(el).attr('height') || 240,
+            imgAlt: safe(cheerio(el).attr('alt')),
             href: '',
-            title: safe($(el).attr('alt')),
+            title: safe(cheerio(el).attr('alt')),
             titleStyle: 'inherit',
             align: 'center'
           }
@@ -50,13 +51,12 @@ const convert = (html) => {
       //ChUl
       case 'ul':
         const lists = [];
-        $(el).find('li').each((idx, el) => {
+        cheerio(el).find('li').each((idx, el) => {
           lists.push({
-            text: safe($(el).html().trim()),
+            text: safe(cheerio(el).html().trim()),
             href: ''
           });
         });
-        console.log(lists);
         drops.push({
           template: 'ChUl',
           formData: {
@@ -74,8 +74,10 @@ const convert = (html) => {
 }
 
 const safe = str => {
-  str = he.decode(str);
-  str = str.replace(/href=/ig, 'data-href=');
+  if (str) {
+    str = he.decode(str);
+    str = str.replace(/href=/ig, 'data-href=');
+  }
   return str;
 }
 
