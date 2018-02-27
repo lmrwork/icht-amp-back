@@ -528,8 +528,12 @@ export const init = {
         title: 'CH 精华线路',
         description: '',
         type: 'object',
-        required: [],
+        required: ['tourCode'],
         properties: {
+          tourCode: {
+            type: 'string',
+            title: '线路代码（必填，例如 cht-63）' 
+          },
           imgSrc: {
             type: 'string', 
             title: '图片源地址（更换后，需要点击下方的 “更新图片”）' 
@@ -595,6 +599,7 @@ export const init = {
         tourDesc: 'Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.',
         tourUrl: '',
         tourBtn: 'View Details',
+        tourCode: ''
       }
     },
 

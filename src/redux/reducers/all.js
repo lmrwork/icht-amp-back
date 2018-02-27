@@ -66,8 +66,12 @@ export const allReducers = (state = init, action) => {
 
   case 'LOAD_ITEMS':
     //移除loading
-    state.dropItems.pop(); 
     state.dropItems = state.dropItems.concat(action.dropItems);
+    return {...state};
+
+  case 'POP_ITEMS':
+    //移除loading
+    state.dropItems.pop(); 
     return {...state};
 
   default:

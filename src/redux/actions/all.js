@@ -72,6 +72,10 @@ export const load_items = (dropItems) => ({
   dropItems
 });
 
+export const pop_items = () => ({
+  type: 'POP_ITEMS'
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -87,5 +91,6 @@ export const actions = {
   loading_status,
   amp_status,
   save_css,
-  load_items
+  load_items,
+  pop_items
 };

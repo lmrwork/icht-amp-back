@@ -69,6 +69,7 @@ export const load_amp = connect( props => {
           } else if (!value.json || value.json==='null') {
             alert('信息平台无AMP数据');
           } else {
+            props.pop_items();
             props.load_items(JSON.parse(value.json));
             props.amp_status(parseInt(value.status, 10));
             props.loading_status(100);

@@ -26,7 +26,7 @@ class FrameBox extends PureComponent {
 
   componentWillMount() {
     if (this.props.state.dropItems.length === 0) {
-      this.props.state.dropItems.push(
+      this.props.drop_item(
         {
           template: 'ChBanner',
           formData:this.props.state.propConf.ChBanner.formData
