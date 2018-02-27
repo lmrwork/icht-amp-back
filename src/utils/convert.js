@@ -52,10 +52,17 @@ const convert = (html) => {
       case 'ul':
         const lists = [];
         cheerio(el).find('li').each((idx, el) => {
-          lists.push({
-            text: safe(cheerio(el).html().trim()),
-            href: ''
-          });
+          if (cheerio(el).children('a').length) {
+            lists.push({
+              text: safe(cheerio(el).text().trim()),
+              href: cheerio(el).children('a').attr('href')
+            });
+          } else {
+            lists.push({
+              text: safe(cheerio(el).html().trim()),
+              href: ''
+            });
+          }
         });
         drops.push({
           template: 'ChUl',
