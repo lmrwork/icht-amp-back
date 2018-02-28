@@ -6,6 +6,7 @@ const convert = (html) => {
   const $ = cheerio;
   const $$ = cheerio.load(html);
   $$('table').remove();
+  $$('.hidden-xs').remove();
   const items = $$('h1, h2, h3, h4, h5, h6, p, img, ul');
   const drops = [];
   items.each((idx, el) => {
