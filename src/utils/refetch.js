@@ -12,7 +12,7 @@ export const build_amp = connect( props => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `html=${data.html}&items=${JSON.stringify(data.items)}`,
+        body: `html=${escape(data.html)}&items=${escape(JSON.stringify(data.items))}`,
         then: value => { 
           props.save_qrcode(value.succ);
           props.save_css(value.css);
@@ -37,7 +37,7 @@ export const save_amp = connect( props => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `icid=${data.icid}&json=${data.json}&html=${data.html}&status=${data.status}&css=${data.css}`,
+        body: `icid=${data.icid}&json=${escape(data.json)}&html=${escape(data.html)}&status=${data.status}&css=${escape(data.css)}`,
         then: value => {
           if (!value.succ) {
             props.saving_status('error');
