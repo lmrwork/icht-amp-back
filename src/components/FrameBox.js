@@ -93,15 +93,15 @@ class FrameBox extends PureComponent {
           break;
         case 'ChImg':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
-          showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;;
+          showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           break;
         case 'ChImg2':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
-          showHtml = show;
+          showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg2 amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           break;
         case 'ChImg3':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg3  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
-          showHtml = show;
+          showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChImg3 amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           break;
         case 'ChA':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChA  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
@@ -117,7 +117,7 @@ class FrameBox extends PureComponent {
           break;
         case 'ChTour':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChTour  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
-          showHtml = show;
+          showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChTour amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           break;
         default:
           show = null;
