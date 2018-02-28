@@ -139,7 +139,7 @@ export const init = {
     ChP: {
       //Schema
       schema: {
-        title: '段落',
+        title: '段落：*注意 <p> 内的链接格式需要这样写： <a data-href="">xxoo</a>',
         description: '',
         type: 'object',
         required: [],

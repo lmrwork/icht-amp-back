@@ -15,6 +15,7 @@ class Loading extends PureComponent {
         template: 'ChLoading',
         formData: {}
       });
+      this.props.loading_status(50);
       this.props.load_amp(parsed.icid);
     }
   }

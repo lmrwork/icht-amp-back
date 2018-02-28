@@ -69,9 +69,11 @@ export const load_amp = connect( props => {
         body: `icid=${icid}`,
         then: value => {
           if (!value.succ) {
-            alert(`信息平台无AMP数据: ${value.message}`);
+            alert(`信息平台无AMP数据`);
+            props.loading_status(null);
           } else if (!value.json || value.json==='null') {
-            alert('信息平台无AMP数据');
+            alert(`信息平台无AMP数据`);
+            props.loading_status(null);
           } else {
             props.pop_items();
             props.load_items(JSON.parse(value.json));
