@@ -24,6 +24,8 @@ const convert = (html) => {
         break;
       //ChP
       case 'p':
+        let pText = safe($(el).html().trim());
+        if (pText === '<br>' || pText === '<br/>' || pText === '<br />') break;
         drops.push({
           template: 'ChP',
           formData: {
