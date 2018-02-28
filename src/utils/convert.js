@@ -3,9 +3,10 @@ import he from 'he';
 
 //HTML TO AMP
 const convert = (html) => {
-  const $ = cheerio.load(html);
-  $('table').remove();
-  const items = $('h1, h2, h3, h4, h5, h6, p, img, ul');
+  const $ = cheerio;
+  const $$ = cheerio.load(html);
+  $$('table').remove();
+  const items = $$('h1, h2, h3, h4, h5, h6, p, img, ul');
   const drops = [];
   items.each((idx, el) => {
     switch (el.name) {
@@ -15,7 +16,7 @@ const convert = (html) => {
         drops.push({
           template: 'ChHead',
           formData: {
-            text: safe(cheerio(el).html().trim()),
+            text: safe($(el).html().trim()),
             head: el.name.toUpperCase()
           }
         })
@@ -25,7 +26,7 @@ const convert = (html) => {
         drops.push({
           template: 'ChP',
           formData: {
-            text: safe(cheerio(el).html().trim()),
+            text: safe($(el).html().trim()),
             align: 'left-align',
             size: 10,
             color: 'inherit',
@@ -34,15 +35,20 @@ const convert = (html) => {
         break;
       //ChImg
       case 'img':
+        const parent = $(el).parent();
+        let img_href = '';
+        if (parent.length && parent[0].name === 'a') {
+          img_href = $(parent).attr('href');
+        }
         drops.push({
           template: 'ChImg',
           formData: {
-            imgSrc: cheerio(el).attr('src'), 
-            imgWidth: cheerio(el).attr('width') || 360,
-            imgHeight: cheerio(el).attr('height') || 240,
-            imgAlt: safe(cheerio(el).attr('alt')),
-            href: '',
-            title: safe(cheerio(el).attr('alt')),
+            imgSrc: $(el).attr('src'), 
+            imgWidth: $(el).attr('width') || 360,
+            imgHeight: $(el).attr('height') || 240,
+            imgAlt: safe($(el).attr('alt')),
+            href: img_href,
+            title: safe($(el).attr('alt')),
             titleStyle: 'inherit',
             align: 'center'
           }
@@ -51,15 +57,15 @@ const convert = (html) => {
       //ChUl
       case 'ul':
         const lists = [];
-        cheerio(el).find('li').each((idx, el) => {
-          if (cheerio(el).children('a').length) {
+        $(el).find('li').each((idx, el) => {
+          if ($(el).children('a').length) {
             lists.push({
-              text: safe(cheerio(el).text().trim()),
-              href: cheerio(el).children('a').attr('href')
+              text: safe($(el).text().trim()),
+              href: $(el).children('a').attr('href')
             });
           } else {
             lists.push({
-              text: safe(cheerio(el).html().trim()),
+              text: safe($(el).html().trim()),
               href: ''
             });
           }
