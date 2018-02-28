@@ -32,7 +32,10 @@ class ChLoading extends PureComponent {
         <div className="ChLoading">
           <Spinkit size={120} color="#09c" />
         </div>
-        <button className="btn block mx-auto mt3" onClick={this.info} style={{width:'16rem', border:'1px solid #888'}}>转换原始HTML成AMP部件（实验性）</button>
+        <button className="btn block mx-auto mt3" onClick={this.info} style={{width:'16rem', border:'1px solid #888'}}>
+          转换原始HTML成AMP部件（实验性）
+        </button>
+        <p className="px2 center">尝试将源HTML代码中的基础标签转成AMP部件，目前会忽略table标签。</p>
       </div>
     )
   }
