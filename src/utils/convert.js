@@ -17,7 +17,7 @@ const convert = (html) => {
         drops.push({
           template: 'ChHead',
           formData: {
-            text: safe($(el).html().trim()),
+            text: safe($(el).text().trim()),
             head: el.name.toUpperCase()
           }
         })

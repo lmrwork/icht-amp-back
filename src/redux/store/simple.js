@@ -1,6 +1,6 @@
 const simple = [
   {
-    name: '测试模板',
+    name: '预制测试模板',
     json: [
       {
         "template": "ChImg2",
@@ -9,24 +9,24 @@ const simple = [
           "imgWidth": 500,
           "imgHeight": 300,
           "imgAlt": "China tour 2018",
-          "title": "China Highlights - Featured on 50  Media and Press",
+          "title": "China Highlights - Featured on 50+ Media and Press",
           "size": 10
         }
       },
       {
         "template": "ChHead",
         "formData": {
-          "text": "我是预置模板 - 测试",
+          "text": "预置模板 - 测试",
           "head": "H1"
         }
       },
       {
         "template": "ChP",
         "formData": {
-          "text": "Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.",
+          "text": "虽然预制模板的功能，已经开发完成，但是估计也没有人会用吧。。。。。。。大部分时间都是直接转化源信息的HTML吧。\n<br>Orz。。。",
           "align": "left-align",
           "size": 10,
-          "color": "inherit"
+          "color": "cRed"
         }
       },
       {
@@ -36,9 +36,18 @@ const simple = [
           "imgWidth": 100,
           "imgHeight": 75,
           "imgAlt": "China tour 2018",
-          "title": "How to Plan a First Trip to China",
+          "title": "How to Plan a First Trip to China step by step.",
           "href": "/tours/top-to-do.htm",
           "size": 9
+        }
+      },
+      {
+        "template": "ChP",
+        "formData": {
+          "text": "A paragraph always begins on a new line and contains at least one sentence.",
+          "align": "left-align",
+          "size": 10,
+          "color": "inherit"
         }
       },
       {
@@ -97,42 +106,6 @@ const simple = [
         }
       },
       {
-        "template": "ChUl",
-        "formData": {
-          "title": "This is a List.",
-          "listStyle": "listSytleDefault",
-          "list": [
-            {
-              "text": "Here is list item1.",
-              "href": ""
-            },
-            {
-              "text": "Here is list item2.",
-              "href": ""
-            }
-          ]
-        }
-      },
-      {
-        "template": "ChImg3",
-        "formData": {
-          "imgSrc": "https://data.chinahighlights.com/image/homepage/plan-a-sirst-trip-to-china-step-by-step.jpg",
-          "imgWidth": 100,
-          "imgHeight": 75,
-          "imgAlt": "China tour 2018",
-          "title": "How to Plan a First Trip to China — Step by Step",
-          "size": 9,
-          "href": "/tours/top-to-do.htm"
-        }
-      },
-      {
-        "template": "ChHead",
-        "formData": {
-          "text": "Hot Tour 2018 ！",
-          "head": "H2"
-        }
-      },
-      {
         "template": "ChTour",
         "formData": {
           "imgSrc": "https://images.arachina.com/allpicture/2016/11/bf0ee703cd7e478190d1396e.jpg",
@@ -144,50 +117,6 @@ const simple = [
           "tourDesc": "Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.",
           "tourUrl": "",
           "tourBtn": "View Details"
-        }
-      },
-      {
-        "template": "ChTour",
-        "formData": {
-          "imgSrc": "https://images.arachina.com/allpicture/2016/11/bf0ee703cd7e478190d1396e.jpg",
-          "imgWidth": 500,
-          "imgHeight": 320,
-          "imgAlt": "The Great Wall of China",
-          "tourTitle": "Classic Wonders - 11 Days",
-          "tourCities": "Beijing - Xi'an - Guilin/Yangshuo -  Shanghai",
-          "tourDesc": "Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.",
-          "tourUrl": "",
-          "tourBtn": "View Details"
-        }
-      },
-      {
-        "template": "ChTour",
-        "formData": {
-          "imgSrc": "https://images.arachina.com/allpicture/2016/11/bf0ee703cd7e478190d1396e.jpg",
-          "imgWidth": 500,
-          "imgHeight": 320,
-          "imgAlt": "The Great Wall of China",
-          "tourTitle": "Classic Wonders - 11 Days",
-          "tourCities": "Beijing - Xi'an - Guilin/Yangshuo -  Shanghai",
-          "tourDesc": "Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.",
-          "tourUrl": "",
-          "tourBtn": "View Details"
-        }
-      },
-      {
-        "template": "ChHead",
-        "formData": {
-          "text": "Head H2",
-          "head": "H2"
-        }
-      },
-      {
-        "template": "ChP",
-        "formData": {
-          "text": "Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.",
-          "align": "left-align",
-          "size": 10,
-          "color": "inherit"
         }
       },
       {
@@ -201,43 +130,12 @@ const simple = [
         }
       },
       {
-        "template": "ChUl",
-        "formData": {
-          "title": "This is a List.",
-          "listStyle": "listSytleDefault",
-          "list": [
-            {
-              "text": "Here is list item1.",
-              "href": ""
-            },
-            {
-              "text": "Here is list item2.",
-              "href": ""
-            }
-          ]
-        }
-      },
-      {
         "template": "ChP",
         "formData": {
           "text": "Paragraph e.g. A paragraph is a section of a piece of writing. A paragraph always begins on a new line and contains at least one sentence.",
           "align": "left-align",
           "size": 10,
           "color": "inherit"
-        }
-      },
-      {
-        "template": "ChTour",
-        "formData": {
-          "imgSrc": "https://images.arachina.com/allpicture/2016/11/bf0ee703cd7e478190d1396e.jpg",
-          "imgWidth": 500,
-          "imgHeight": 320,
-          "imgAlt": "The Great Wall of China",
-          "tourTitle": "Classic Wonders - 15 Days",
-          "tourCities": "Beijing1 - Xi'an - Guilin/Yangshuo -  Shanghai",
-          "tourDesc": "Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy <b>Shanghai</b>, all in 11 days.",
-          "tourUrl": "",
-          "tourBtn": "View Details"
         }
       }
     ]

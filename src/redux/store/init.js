@@ -10,6 +10,8 @@ export const init = {
   saving: null,
   loading: null,
   amp_status: 0,
+  dataSource: ['http://europe.chtcdn.com', 'http://cht.mycht.cn'],
+  dataSourceId: 0,
   //属性配置
   propConf: {
 
