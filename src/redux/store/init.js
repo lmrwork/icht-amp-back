@@ -288,7 +288,7 @@ export const init = {
             type: 'string', 
             title: '图片描述样式',
             enum: ['inherit', 'titleStyleCh'],
-            enumNames: ['默认', '斜体（ch）']
+            enumNames: ['默认', '斜体']
           },
           align: {
             type: 'string',
