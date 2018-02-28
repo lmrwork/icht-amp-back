@@ -9,7 +9,7 @@
   list-style: decimal;
   list-style-position: inside;
   padding-left: 0;
-  background-image: none;
+  background: none;
 }
 .ChUl p {
   margin-bottom: -0.5rem;
