@@ -37,7 +37,7 @@ class Header extends PureComponent {
   }
 
   reload = () => {
-    const reload = window.confirm('重新拉去信息的HTML，并转化成AMP部件？');
+    const reload = window.confirm("清空面板，重新拉取信息的HTML，并转化成AMP部件？");
     if (reload) {
       const parsed = queryString.parse(window.location.search);
       this.props.clear_dropitems();
@@ -45,7 +45,10 @@ class Header extends PureComponent {
         template: 'ChBanner',
         formData:this.props.state.propConf.ChBanner.formData
       });
-      this.props.load_info(parsed.icid);
+      this.props.drop_item({
+        template: 'ChLoading',
+        formData:this.props.state.propConf.ChBanner.formData
+      });
     }
   }
 
@@ -54,7 +57,7 @@ class Header extends PureComponent {
     return (
       <header className="App-header relative" id="appHeader">
         <button className="btn sourceBtn" onClick={this.site}>{this.props.state.dataSource[this.props.state.dataSourceId]}</button>
-        <button className="btn reloadBtn" onClick={this.reload}>Reload</button>
+        <button className="btn reloadBtn" onClick={this.reload}>Clear</button>
         <img src={logo} className="App-logo" alt="logo" />
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={history} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="histoyBtn">
           <div className="pb2">点击下方，加载历史记录：（约~200条）</div>

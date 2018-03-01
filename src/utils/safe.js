@@ -5,6 +5,7 @@ export const safeStr = str => {
   if (str) {
     str = he.decode(str);
     str = str.replace(/href=/ig, 'data-href=');
+    str = str.replace(/style="(.*)?"/ig, '');
   }
   return str;
 }

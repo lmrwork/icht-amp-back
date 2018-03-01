@@ -112,7 +112,7 @@ body {
 .App .sourceBtn {
   color: #000;
   position: absolute;
-  left: 6rem;
+  left: 5.5rem;
   top: 0.5rem;
 }
 .App .reloadBtn {
