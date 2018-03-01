@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import connect from '../../redux/connect';
 import ImgFix from '../ImgFix';
+import {safeHref as safe} from '../../utils/safe';
 
 @connect
 class ChImg2 extends PureComponent {
@@ -10,7 +11,7 @@ class ChImg2 extends PureComponent {
     return (
       <div onClick={this.props.onClick} className="ChImg2 homeBrand mb1"> 
         <ImgFix formData={formData} amp={this.props.amp} layout={'responsive'}/>
-        <span className={`pSize${formData.size}`} dangerouslySetInnerHTML={{__html:formData.title}}>
+        <span className={`pSize${formData.size}`} dangerouslySetInnerHTML={{__html:safe(formData.title)}}>
         </span>
       </div>
     )

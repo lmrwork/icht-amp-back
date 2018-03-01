@@ -23,7 +23,7 @@ const simple = [
       {
         "template": "ChP",
         "formData": {
-          "text": "虽然预制模板的功能，已经开发完成，但是估计也没有人会用吧。。。。。。。大部分时间都是直接转化源信息的HTML吧。\n<br>Orz。。。",
+          "text": "虽然预制模板的功能，已经开发完成，但是估计不会有人用吧。。。。。。。大部分时间都是直接转化源信息的HTML吧。\n<br>Orz。。。",
           "align": "left-align",
           "size": 10,
           "color": "cRed"

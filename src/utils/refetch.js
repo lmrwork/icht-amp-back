@@ -5,8 +5,8 @@ export const build_amp = connect( props => {
   return {
     build_amp: data => ({
       postResponse: {
-        url: 'http://localhost:3001/',
-        //url: 'http://202.103.68.62:3001/',
+        //url: 'http://localhost:3001/',
+        url: 'http://202.103.68.62:3001/',
         method: 'POST',
         force: true,
         headers: {

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import connect from '../../redux/connect';
+import {safeHref as safe} from '../../utils/safe';
 
 @connect
 class ChUl extends PureComponent {
@@ -14,7 +15,7 @@ class ChUl extends PureComponent {
             if (i.href) {
               return <li key={idx} className={formData.listStyle}><a data-href={i.href}>{i.text}</a></li>;
             } else {
-              return <li key={idx} className={formData.listStyle} dangerouslySetInnerHTML={{__html: i.text}}></li>;
+              return <li key={idx} className={formData.listStyle} dangerouslySetInnerHTML={{__html: safe(i.text)}}></li>;
           }}) : null}
         </ul>
        </div>

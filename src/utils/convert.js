@@ -1,5 +1,5 @@
-import cheerio from 'cheerio';
-import he from 'he'; 
+import cheerio from 'cheerio'; 
+import {safeStr as safe} from './safe'; 
 
 //HTML TO AMP
 const convert = (html) => {
@@ -87,14 +87,6 @@ const convert = (html) => {
     }
   });
   return drops;
-}
-
-const safe = str => {
-  if (str) {
-    str = he.decode(str);
-    str = str.replace(/href=/ig, 'data-href=');
-  }
-  return str;
 }
 
 export default convert;

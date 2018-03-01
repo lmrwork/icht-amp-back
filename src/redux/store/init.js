@@ -8,7 +8,7 @@ export const init = {
   css: null,
   qrCode: null,
   saving: null,
-  loading: null,
+  loading: null, //加载状态：null无加载，50加载中，100完成。
   amp_status: 0,
   dataSource: ['http://europe.chtcdn.com', 'http://cht.mycht.cn'],
   dataSourceId: 0,

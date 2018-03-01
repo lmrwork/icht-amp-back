@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import connect from '../../redux/connect';
 import ImgFix from '../ImgFix';
+import {safeHref as safe} from '../../utils/safe';
 
 @connect
 class ChTour extends PureComponent {
@@ -15,7 +16,7 @@ class ChTour extends PureComponent {
         <div className="tourPackage">
           <h3>{formData.tourTitle}</h3>
           {formData.tourCities ? <span className="destinations">{formData.tourCities}</span> : null}
-          <p dangerouslySetInnerHTML={{__html: formData.tourDesc}}></p>
+          <p dangerouslySetInnerHTML={{__html: safe(formData.tourDesc)}}></p>
           <div className="viewDetail"><a data-href={formData.tourUrl}>{formData.tourBtn}</a></div>
         </div>
       </div>

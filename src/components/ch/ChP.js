@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import connect from '../../redux/connect';
+import {safeHref as safe} from '../../utils/safe';
 
 @connect
 class ChP extends PureComponent {
@@ -10,7 +11,7 @@ class ChP extends PureComponent {
       <p 
       className={`ChP px2 ${formData.align} ${formData.color} pSize${formData.size}`} 
       onClick={this.props.onClick} 
-      dangerouslySetInnerHTML={{__html: formData.text}}
+      dangerouslySetInnerHTML={{__html: safe(formData.text)}}
       />
     )
   }
