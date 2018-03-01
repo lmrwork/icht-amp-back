@@ -19,6 +19,7 @@ class Saving extends PureComponent {
         html: this.props.state.html,
         json: this.props.state.json,
         css: this.props.state.css,
+        script: this.props.state.script,
         status: this.props.state.amp_status
       });
     } else {

@@ -52,6 +52,9 @@ export const allReducers = (state = init, action) => {
   case 'SAVE_CSS':
     return {...state, css: action.css};
 
+  case 'SAVE_SCRIPT':
+    return {...state, script: action.script};
+
   case 'CLEAR_DROPITEMS':
     return {...state, dropItems: [], qrCode: null, saving: null};
 
@@ -73,6 +76,9 @@ export const allReducers = (state = init, action) => {
     //移除loading
     state.dropItems.pop(); 
     return {...state};
+
+  case 'TAGGLE_SITE':
+    return {...state, dataSourceId: action.id};
 
   default:
     return state;

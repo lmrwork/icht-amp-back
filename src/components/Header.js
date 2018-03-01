@@ -29,10 +29,17 @@ class Header extends PureComponent {
     }
   }
 
+  site = () => {
+    alert(`当前源：${this.props.state.dataSource[this.props.state.dataSourceId]}，点我也不会切换！`);
+    //const currentId = this.props.state.dataSourceId + 1;
+    //this.props.taggle_site(currentId % this.props.state.dataSource.length);
+  }
+
   render() {
     const histories = window.loadDropItems();
     return (
       <header className="App-header relative" id="appHeader">
+        <button className="btn sourceBtn" onClick={this.site}>{this.props.state.dataSource[this.props.state.dataSourceId]}</button>
         <img src={logo} className="App-logo" alt="logo" />
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={history} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="histoyBtn">
           <div className="pb2">点击下方，加载历史记录：（约~200条）</div>

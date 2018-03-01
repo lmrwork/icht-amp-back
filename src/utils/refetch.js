@@ -5,8 +5,8 @@ export const build_amp = connect( props => {
   return {
     build_amp: data => ({
       postResponse: {
-        //url: 'http://localhost:3001/',
-        url: 'http://202.103.68.62:3001/',
+        //url: 'http://localhost:3733/',
+        url: 'http://202.103.68.62:3733/',
         method: 'POST',
         force: true,
         headers: {
@@ -16,6 +16,7 @@ export const build_amp = connect( props => {
         then: value => { 
           props.save_qrcode(value.succ);
           props.save_css(value.css);
+          props.save_script(value.script);
         },
         catch: ( reason => {
           alert('本地express4未启动');
@@ -30,14 +31,14 @@ export const save_amp = connect( props => {
   return {
     save_amp: data => ({
       postResponse: {
-        url: `${props.state.dataSource[props.state.dataSourceId]}/info.php/info_amp/save_amp`,
+        url: `//${props.state.dataSource[props.state.dataSourceId]}/info.php/info_amp/save_amp`,
         //url: 'http://202.103.68.62:9000/info.php/info_amp/save_amp',
         method: 'POST',
         force: true,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `icid=${data.icid}&json=${encodeURIComponent(data.json)}&html=${encodeURIComponent(data.html)}&status=${data.status}&css=${encodeURIComponent(data.css)}`,
+        body: `icid=${data.icid}&json=${encodeURIComponent(data.json)}&html=${encodeURIComponent(data.html)}&status=${data.status}&css=${encodeURIComponent(data.css)}&script=${encodeURIComponent(data.script)}`,
         then: value => {
           if (!value.succ) {
             props.saving_status('error');
@@ -59,7 +60,7 @@ export const load_amp = connect( props => {
   return {
     load_amp: icid => ({
       postResponse: {
-        url: `${props.state.dataSource[props.state.dataSourceId]}/info.php/info_amp/load_amp`,
+        url: `//${props.state.dataSource[props.state.dataSourceId]}/info.php/info_amp/load_amp`,
         //url: 'http://202.103.68.62:9000/info.php/info_amp/load_amp',
         method: 'POST',
         force: true,
@@ -94,7 +95,7 @@ export const load_info = connect( props => {
   return {
     load_info: icid => ({
       postResponse: {
-        url: `${props.state.dataSource[props.state.dataSourceId]}/info.php/info_amp/load_info`,
+        url: `//${props.state.dataSource[props.state.dataSourceId]}/info.php/info_amp/load_info`,
         //url: 'http://202.103.68.62:9000/info.php/info_amp/load_info',
         method: 'POST',
         force: true,
@@ -104,9 +105,9 @@ export const load_info = connect( props => {
         body: `icid=${icid}`,
         then: value => {
           if (!value.succ) {
-            alert(`信息平台无AMP数据: ${value.message}`);
+            alert(`信息平台无AMP数据:`);
           } else if (!value.info || value.info==='null') {
-            alert('信息平台无AMP数据');
+            alert(`信息平台无AMP数据`);
           } else {
             const json = convert(value.info);
             props.pop_items();

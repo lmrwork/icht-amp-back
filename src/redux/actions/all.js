@@ -48,6 +48,11 @@ export const save_css = (css) => ({
   css
 });
 
+export const save_script = (script) => ({
+  type: 'SAVE_SCRIPT',
+  script
+});
+
 export const clear_dropitems = () => ({
   type: 'CLEAR_DROPITEMS'
 });
@@ -76,6 +81,11 @@ export const pop_items = () => ({
   type: 'POP_ITEMS'
 });
 
+export const taggle_site = (id) => ({
+  type: 'TAGGLE_SITE',
+  id
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -91,6 +101,8 @@ export const actions = {
   loading_status,
   amp_status,
   save_css,
+  save_script,
   load_items,
-  pop_items
+  pop_items,
+  taggle_site
 };

@@ -18,6 +18,19 @@ class Loading extends PureComponent {
       this.props.loading_status(50);
       this.props.load_amp(parsed.icid);
     }
+    //来源站点
+    const ssid = sessionStorage.getItem('dataSourceId');
+    if (ssid) {
+      this.props.taggle_site(ssid);
+    } else {
+      this.props.state.dataSource.forEach((v, idx) => {
+        if (document.referrer.indexOf(v) !== -1) {
+          this.props.taggle_site(idx);
+          sessionStorage.setItem('dataSourceId', idx);
+          return false;
+        }
+      });
+    }
   }
 
   render() {

@@ -38,8 +38,17 @@ app.post('/', (req, res) => {
   const opt1 = {level:2}
   css = new CleanCSS(opt1).minify(css).styles
 
+  let script = `
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  `;
+  if (req.body.html.indexOf('amp-carousel') !== -1) {
+    script = script + `<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>`;
+  }
+
   //console.log(req.body.html);
-  const page = res.render('amp', { html: req.body.html, css: css }, (err, text) => {
+  const page = res.render('amp', { html: req.body.html, css: css, script: script }, (err, text) => {
     if (err) {
       res.send({err})
     } else {
@@ -48,11 +57,12 @@ app.post('/', (req, res) => {
       let cache_file_path = path.join(amp_cache_path, cache_file)
       fs.writeFileSync(cache_file_path, text)
       res.send({
-        succ: `http://${req.hostname}:3001/amp_cache/${cache_file}`,
-        css: css
+        succ: `http://${req.hostname}:3733/amp_cache/${cache_file}`,
+        css: css,
+        script: script
       })
     }
   })
 })
 
-app.listen(3001)
+app.listen(3733)
