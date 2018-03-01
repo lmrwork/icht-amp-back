@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react';
 import connect from '../redux/connect';
 import { slide as Menu } from 'react-burger-menu'
+import { load_info } from '../utils/refetch';
+import queryString from 'query-string';
 
 import logo from '../svg/logo.svg';
 import history from '../svg/history.svg';
@@ -8,6 +10,7 @@ import template from '../svg/all.svg';
 import simple from '../redux/store/simple';
 
 @connect
+@load_info
 class Header extends PureComponent {
 
   history = (n) => {
@@ -17,12 +20,10 @@ class Header extends PureComponent {
   simple = (n) => {
     if (simple[n]) {
       this.props.clear_dropitems();
-      this.props.drop_item(
-        {
-          template: 'ChBanner',
-          formData:this.props.state.propConf.ChBanner.formData
-        }
-      );
+      this.props.drop_item({
+        template: 'ChBanner',
+        formData:this.props.state.propConf.ChBanner.formData
+      });
       this.props.load_items(simple[n].json);
     } else {
       alert('载入预置模板失败！');
@@ -35,11 +36,25 @@ class Header extends PureComponent {
     //this.props.taggle_site(currentId % this.props.state.dataSource.length);
   }
 
+  reload = () => {
+    const reload = window.confirm('重新拉去信息的HTML，并转化成AMP部件？');
+    if (reload) {
+      const parsed = queryString.parse(window.location.search);
+      this.props.clear_dropitems();
+      this.props.drop_item({
+        template: 'ChBanner',
+        formData:this.props.state.propConf.ChBanner.formData
+      });
+      this.props.load_info(parsed.icid);
+    }
+  }
+
   render() {
     const histories = window.loadDropItems();
     return (
       <header className="App-header relative" id="appHeader">
         <button className="btn sourceBtn" onClick={this.site}>{this.props.state.dataSource[this.props.state.dataSourceId]}</button>
+        <button className="btn reloadBtn" onClick={this.reload}>Reload</button>
         <img src={logo} className="App-logo" alt="logo" />
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={history} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="histoyBtn">
           <div className="pb2">点击下方，加载历史记录：（约~200条）</div>
