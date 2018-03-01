@@ -30,7 +30,7 @@ class Header extends PureComponent {
   }
 
   site = () => {
-    alert(`当前源：${this.props.state.dataSource[this.props.state.dataSourceId]}，点我也不会切换！`);
+    alert(`当前数据源：${this.props.state.dataSource[this.props.state.dataSourceId]}。`);
     //const currentId = this.props.state.dataSourceId + 1;
     //this.props.taggle_site(currentId % this.props.state.dataSource.length);
   }
