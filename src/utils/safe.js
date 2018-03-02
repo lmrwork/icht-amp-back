@@ -4,7 +4,7 @@ import he from 'he';
 export const safeStr = str => {
   if (str) {
     str = he.decode(str);
-    str = str.replace(/href=/ig, 'data-href=');
+    //str = str.replace(/href=/ig, 'data-href=');
     str = str.replace(/file:\/\//ig, '');
     str = str.replace(/(c|d|e):\//ig, '');
     str = str.replace(/style="(.*)?"/ig, '');
