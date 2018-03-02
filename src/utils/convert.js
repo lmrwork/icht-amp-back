@@ -4,7 +4,7 @@ import {safeStr as safe} from './safe';
 //HTML TO AMP
 const convert = (html) => {
   const $ = cheerio;
-  const $$ = cheerio.load(html);
+  const $$ = $.load(html);
   $$('table').remove();
   $$('.hidden-xs').remove();
   const items = $$('h1, h2, h3, h4, h5, h6, p, img, ul');
@@ -26,10 +26,14 @@ const convert = (html) => {
       case 'p':
         let pText = safe($(el).html().trim());
         if (pText === '<br>' || pText === '<br/>' || pText === '<br />') break;
+        const rmImg = $.load(el);
+        rmImg('img').remove();
+        const prText = safe(rmImg('p').html().trim());
+        if (!prText) break;
         drops.push({
           template: 'ChP',
           formData: {
-            text: safe($(el).html().trim()),
+            text: prText,
             align: 'left-align',
             size: 10,
             color: 'inherit',
