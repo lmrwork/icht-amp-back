@@ -80,6 +80,9 @@ export const allReducers = (state = init, action) => {
   case 'TAGGLE_SITE':
     return {...state, dataSourceId: action.id};
 
+  case 'SAVE_VALIDATOR':
+    return {...state, validator: action.validator};
+
   default:
     return state;
   }

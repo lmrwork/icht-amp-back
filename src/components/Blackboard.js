@@ -53,8 +53,15 @@ class Blackboard extends PureComponent {
           </div>
           <div className="flex flex-wrap coldarea">
             <div className="col-12 mb1">
-              <p><span className="bold">#FIRST#</span>：点击iPhone的 "Home" 生成AMP（用手机扫描二维码测试）。</p>
-              <p><span className="bold">#SECOND#</span>：勾选发布，推送到信息平台。</p>
+              { this.props.state.validator ? 
+                <div className={`validator ${this.props.state.validator.status}`}> 
+                  <span className="bold">#CHECK#</span>
+                  { this.props.state.validator.status === 'PASS' ? <p> { this.props.state.validator.message } </p> : <div dangerouslySetInnerHTML={{__html: this.props.state.validator.message}} />}
+                </div>
+                : null
+              }
+              <p><span className="bold">#FIRST#</span>： 点击iPhone的 "Home" 生成AMP（用手机扫描二维码测试）。</p>
+              <p><span className="bold">#SECOND#</span>： 勾选发布，推送到信息平台。</p>
               <div className="QRCode">
                 { showQr ? 
                 <div>

@@ -7,6 +7,7 @@ const fs = require("fs")
 const app = express()
 const CleanCSS = require('clean-css')
 const crypto = require('crypto'); //md5
+const amphtmlValidator = require('amphtml-validator') //valitator
 
 //cors
 app.use(cors());
@@ -56,11 +57,28 @@ app.post('/', (req, res) => {
       let cache_file = `test-${md5.update(req.ip).digest('hex')}.html`
       let cache_file_path = path.join(amp_cache_path, cache_file)
       fs.writeFileSync(cache_file_path, text)
-      res.send({
-        succ: `http://${req.hostname}:3733/amp_cache/${cache_file}#development=1`,
-        css: css,
-        script: script,
-        html: text
+      //validator
+      let check = {status:'PASS', message:'恭喜，AMP-HTML 代码验证通过！'};
+      amphtmlValidator.getInstance().then(function (validator) {
+        var input = fs.readFileSync(cache_file_path, 'utf8')
+        var result = validator.validateString(input)
+        console.log(result.status)
+        if (result.status === 'PASS') {
+          check.status = 'PASS'
+        } else {
+          check.status = 'EROOR'
+          check.message = ''
+        }
+        for (var ii = 0; ii < result.errors.length; ii++) {
+          var error = result.errors[ii]
+          check.message += '<p>line ' + error.line + ', col ' + error.col + ': ' + error.message + ' See: ' + error.specUrl + '</p>'
+        }
+        res.send({
+          succ: `http://${req.hostname}:3733/amp_cache/${cache_file}#development=1`,
+          css: css,
+          script: script,
+          validator: check
+        })
       })
     }
   })

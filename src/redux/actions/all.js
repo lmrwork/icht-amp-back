@@ -86,6 +86,11 @@ export const taggle_site = (id) => ({
   id
 });
 
+export const save_validator = (validator) => ({
+  type: 'SAVE_VALIDATOR',
+  validator
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -104,5 +109,6 @@ export const actions = {
   save_script,
   load_items,
   pop_items,
-  taggle_site
+  taggle_site,
+  save_validator
 };

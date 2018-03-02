@@ -12,7 +12,8 @@ export const init = {
   loading: null, //加载状态：null无加载，50加载中，100完成。
   amp_status: 0,
   dataSource: ['europe.chtcdn.com', 'cht.mycht.cn', 'gm.chtcdn.com', '202.103.68.62:9000'],
-  dataSourceId: 0,
+  dataSourceId: 1,
+  validator: null, //amp验证返回：{status:'PASS',message:''}
   //属性配置
   propConf: {
 

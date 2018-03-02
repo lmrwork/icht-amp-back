@@ -19,6 +19,14 @@ body {
   z-index: -9;
 }
 
+.App .validator.EROOR {
+  color: red;
+}
+
+.App .validator.PASS {
+  color: green;
+}
+
 .App .bsform {
   background-color: white;
   margin: 1em;
