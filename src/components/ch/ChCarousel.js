@@ -22,7 +22,7 @@ class ChCarousel extends PureComponent {
   render() {
     const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChCarousel.formData;
     return (
-      <div className="relative">
+      <div className="relative my2">
         <div onClick={this.props.onClick} className="ChCarousel" width={formData.imgWidth} height={formData.imgHeight}>
           {formData.imgList ? formData.imgList.map( (v, id) => {
             if (v.href) {

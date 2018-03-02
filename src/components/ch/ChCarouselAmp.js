@@ -7,7 +7,7 @@ class ChCarousel extends PureComponent {
   render() {
     const formData = this.props.form_data ? this.props.form_data : this.props.state.propConf.ChCarousel.formData;
     return (
-      <div onClick={this.props.onClick} className="ChCarousel">
+      <div onClick={this.props.onClick} className="ChCarousel my2">
       	<amp-carousel layout="responsive" width={formData.imgWidth} height={formData.imgHeight} type="slides" autoplay="autoplay" delay="3000" loop="loop">
           {formData.imgList ? formData.imgList.map( (v, id) => {
             if (v.href) {

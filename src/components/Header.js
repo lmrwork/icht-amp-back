@@ -37,7 +37,7 @@ class Header extends PureComponent {
   }
 
   reload = () => {
-    const reload = window.confirm("清空面板，重新拉取信息的HTML，并转化成AMP部件？");
+    const reload = window.confirm("清空面板？");
     if (reload) {
       const parsed = queryString.parse(window.location.search);
       this.props.clear_dropitems();

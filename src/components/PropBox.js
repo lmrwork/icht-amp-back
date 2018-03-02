@@ -52,7 +52,7 @@ class PropBox extends PureComponent {
                   action="#">
                 <div className="relative clearfix px1">
                   <button type="button" className="btn btn-danger left" onClick={this.delete}>删除部件</button>
-                  <button type="button" className="btn btn-info right" onClick={this.update_item}>刷新图片</button>
+                  <button type="button" className="btn btn-info right" onClick={this.update_item}>刷新iPhone</button>
                 </div>
             </Form>
             : null }

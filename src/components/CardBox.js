@@ -30,7 +30,7 @@ class CardBox extends PureComponent {
                 <Tab>常用部件</Tab>
                 <Tab>线路部件</Tab>
                 <Tab>图文部件</Tab>
-                <Tab>轮播图</Tab>
+                <Tab>高级部件</Tab>
               </TabList>
 
               <TabPanel>
