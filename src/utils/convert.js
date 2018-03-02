@@ -50,7 +50,7 @@ const convert = (html) => {
         drops.push({
           template: 'ChImg',
           formData: {
-            imgSrc: $(el).attr('src'), 
+            imgSrc: safe($(el).attr('src')), 
             imgWidth: $(el).attr('width') || 360,
             imgHeight: $(el).attr('height') || 240,
             imgAlt: safe($(el).attr('alt')),

@@ -8,6 +8,7 @@ export const safeStr = str => {
     str = str.replace(/file:\/\//ig, '');
     str = str.replace(/(c|d|e):\//ig, '');
     str = str.replace(/style="(.*)?"/ig, '');
+    str = str.replace(/^\/information-view/ig, '//data.arachina.com/information-view');
 
   }
   return str;

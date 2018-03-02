@@ -13,9 +13,11 @@ button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button
 .clearfix:before,.clearfix:after,.btn-toolbar:before,.btn-toolbar:after,.btn-group-vertical>.btn-group:before,.btn-group-vertical>.btn-group:after{content:" ";display:table}.clearfix:after,.btn-toolbar:after,.btn-group-vertical>.btn-group:after{clear:both}.center-block{display:block;margin-left:auto;margin-right:auto}.pull-right{float:right!important}.pull-left{float:left!important}.hide{display:none!important}.show{display:block!important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none!important}.affix{position:fixed}
 
 /*lmr*/
+/*
 textarea.form-control {
   min-height: 10em;
 }
+*/
 legend {
   padding-bottom: 8px;
 }

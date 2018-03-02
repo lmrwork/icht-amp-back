@@ -57,7 +57,7 @@ app.post('/', (req, res) => {
       let cache_file_path = path.join(amp_cache_path, cache_file)
       fs.writeFileSync(cache_file_path, text)
       res.send({
-        succ: `http://${req.hostname}:3733/amp_cache/${cache_file}`,
+        succ: `http://${req.hostname}:3733/amp_cache/${cache_file}#development=1`,
         css: css,
         script: script
       })

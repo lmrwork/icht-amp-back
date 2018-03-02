@@ -106,7 +106,7 @@ export const init = {
           },
           listStyle: {
             type: 'string', 
-            title: '前置标志',
+            title: '列表前置标识',
             enum: ['listSytleDefault', 'listSytleNumber'],
             enumNames: ['默认', '数字']
           },
@@ -122,6 +122,14 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
+        list: {
+          items: {
+            text: {
+              'ui:widget': 'textarea',
+              'ui:options': { rows: 3 }
+            }
+          }
+        },
         listStyle: {
           'ui:widget': 'select'
         }
@@ -174,7 +182,7 @@ export const init = {
       uiSchema: {
         text: {
           'ui:widget': 'textarea',
-          'ui:options': { rows: 12 }
+          'ui:options': { rows: 15 }
         },
         size: {
           'ui:widget': 'range'
@@ -589,7 +597,8 @@ export const init = {
           'ui:widget': 'updown'
         },
         tourDesc: {
-          'ui:widget': 'textarea'
+          'ui:widget': 'textarea',
+          'ui:options': { rows: 10 }
         }
       },
       //formData
