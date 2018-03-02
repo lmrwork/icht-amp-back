@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react';
 import connect from '../redux/connect';
 import { slide as Menu } from 'react-burger-menu'
 import { load_info } from '../utils/refetch';
-import queryString from 'query-string';
 
 import logo from '../svg/logo.svg';
 import history from '../svg/history.svg';
@@ -39,7 +38,6 @@ class Header extends PureComponent {
   reload = () => {
     const reload = window.confirm("清空面板？");
     if (reload) {
-      const parsed = queryString.parse(window.location.search);
       this.props.clear_dropitems();
       this.props.drop_item({
         template: 'ChBanner',
