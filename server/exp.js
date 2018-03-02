@@ -59,7 +59,8 @@ app.post('/', (req, res) => {
       res.send({
         succ: `http://${req.hostname}:3733/amp_cache/${cache_file}#development=1`,
         css: css,
-        script: script
+        script: script,
+        html: text
       })
     }
   })
