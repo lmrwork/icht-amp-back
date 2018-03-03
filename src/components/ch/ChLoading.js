@@ -39,12 +39,12 @@ class ChLoading extends PureComponent {
         { this.props.state.loading !== 50 ?
           <div>
             <button className="btn block mx-auto mt3" onClick={this.info} style={{width:'16rem', border:'1px solid #888'}}>
-              转换原始HTML成AMP部件（实验性）
+              将HTML转换成AMP部件（实验性）
             </button>
             <button className="btn block mx-auto mt2" onClick={this.create} style={{width:'16rem', border:'1px solid #888'}}>
-              开始编辑新AMP页面
+              创建新AMP页面
             </button>
-            <p className="px2 center">尝试将源HTML代码中的基础标签转成AMP部件，目前会忽略table标签。</p>
+            <p className="px2 center pSize9 cGray">* 实验性：尝试将源HTML中的基础标签转换成<br/>AMP部件，目前会忽略&lt;table&gt;、&lt;form&gt;标签。</p>
           </div>
         : null }
       </div>

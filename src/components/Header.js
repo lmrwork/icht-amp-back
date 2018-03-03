@@ -41,7 +41,7 @@ class Header extends PureComponent {
   }
 
   reload = () => {
-    const reload = window.confirm("清空面板？");
+    const reload = window.confirm("清空iPhone屏幕？");
     if (reload) {
       this.props.clear_dropitems();
       this.props.drop_item({
