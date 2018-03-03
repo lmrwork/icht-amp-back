@@ -1,14 +1,15 @@
 /*ChUl*/
 .ChUl ul li {
-  background: url(//data.chinahighlights.com/image/travelguide/culture/index/list-gray.jpg) no-repeat 0 center;
+  background: url(//data.chinahighlights.com/image/travelguide/culture/index/list-gray.jpg) no-repeat 0 0.55rem;
   padding-left: 1.2rem;
   line-height: 1.7rem;
   font-size: 1rem;
 }
 .ChUl ul li.listSytleNumber {
   list-style: decimal;
-  list-style-position: inside;
-  padding-left: 0;
+  list-style-position: outside;
+  padding-left: 0.2rem;
+  margin-left: 1.2rem;
   background: none;
 }
 .ChUl p {
