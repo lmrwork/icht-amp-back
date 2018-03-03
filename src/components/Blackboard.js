@@ -60,7 +60,7 @@ class Blackboard extends PureComponent {
                 </div>
                 : null
               }
-              <p><span className="bold">#FIRST#</span>： 点击iPhone的 "Home" 生成AMP（用手机扫描二维码测试）。</p>
+              <p><span className="bold">#FIRST#</span>： 点击iPhone的 "Home" 生成AMP预览页，用手机扫描二维码测试。</p>
               <p><span className="bold">#SECOND#</span>： 勾选发布，推送到信息平台。</p>
               <p><span className="bold">#THIRD#</span>： 返回信息平台，保存并发布信息。</p>
               <div className="QRCode">
