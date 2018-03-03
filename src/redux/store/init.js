@@ -12,7 +12,7 @@ export const init = {
   loading: null, //加载状态：null无加载，50加载中，100完成。
   amp_status: 0,
   dataSource: ['europe.chtcdn.com', 'cht.mycht.cn', 'gm.chtcdn.com', '202.103.68.62:9000'],
-  dataSourceId: 1,
+  dataSourceId: 0,
   validator: null, //amp验证返回：{status:'PASS',message:''}
   //属性配置
   propConf: {
@@ -65,6 +65,10 @@ export const init = {
       },
       //uiSchema
       uiSchema: {
+        text: {
+          'ui:widget': 'textarea',
+          'ui:options': { rows: 5 }
+        },
         head: {
           'ui:widget': 'select'
         }

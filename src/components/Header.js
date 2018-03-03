@@ -55,10 +55,10 @@ class Header extends PureComponent {
     return (
       <header className="App-header relative" id="appHeader">
         <button className="btn sourceBtn" onClick={this.site}>{this.props.state.dataSource[this.props.state.dataSourceId]}</button>
-        <button className="btn reloadBtn" onClick={this.reload}>Clear</button>
+        <button className="btn reloadBtn" onClick={this.reload}>清屏</button>
         <img src={logo} className="App-logo" alt="logo" />
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={history} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="histoyBtn">
-          <div className="pb2">点击下方，加载历史记录：（约~200条）</div>
+          <div className="pb2">点击加载历史记录：（约~200条）</div>
           {
             histories ? histories.map( (i, n) => (
               <a key={n} className="menu-item py1 left-align" onClick={() => this.history(n)} style={{cursor:'pointer'}}> 
@@ -68,7 +68,7 @@ class Header extends PureComponent {
           }
         </Menu>
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={template} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="simpleBtn">
-          <div className="pb2">点击下方，加载预置模板</div>
+          <div className="pb2">点击加载预置模板</div>
           { simple.map( (i, n) => (
               <a key={n} className="menu-item py1 left-align" onClick={() => this.simple(n)} style={{cursor:'pointer'}}> 
               {`（${n+1}）${i.name}`}
