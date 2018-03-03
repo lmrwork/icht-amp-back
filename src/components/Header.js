@@ -6,6 +6,7 @@ import { load_info } from '../utils/refetch';
 import logo from '../svg/logo.svg';
 import history from '../svg/history.svg';
 import template from '../svg/all.svg';
+import schema from '../svg/json.svg';
 import simple from '../redux/store/simple';
 
 @connect
@@ -58,7 +59,7 @@ class Header extends PureComponent {
         <button className="btn reloadBtn" onClick={this.reload}>清屏</button>
         <img src={logo} className="App-logo" alt="logo" />
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={history} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="histoyBtn">
-          <div className="pb2">点击加载历史记录：（约~200条）</div>
+          <div className="mb2">点击加载历史记录：（约~200条）</div>
           {
             histories ? histories.map( (i, n) => (
               <a key={n} className="menu-item py1 left-align" onClick={() => this.history(n)} style={{cursor:'pointer'}}> 
@@ -68,7 +69,7 @@ class Header extends PureComponent {
           }
         </Menu>
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={template} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="simpleBtn">
-          <div className="pb2">点击加载预置模板</div>
+          <div className="mb2">点击加载预置模板</div>
           { simple.map( (i, n) => (
               <a key={n} className="menu-item py1 left-align" onClick={() => this.simple(n)} style={{cursor:'pointer'}}> 
               {`（${n+1}）${i.name}`}
@@ -76,6 +77,49 @@ class Header extends PureComponent {
             ))
           }
         </Menu>
+        <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={schema} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="schemaBtn" menuClassName="schemaMenu">
+          <div className="mb2">录入结构化标签（JSON-LD），帮助链接:<a href="https://jsonld.com/article/"> Schema.org </a></div>
+          <textarea className="schemaArea" placeholder={
+`Such as ......
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "@id": "https://www.chinahighlights.com/",
+  "mainEntityOfPage": [{
+    "@type": "WebPage",
+    "@id": "https://google.com/article"
+  }],
+  "headline":"China Travel Agency, Tour with China Highlights - Since 1959!",
+  "author": [{
+    "@type": "person",
+    "name": "Mercier Zeng"
+  }],
+  "description": "China travel agency offers China Tours, Yangtze River Cruises, Domestic Flights &amp; Hotels. Helping over 10,000+ people tour China each year, maybe you?",
+  "image": [{
+    "@type": "ImageObject",
+    "url": "https://data.chinahighlights.com/image/homepage/great-wall-trek.jpg",
+    "width": "1903px",
+    "height": "720px"
+  }],
+  "publisher": [{
+    "@type": "Organization",
+    "name": "China Highlights",
+    "logo": [{
+      "@type": "ImageObject",
+      "url": "https://data.chinahighlights.com/pic/logo/logo-132x104.png",
+      "width": "132",
+      "height": "104"
+    }]
+  }],
+  "datePublished": "1998-09-27 02:14:27.000",
+  "dateModified": "2017-07-20 02:19:23.293"
+}
+</script>`}></textarea>
+          <button className="btn my2 center">提交结构化标签</button>
+        </Menu>
+
       </header>
   )}
 

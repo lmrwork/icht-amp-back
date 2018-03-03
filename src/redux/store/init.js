@@ -5,12 +5,13 @@ export const init = {
   propIndex: null,
   html: null,
   json: null,
-  css: null,
-  script: null,
+  css: null, //AMP css
+  script: null, //AMP script-src
   qrCode: null,
   saving: null,
+  schema: null, //结构化标签
   loading: null, //加载状态：null无加载，50加载中，100完成。
-  amp_status: 0,
+  amp_status: 0, //AMP status
   dataSource: ['europe.chtcdn.com', 'cht.mycht.cn', 'gm.chtcdn.com', '202.103.68.62:9000'],
   dataSourceId: 0,
   validator: null, //amp验证返回：{status:'PASS',message:''}

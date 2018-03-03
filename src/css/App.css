@@ -152,13 +152,21 @@ body {
   right: 0;
 }
 
-.App .histoyBtn {
-
-}
 .App .simpleBtn {
   right: 5rem;
 }
-
+.App .schemaBtn {
+  right: 8rem;
+}
+.App .schemaMenu {
+  width: 50rem;
+}
+.App .schemaArea {
+  width:100%;
+  height:36rem;
+  font-size:0.8rem;
+  padding:1rem;
+}
 .App .portal {
   width: 60%;
   margin: 0 auto;
