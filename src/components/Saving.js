@@ -20,7 +20,8 @@ class Saving extends PureComponent {
         json: this.props.state.json,
         css: this.props.state.css,
         script: this.props.state.script,
-        status: this.props.state.amp_status
+        status: this.props.state.amp_status,
+        schema: this.props.state.schema
       });
     } else {
       alert('无法绑定信息平台');

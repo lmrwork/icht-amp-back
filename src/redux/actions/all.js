@@ -91,6 +91,11 @@ export const save_validator = (validator) => ({
   validator
 });
 
+export const save_schema = (schema) => ({
+  type: 'SAVE_SCHEMA',
+  schema
+});
+
 export const actions = {
   drop_item,
   sort_item,
@@ -110,5 +115,6 @@ export const actions = {
   load_items,
   pop_items,
   taggle_site,
-  save_validator
+  save_validator,
+  save_schema
 };

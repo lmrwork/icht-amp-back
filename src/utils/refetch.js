@@ -12,7 +12,7 @@ export const build_amp = connect( props => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `html=${encodeURIComponent(data.html)}&items=${encodeURIComponent(JSON.stringify(data.items))}`,
+        body: `html=${encodeURIComponent(data.html)}&items=${encodeURIComponent(JSON.stringify(data.items))}&schema=${encodeURIComponent(data.schema)}`,
         then: value => { 
           props.save_qrcode(value.succ);
           props.save_css(value.css);
@@ -39,7 +39,7 @@ export const save_amp = connect( props => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
-        body: `icid=${data.icid}&json=${encodeURIComponent(data.json)}&html=${encodeURIComponent(data.html)}&status=${data.status}&css=${encodeURIComponent(data.css)}&script=${encodeURIComponent(data.script)}`,
+        body: `icid=${data.icid}&json=${encodeURIComponent(data.json)}&html=${encodeURIComponent(data.html)}&status=${data.status}&css=${encodeURIComponent(data.css)}&script=${encodeURIComponent(data.script)}&schema=${encodeURIComponent(data.schema)}`,
         then: value => {
           if (!value.succ) {
             props.saving_status('error');
@@ -80,6 +80,7 @@ export const load_amp = connect( props => {
             props.pop_items();
             props.load_items(JSON.parse(value.json));
             props.amp_status(parseInt(value.status, 10));
+            props.save_schema(value.schema);
             props.loading_status(100);
           }
         },

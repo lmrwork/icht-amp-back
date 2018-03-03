@@ -36,6 +36,10 @@ class Header extends PureComponent {
     //this.props.taggle_site(currentId % this.props.state.dataSource.length);
   }
 
+  schema = (e) => {
+    this.props.save_schema(e.target.value);
+  }
+
   reload = () => {
     const reload = window.confirm("清空面板？");
     if (reload) {
@@ -78,52 +82,30 @@ class Header extends PureComponent {
           }
         </Menu>
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={schema} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="schemaBtn" menuClassName="schemaMenu">
-          <div className="mb2">录入结构化标签（JSON-LD），帮助链接:<a href="https://jsonld.com/article/"> Schema.org </a></div>
-          <textarea className="schemaArea" placeholder={
-`Such as ......
-
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "NewsArticle",
-  "@id": "https://www.chinahighlights.com/",
-  "mainEntityOfPage": [{
-    "@type": "WebPage",
-    "@id": "https://google.com/article"
-  }],
-  "headline":"China Travel Agency, Tour with China Highlights - Since 1959!",
-  "author": [{
-    "@type": "person",
-    "name": "Mercier Zeng"
-  }],
-  "description": "China travel agency offers China Tours, Yangtze River Cruises, Domestic Flights &amp; Hotels. Helping over 10,000+ people tour China each year, maybe you?",
-  "image": [{
-    "@type": "ImageObject",
-    "url": "https://data.chinahighlights.com/image/homepage/great-wall-trek.jpg",
-    "width": "1903px",
-    "height": "720px"
-  }],
-  "publisher": [{
-    "@type": "Organization",
-    "name": "China Highlights",
-    "logo": [{
-      "@type": "ImageObject",
-      "url": "https://data.chinahighlights.com/pic/logo/logo-132x104.png",
-      "width": "132",
-      "height": "104"
-    }]
-  }],
-  "datePublished": "1998-09-27 02:14:27.000",
-  "dateModified": "2017-07-20 02:19:23.293"
-}
-</script>`}></textarea>
-          <button className="btn my2 center">提交结构化标签</button>
+          <div className="mb2">录入结构化标签（JSON-LD），帮助:<a href="https://jsonld.com/article/" style={{color: '#000'}} target="_blank" rel="noopener noreferrer"> Schema.org </a></div>
+          <textarea className="schemaArea" placeholder={schemaDef} onChange={this.schema} value={this.props.state.schema}></textarea>
         </Menu>
 
       </header>
   )}
 
 }
+
+const schemaDef = `# TIP: 必须包含<script type="application/ld+json"> 如下栗子 #
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "http://www.example.com",
+  "name": "Unlimited Ball Bearings Corp.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-401-555-1212",
+    "contactType": "Customer service"
+  }
+}
+</script>`;
 
 export default Header;
 

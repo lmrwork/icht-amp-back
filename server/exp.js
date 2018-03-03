@@ -49,7 +49,7 @@ app.post('/', (req, res) => {
   }
 
   //console.log(req.body.html);
-  const page = res.render('amp', { html: req.body.html, css: css, script: script }, (err, text) => {
+  const page = res.render('amp', { html: req.body.html, css: css, script: script, schema: req.body.schema }, (err, text) => {
     if (err) {
       res.send({err})
     } else {
