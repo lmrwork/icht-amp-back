@@ -84,7 +84,7 @@ export const allReducers = (state = init, action) => {
     return {...state, validator: action.validator};
 
   case 'SAVE_SCHEMA':
-    return {...state, schema: action.schema};
+    return {...state, schema: action.schema, qrCode: null, saving: null};
 
   default:
     return state;
