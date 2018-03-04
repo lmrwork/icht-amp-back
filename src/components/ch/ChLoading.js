@@ -42,8 +42,8 @@ class ChLoading extends PureComponent {
         { this.props.state.loading === 100 ?
           <div>
             <div className="lmrLogo center mt4"> 
-              {/*备胎：https://picsum.photos/200/180/?random*/ }
-              <img src="https://lorempixel.com/200/180/" alt="这里应该有一张图片，如果不出请联系LMR！"/>
+              {/* 备胎：http://pipsum.com/200x180.jpg https://lorempixel.com/200/180/*/ }
+              <img src="http://pipsum.com/200x180.jpg" alt="这里应该有一张图片，如果不出请联系LMR！"/>
             </div>
             <button className="btn block mx-auto mt3" onClick={this.info} style={{width:'16rem', border:'1px solid #888'}}>
               将HTML转换成AMP部件（实验性）
