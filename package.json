@@ -74,8 +74,7 @@
     "express": "^4.16.2",
     "he": "^1.1.1",
     "lodash": "^4.17.5",
-    "nodemon": "^1.14.12",
-    "purify-css": "^1.2.5"
+    "nodemon": "^1.14.12"
   },
   "scripts": {
     "start": "node scripts/start.js",
