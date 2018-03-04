@@ -8,7 +8,6 @@ const app = express();
 const CleanCSS = require('clean-css');
 const crypto = require('crypto'); //md5
 const amphtmlValidator = require('amphtml-validator'); //valitator
-const purifycss = require("purify-css");
 
 //cors
 app.use(cors());
@@ -56,8 +55,7 @@ app.post('/', (req, res) => {
       let md5 = crypto.createHash('md5');
       let cache_file = `test-${md5.update(req.ip).digest('hex')}.html`;
       let cache_file_path = path.join(amp_cache_path, cache_file);
-      //unuse css
-      //css = purifycss(text, css, {minify: true});
+      //TODO: unuse css
       //text = text.replace(/<style amp-custom="">(.*?)<\/style>/, `<style amp-custom="">${css}</style>`);
       //write amphtml
       fs.writeFileSync(cache_file_path, text);
