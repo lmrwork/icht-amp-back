@@ -57,7 +57,7 @@ app.post('/', (req, res) => {
       let cache_file = `test-${md5.update(req.ip).digest('hex')}.html`;
       let cache_file_path = path.join(amp_cache_path, cache_file);
       //TODO: unuse css
-      uncss(text, {raw: css, ignoreSheets: [/fonts.googleapis/], timeout: 2000}, function (error, output) {
+      uncss(text, {raw: css, ignoreSheets: [/fonts.googleapis/]}, function (error, output) {
         text = text.replace(/<style amp-custom="">(.*?)<\/style>/, `<style amp-custom="">${output}</style>`);
         //write amphtml
         fs.writeFileSync(cache_file_path, text);
