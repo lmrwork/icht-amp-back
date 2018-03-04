@@ -39,10 +39,10 @@ class ChLoading extends PureComponent {
             <Spinkit size={120} color="#09c" />
           </div> : null
         }
-        { this.props.state.loading !== 50 ?
+        { this.props.state.loading === 100 ?
           <div>
             <div className="lmrLogo center mt4"> 
-              <img src="http://imgs.aixifan.com/cms/2018_01_11/1515667683355.png"/>
+              <img src="http://imgs.aixifan.com/cms/2018_01_11/1515667683355.png" alt="这里应该有一张图片，如果不出请联系LMR！"/>
             </div>
             <button className="btn block mx-auto mt3" onClick={this.info} style={{width:'16rem', border:'1px solid #888'}}>
               将HTML转换成AMP部件（实验性）

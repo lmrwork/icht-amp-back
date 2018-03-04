@@ -72,7 +72,7 @@ class Blackboard extends PureComponent {
                 </div>
                 : null
               }
-              { this.props.state.validator && showQr ? 
+              { this.props.state.validator && showQr && this.props.state.loading === 100 ? 
                 <div className={`validator ${this.props.state.validator.status}`}> 
                   <span className="bold">#CHECK#</span>
                   { this.props.state.validator.status === 'PASS' ? <p> { this.props.state.validator.message } </p> : <div dangerouslySetInnerHTML={{__html: this.props.state.validator.message}} />}

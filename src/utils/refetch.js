@@ -73,17 +73,15 @@ export const load_amp = connect( props => {
         then: value => {
           if (!value.succ) {
             alert(`信息平台无AMP数据`);
-            props.loading_status(null);
           } else if (!value.json || value.json==='null') {
             alert(`信息平台无AMP数据`);
-            props.loading_status(null);
           } else {
             props.pop_items();
             props.load_items(JSON.parse(value.json));
             props.amp_status(parseInt(value.status, 10));
             props.save_schema(value.schema);
-            props.loading_status(100);
           }
+          props.loading_status(100);
         },
         catch: ( reason => {
           alert('请求服务器失败');
@@ -124,6 +122,7 @@ export const load_info = connect( props => {
             });
             props.load_items(json);
           }
+          props.loading_status(100);
         },
         catch: ( reason => {
           alert('请求服务器失败');

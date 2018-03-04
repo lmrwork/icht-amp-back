@@ -10,7 +10,7 @@ export const init = {
   qrCode: null,
   saving: null,
   schema: '', //结构化标签
-  loading: null, //加载状态：null无加载，50加载中，100完成。
+  loading: 100, //加载状态：null无加载，50 loading amp，65 loading info，100完成。
   amp_status: 0, //AMP status
   dataSource: ['europe.chtcdn.com', 'cht.mycht.cn', 'gm.chtcdn.com', '202.103.68.62:9000'],
   dataSourceId: 0,
