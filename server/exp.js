@@ -74,8 +74,9 @@ app.post('/', (req, res) => {
           }
           for (var ii = 0; ii < result.errors.length; ii++) {
             var error = result.errors[ii];
-            check.message += '<p> line ' + error.line + ', col ' + error.col + ': ' + error.message + ' See it! <b>' + error.specUrl + '</b></p>';
+            check.message += '<p> line ' + error.line + ', col ' + error.col + ': ' + error.message + ' See it! <em>' + error.specUrl + '</em></p>';
           }
+          //return api result
           res.send({
             succ: `http://${req.hostname}:3733/amp_cache/${cache_file}`,
             css: output,
