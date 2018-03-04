@@ -62,7 +62,7 @@ app.post('/', (req, res) => {
         //write amphtml
         fs.writeFileSync(cache_file_path, text);
         //validator
-        let check = {status:'PASS', message:'恭喜，移除未使用的 CSS，并通过 AMP-HTML 代码验证！'};
+        let check = {status:'PASS', message:'恭喜，已移除未使用的 CSS，并通过 AMP-HTML 代码验证！'};
         amphtmlValidator.getInstance().then(function (validator) {
           var input = fs.readFileSync(cache_file_path, 'utf8');
           var result = validator.validateString(input);
