@@ -15,19 +15,7 @@ import 'codemirror/mode/xml/xml.js';
 import 'codemirror/mode/javascript/javascript.js';
 import {UnControlled as CodeMirror} from 'react-codemirror2';
 import pretty from 'pretty';
-import {
-  //ChasingDots
-  //Circle
-  //CubeGrid
-  //DoubleBounce
-  //FadingCircle
-  //FoldingCube
-  //Pulse
-  //RotatingPlane
-  //ThreeBounce
-  //WanderingCubes
-  Wave
-as Spinkit} from 'better-react-spinkit'; 
+import {Wave as Spinkit} from 'better-react-spinkit'; 
 
 @connect
 class Blackboard extends PureComponent {

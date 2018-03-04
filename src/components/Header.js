@@ -43,6 +43,7 @@ class Header extends PureComponent {
   reload = () => {
     const reload = window.confirm("清空iPhone屏幕？");
     if (reload) {
+      this.props.loading_status(100);
       this.props.clear_dropitems();
       this.props.drop_item({
         template: 'ChBanner',
