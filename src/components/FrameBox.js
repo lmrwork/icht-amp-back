@@ -47,6 +47,7 @@ class FrameBox extends PureComponent {
       allNodeText = allNodeText.replace(/data-href/g, 'href');
       allNodeText = allNodeText.replace(/undefined/g, '');
       this.props.update_html(allNodeText);
+      this.props.loading_status(65);
       this.props.build_amp({
         html:allNodeText, 
         items:this.props.state.dropItems, 
@@ -132,10 +133,10 @@ class FrameBox extends PureComponent {
 
     return (
       <div className="FrameBox mx-auto relative">
-        <div className="iPhone8Btn hvr-border-fade" onClick={this.update_html}></div>
         <Drop name="FrameDrop" accepts="DnD">
           <div className="iPhone8">{ nodes.map( i => i.show ) }</div>
         </Drop>
+        <div className="iPhone8Btn hvr-border-fade" onClick={this.update_html}></div>
         <Frame className="hidden pureHtml" ref="pureHtml">
           <div ref="phone">{ nodes.map( i => i.showHtml ) }</div>
         </Frame>

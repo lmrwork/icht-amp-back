@@ -15,6 +15,19 @@ import 'codemirror/mode/xml/xml.js';
 import 'codemirror/mode/javascript/javascript.js';
 import {UnControlled as CodeMirror} from 'react-codemirror2';
 import pretty from 'pretty';
+import {
+  //ChasingDots
+  //Circle
+  //CubeGrid
+  //DoubleBounce
+  //FadingCircle
+  //FoldingCube
+  //Pulse
+  //RotatingPlane
+  //ThreeBounce
+  //WanderingCubes
+  Wave
+as Spinkit} from 'better-react-spinkit'; 
 
 @connect
 class Blackboard extends PureComponent {
@@ -53,6 +66,12 @@ class Blackboard extends PureComponent {
           </div>
           <div className="flex flex-wrap coldarea">
             <div className="col-12 mb1">
+              { this.props.state.loading === 65 ? 
+                <div className="mx-auto" style={{width:'120px'}}>
+                  <Spinkit size={120} color="#09c" />
+                </div>
+                : null
+              }
               { this.props.state.validator && showQr ? 
                 <div className={`validator ${this.props.state.validator.status}`}> 
                   <span className="bold">#CHECK#</span>

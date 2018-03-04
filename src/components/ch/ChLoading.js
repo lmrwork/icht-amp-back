@@ -24,6 +24,7 @@ class ChLoading extends PureComponent {
   info = () => {
     const parsed = queryString.parse(window.location.search);
     this.props.load_info(parsed.icid);
+    this.props.loading_status(50);
   }
 
   create = () => {
@@ -33,11 +34,16 @@ class ChLoading extends PureComponent {
   render() {
     return (
       <div>
-        <div className="ChLoading">
-          <Spinkit size={120} color="#09c" />
-        </div>
+        { this.props.state.loading === 50 ?
+          <div className="ChLoading">
+            <Spinkit size={120} color="#09c" />
+          </div> : null
+        }
         { this.props.state.loading !== 50 ?
           <div>
+            <div className="lmrLogo center mt4"> 
+              <img src="http://imgs.aixifan.com/cms/2018_01_11/1515667683355.png"/>
+            </div>
             <button className="btn block mx-auto mt3" onClick={this.info} style={{width:'16rem', border:'1px solid #888'}}>
               将HTML转换成AMP部件（实验性）
             </button>

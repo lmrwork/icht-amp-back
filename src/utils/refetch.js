@@ -18,6 +18,7 @@ export const build_amp = connect( props => {
           props.save_css(value.css);
           props.save_script(value.script);
           props.save_validator(value.validator);
+          props.loading_status(100);
         },
         catch: ( reason => {
           alert('本地express4未启动');
