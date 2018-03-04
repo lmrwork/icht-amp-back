@@ -24,7 +24,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}b
 .ampstart-dropdown.absolute{z-index:100}
 .ampstart-dropdown.absolute>section,.ampstart-dropdown.absolute>section>header{height:100%}
 .ampstart-dropdown>section>header{border:0;background-color:#000;color:#fff}
-.ampstart-dropdown>section>header:after{display:inline-block;padding:0 0 0 1.5rem;color:#003f93;content:"+"}
+.ampstart-dropdown>section>header:after{display:inline-block;padding:0 0 0 1.5rem;color:#003f93;content:"+";font-weight: bold;font-size: 1.2rem;}
 .ampstart-dropdown>[expanded]>header:after{content:"–"}
 .absolute .ampstart-dropdown-items{z-index:200}
 .ampstart-dropdown-item{background-color:#000;color:#003f93;opacity:.9}
@@ -103,7 +103,7 @@ amp-carousel .ampstart-image-with-caption{margin-bottom:0}
 .ampstart-nav-item:active,.ampstart-nav-item:focus,.ampstart-nav-item:hover{opacity:1}
 .ampstart-navbar-trigger:focus{outline:0}
 .ampstart-nav a,.ampstart-navbar-trigger,.ampstart-sidebar-faq a{text-decoration:none;cursor:pointer}
-.ampstart-nav .ampstart-label{color:inherit}
+.ampstart-nav .ampstart-label{color:inherit;font-size: 1rem;}
 .ampstart-navbar-trigger{font-size:2rem;line-height:3.5rem}
 .ampstart-headerbar-nav{-webkit-box-flex:1;-ms-flex:1;flex:1}
 .ampstart-nav-search{-webkit-box-flex:.5;-ms-flex-positive:.5;flex-grow:.5}
@@ -112,7 +112,8 @@ amp-carousel .ampstart-image-with-caption{margin-bottom:0}
 .ampstart-nav-dropdown{min-width:200px}
 .ampstart-nav-dropdown amp-accordion header{border:none;background-color:#fff}
 .ampstart-nav-dropdown amp-accordion ul{background-color:#fff}
-.ampstart-nav-dropdown .ampstart-dropdown-item,.ampstart-nav-dropdown .ampstart-dropdown>section>header{background-color:#fff;color:#000}
+.ampstart-nav-dropdown .ampstart-dropdown-item,.ampstart-nav-dropdown .ampstart-dropdown>section>header{background-color:#fff;color:#000;font-size: 1rem;}
+.ampstart-nav-dropdown .ampstart-dropdown-item a {font-size: 0.875rem;color: #000;}
 .ampstart-nav-dropdown .ampstart-dropdown-item{color:#003f93}
 .ampstart-sidebar{width:300px;min-width:300px;background-color:#fff;color:#000}
 .ampstart-sidebar .ampstart-icon{fill:#003f93}
@@ -140,3 +141,5 @@ amp-carousel .ampstart-image-with-caption{margin-bottom:0}
 main .ampstart-social-follow{margin-right:auto;margin-left:auto;width:315px}
 main .ampstart-social-follow li{-webkit-transform:scale(1.8);transform:scale(1.8)}
 h1+.ampstart-byline time{font-weight:400;font-size:1.5rem}
+.ampstart-nav-dropdown .ampstart-dropdown-item {margin-bottom: 1rem;}
+.ampstart-nav-dropdown amp-accordion ul {margin-bottom: 1rem;margin-top: -1rem;}
