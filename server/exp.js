@@ -8,6 +8,7 @@ const app = express();
 const CleanCSS = require('clean-css');
 const crypto = require('crypto'); //md5
 const amphtmlValidator = require('amphtml-validator'); //valitator
+const uncss = require('uncss'); //uncss
 
 //cors
 app.use(cors());
@@ -56,31 +57,33 @@ app.post('/', (req, res) => {
       let cache_file = `test-${md5.update(req.ip).digest('hex')}.html`;
       let cache_file_path = path.join(amp_cache_path, cache_file);
       //TODO: unuse css
-      //text = text.replace(/<style amp-custom="">(.*?)<\/style>/, `<style amp-custom="">${css}</style>`);
-      //write amphtml
-      fs.writeFileSync(cache_file_path, text);
-      //validator
-      let check = {status:'PASS', message:'恭喜，已通过 AMP-HTML 代码验证！'};
-      amphtmlValidator.getInstance().then(function (validator) {
-        var input = fs.readFileSync(cache_file_path, 'utf8');
-        var result = validator.validateString(input);
-        if (result.status === 'PASS') {
-          check.status = 'PASS';
-        } else {
-          check.status = 'EROOR';
-          check.message = '';
-        }
-        for (var ii = 0; ii < result.errors.length; ii++) {
-          var error = result.errors[ii];
-          check.message += '<p> line ' + error.line + ', col ' + error.col + ': ' + error.message + ' See it! <b>' + error.specUrl + '</b></p>';
-        }
-        res.send({
-          succ: `http://${req.hostname}:3733/amp_cache/${cache_file}`,
-          css: css,
-          script: script,
-          validator: check
+      uncss(text, {raw: css, ignoreSheets: [/fonts.googleapis/], timeout: 2000}, function (error, output) {
+        text = text.replace(/<style amp-custom="">(.*?)<\/style>/, `<style amp-custom="">${output}</style>`);
+        //write amphtml
+        fs.writeFileSync(cache_file_path, text);
+        //validator
+        let check = {status:'PASS', message:'恭喜，已通过 AMP-HTML 代码验证！'};
+        amphtmlValidator.getInstance().then(function (validator) {
+          var input = fs.readFileSync(cache_file_path, 'utf8');
+          var result = validator.validateString(input);
+          if (result.status === 'PASS') {
+            check.status = 'PASS';
+          } else {
+            check.status = 'EROOR';
+            check.message = '';
+          }
+          for (var ii = 0; ii < result.errors.length; ii++) {
+            var error = result.errors[ii];
+            check.message += '<p> line ' + error.line + ', col ' + error.col + ': ' + error.message + ' See it! <b>' + error.specUrl + '</b></p>';
+          }
+          res.send({
+            succ: `http://${req.hostname}:3733/amp_cache/${cache_file}`,
+            css: output,
+            script: script,
+            validator: check
+          })
         })
-      })
+      });
     }
   })
 })
