@@ -37,6 +37,7 @@ app.post('/', (req, res) => {
     }
   })
   css += "\n\r"+fs.readFileSync('./src/css/widget/Global.css');
+  css += "\n\r"+fs.readFileSync('./src/css/widget/BannerFixd.css');
   css = new CleanCSS({level:2}).minify(css).styles;
   //amp script src
   let script = `
