@@ -112,14 +112,17 @@ export const load_info = connect( props => {
           } else {
             const json = convert(value.info);
             props.pop_items();
+            let hasHead1 = json.some(item => item.formData.head === 'H1');
             //添加H1标签
-            props.drop_item({
-              template: 'ChHead',
-              formData: {
-                text: value.title,
-                type: 'H1'
-              }
-            });
+            if (!hasHead1) {
+              props.drop_item({
+                template: 'ChHead',
+                formData: {
+                  text: value.title,
+                  type: 'H1'
+                }
+              });
+            }
             props.load_items(json);
           }
           props.loading_status(100);
