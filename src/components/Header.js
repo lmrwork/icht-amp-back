@@ -83,7 +83,10 @@ class Header extends PureComponent {
           }
         </Menu>
         <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={schema} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="schemaBtn" menuClassName="schemaMenu">
-          <div className="mb2">录入结构化标签（JSON-LD），帮助:<a href="https://jsonld.com/article/" style={{color: '#000'}} target="_blank" rel="noopener noreferrer"> Schema.org </a></div>
+          <div className="mb2">录入结构化标签（JSON-LD），帮助：
+            <a href="https://jsonld.com/article/" style={{color: '#000'}} target="_blank" rel="noopener noreferrer"> Jsonld </a>、
+            <a href="https://technicalseo.com/seo-tools/schema-markup-generator/" style={{color: '#000'}} target="_blank" rel="noopener noreferrer"> Schema </a>
+          </div>
           <textarea className="schemaArea" placeholder={schemaDef} onChange={this.schema} value={this.props.state.schema}></textarea>
         </Menu>
 
