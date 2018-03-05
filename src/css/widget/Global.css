@@ -1,5 +1,5 @@
 body {
-  color: #333;
+  color: rgba(0,0,0,0.87);;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
@@ -12,7 +12,8 @@ p {
 }
 
 a {
-  color:#069;
+  color:#07c;
+  text-decoration: underline;
 }
 
 .pSize8 {font-size: 0.8rem; line-height: 1.2rem;}

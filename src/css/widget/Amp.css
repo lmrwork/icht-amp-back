@@ -39,6 +39,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}b
 }
 .ampstart-footer small {
 	color: #444;
+  font-size: 0.8rem;
 }
 .ampstart-footer .ampstart-icon{fill:#000}
 .ampstart-footer .ampstart-social-follow li:last-child{margin-right:0}

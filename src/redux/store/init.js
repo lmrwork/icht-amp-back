@@ -132,7 +132,7 @@ export const init = {
           items: {
             text: {
               'ui:widget': 'textarea',
-              'ui:options': { rows: 3 }
+              'ui:options': { rows: 5 }
             }
           }
         },
