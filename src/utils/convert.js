@@ -65,6 +65,7 @@ const convert = (html) => {
       case 'ul':
         const lists = [];
         $(el).find('li').each((idx, el) => {
+          $.load(el)('img').remove(); //fix:移除LI里面的图片
           if ($(el).children('a').length) {
             lists.push({
               text: safe($(el).text().trim()),

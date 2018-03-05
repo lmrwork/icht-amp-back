@@ -72,9 +72,9 @@ export const load_amp = connect( props => {
         body: `icid=${icid}`,
         then: value => {
           if (!value.succ) {
-            alert(`信息平台无AMP数据`);
+            alert(`此条信息无AMP页面，请新建AMP页面或者转换HTML到AMP。`);
           } else if (!value.json || value.json==='null') {
-            alert(`信息平台无AMP数据`);
+            alert(`此条信息无AMP页面，请新建AMP页面或者转换HTML到AMP。`);
           } else {
             props.pop_items();
             props.load_items(JSON.parse(value.json));
@@ -106,9 +106,9 @@ export const load_info = connect( props => {
         body: `icid=${icid}`,
         then: value => {
           if (!value.succ) {
-            alert(`信息平台无AMP数据:`);
+            alert(`查询不到源信息的HTML:`);
           } else if (!value.info || value.info==='null') {
-            alert(`信息平台无AMP数据`);
+            alert(`查询不到源信息的HTML`);
           } else {
             const json = convert(value.info);
             props.pop_items();
