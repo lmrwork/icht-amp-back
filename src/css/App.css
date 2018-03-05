@@ -195,8 +195,8 @@ body {
 
 .App .lmrLogo > img {
   max-width: 55%;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 1rem #111;
+  /*border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #aaa;*/
 }
 
 /*CardBox*/
