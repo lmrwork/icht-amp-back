@@ -1,5 +1,5 @@
 /*ChTour*/
-.ChTour2 .PopCity{position:relative;margin-bottom:1.6rem;}
+.ChTour2 .PopCity{position:relative;}
 .ChTour2 .PopCity a{color:#fff;text-decoration:none;}
 .ChTour2 .CityName{position:absolute;top:5rem;display:block;width:100%;color:#fff;text-align:center;text-shadow:0 0 0.15rem #333;font-size:2rem;}
 .ChTour2 .CityTag{position:absolute;top:8rem;display:block;width:100%;color:#fff;text-align:center;text-shadow:0 0 0.15rem #333;font-size:0.9rem;}
