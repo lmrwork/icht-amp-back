@@ -12,6 +12,7 @@ import ChA from './ch/ChA';
 import ChUl from './ch/ChUl';
 import ChCarousel from './ch/ChCarousel';
 import ChTour from './ch/ChTour';
+import ChTour2 from './ch/ChTour2';
 
 @connect
 class CardBox extends PureComponent {
@@ -58,6 +59,10 @@ class CardBox extends PureComponent {
               </TabPanel>
               <TabPanel>
                 <div className="CardBoxItem mx2 my1 p2 relative">
+                  <Drag {...this.props} template="ChTour2">
+                    <ChTour2 />
+                  </Drag>
+                  <hr/>
                   <Drag {...this.props} template="ChTour">
                     <ChTour />
                   </Drag>

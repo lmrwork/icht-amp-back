@@ -546,7 +546,7 @@ export const init = {
         title: 'CH 精华线路',
         description: '',
         type: 'object',
-        required: ['tourCode'],
+        required: [],
         properties: {
           tourCode: {
             type: 'string',
@@ -617,8 +617,99 @@ export const init = {
         tourCities: 'Beijing - Xi\'an - Guilin/Yangshuo -  Shanghai',
         tourDesc: 'Enjoy China’s classic scenery in Guilin, as well as ancient culture in Beijing and Xi’an, and classy Shanghai, all in 11 days.',
         tourUrl: '',
-        tourBtn: 'View Details',
-        tourCode: ''
+        tourBtn: 'View Details'
+      }
+    },
+
+    ChTour2: {
+      //Schema
+      schema: {
+        definitions: {
+          Tour: {
+            type: 'object',
+            properties: {
+              text: {
+                type: 'string',
+                title: '线路名称',
+                default: '子项'
+              },
+              href: {
+                type: 'string',
+                title: '线路链接',
+                default: ''
+              },
+            }
+          }
+        },
+        title: 'CH 精华线路2',
+        description: '',
+        type: 'object',
+        required: [],
+        properties: {
+          imgSrc: {
+            type: 'string', 
+            title: '图片源地址（更换后，需要点击下方的 “更新图片”）' 
+          },
+          imgWidth: {
+            type: 'integer', 
+            title: '图片宽度（px）',
+            minimum: 0,
+            maximum: 960
+          },
+          imgHeight: {
+            type: 'integer', 
+            title: '图片高度（px）',
+            minimum: 0,
+            maximum: 640
+          },
+          imgAlt: {
+            type: 'string', 
+            title: '图片Alt文字' 
+          },
+          imgTitle: {
+            type: 'string', 
+            title: '图片标题文本' 
+          },
+          imgTitleSmall: {
+            type: 'string', 
+            title: '图片标题描述（小）' 
+          },
+          imgTitleHref: {
+            type: 'string', 
+            title: '图片标题链接' 
+          },
+          list: {
+            type: 'array', 
+            title: '线路列表',
+            items: {
+              title: '线路',
+              $ref: '#/definitions/Tour'
+            }
+          },
+        }
+      },
+      //uiSchema
+      uiSchema: {
+        imgWidth: {
+          'ui:widget': 'updown'
+        },
+        imgHeight: {
+          'ui:widget': 'updown'
+        },
+      },
+      //formData
+      formData: {
+        imgSrc: '//data.chinahighlights.com/image/tour-list/index/destination-huangshan.jpg',
+        imgWidth: 460,
+        imgHeight: 400,
+        imgAlt: 'The Yellow Mountains',
+        imgTitle: 'HUANG SHAN',
+        imgTitleSmall: 'Hiking . Sea of Clouds . Sunrise and Sunset',
+        imgTitleHref: '/huangshan/tours.htm',
+        list: [
+          {text: '3-Day Essence of Huangshan Tour', href: '/tour/huangshantour/hs-1/'},
+          {text: '4-Day Trekking in the Yellow Mountains', href: '/tour/huangshantour/hs-7/'},
+        ]
       }
     },
 

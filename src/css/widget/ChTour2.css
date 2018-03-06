@@ -1,0 +1,10 @@
+/*ChTour*/
+.ChTour2 .PopCity{position:relative;margin-bottom:1.6rem;}
+.ChTour2 .PopCity a{color:#fff;text-decoration:none;}
+.ChTour2 .CityName{position:absolute;top:5rem;display:block;width:100%;color:#fff;text-align:center;text-shadow:0 0 0.15rem #333;font-size:2rem;}
+.ChTour2 .CityTag{position:absolute;top:8rem;display:block;width:100%;color:#fff;text-align:center;text-shadow:0 0 0.15rem #333;font-size:0.9rem;}
+.ChTour2 .CityTour{position:absolute;bottom:0;padding:0.7rem 1rem;width:100%;border-radius:0 0 0.22rem 0.22rem;background-color:rgba(0,0,0,.6);box-sizing: border-box;}
+.ChTour2 .CityTour ul{padding-left: 0;margin: 0}
+.ChTour2 .CityTour ul li{padding-left:1.3rem;background:url(//data.chinahighlights.com/pic/destination-list-bg.png) no-repeat left;color:#fff;font-size:0.9rem;line-height:1.6rem;list-style: none;}
+.ChTour2 .CityTour ul li a{color:#fff;text-decoration:none;}
+

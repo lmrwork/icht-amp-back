@@ -19,6 +19,7 @@ import ChUl from './ch/ChUl';
 import ChCarousel from './ch/ChCarousel';
 import ChCarouselAmp from './ch/ChCarouselAmp';
 import ChTour from './ch/ChTour';
+import ChTour2 from './ch/ChTour2';
 
 @connect
 @build_amp
@@ -123,6 +124,10 @@ class FrameBox extends PureComponent {
         case 'ChTour':
           show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChTour  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChTour amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+          break;
+        case 'ChTour2':
+          show = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChTour2  onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
+          showHtml = <Sort key={idx} index={idx} id={idx} moveCard={this.moveCard} prop_item={this.props.prop_item} save_history={this.props.save_history}><ChTour2 amp={true} onClick={() => this.click(el, idx)} form_data={el.formData}/></Sort>;
           break;
         default:
           show = null;
