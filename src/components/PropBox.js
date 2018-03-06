@@ -29,6 +29,26 @@ class PropBox extends PureComponent {
     this.props.save_history('属性');
   }
 
+  move_up = () => {
+    if (this.props.state.propIndex !== null && this.props.state.propIndex !== 1) {
+      this.props.sort_item(this.props.state.propIndex, this.props.state.propIndex+1);
+      this.props.prop_item(this.props.state.propIndex-1);
+      this.props.save_history('上移');
+    } else {
+      alert('已经到最顶部了！');
+    }
+  }
+
+  move_down = () => {
+    if (this.props.state.propIndex !== null && this.props.state.propIndex !== this.props.state.dropItems.length-1) {
+      this.props.sort_item(this.props.state.propIndex+1, this.props.state.propIndex+2);
+      this.props.prop_item(this.props.state.propIndex+1);
+      this.props.save_history('下移');
+    } else {
+      alert('已经到最底部了！');
+    }
+  }
+
   render() {
     let item, itemCfg; 
     item = this.props.state.dropItems[this.props.state.propIndex];
@@ -51,7 +71,9 @@ class PropBox extends PureComponent {
                   className="bsform"
                   action="#">
                 <div className="relative clearfix px1">
-                  <button type="button" className="btn btn-danger left" onClick={this.delete}>删除部件</button>
+                  <button type="button" className="btn btn-danger left mr1" onClick={this.delete}>删除</button>
+                  <button type="button" className="btn btn-default left mr1" onClick={this.move_up}>上移</button>
+                  <button type="button" className="btn btn-default left mr1" onClick={this.move_down}>下移</button>
                   <button type="button" className="btn btn-info right" onClick={this.update_item}>刷新iPhone</button>
                 </div>
             </Form>

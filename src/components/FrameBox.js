@@ -60,6 +60,7 @@ class FrameBox extends PureComponent {
   moveCard = (dragIndex, hoverIndex) => {
     //TODO:Sort
     this.props.sort_item(dragIndex+1, hoverIndex+1);
+    this.props.prop_item(hoverIndex);
   }
 
   render() {
