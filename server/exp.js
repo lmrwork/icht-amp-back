@@ -23,6 +23,8 @@ app.set('view engine', 'html');
 
 const amp_cache_path = path.join(__dirname, 'amp_cache');
 app.use('/amp_cache', express.static(amp_cache_path));
+const amp_release = path.join(__dirname, '../build');
+app.use('/release', express.static(amp_release));
 
 app.post('/', (req, res) => {
   //get css
