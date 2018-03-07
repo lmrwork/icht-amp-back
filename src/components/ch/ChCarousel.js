@@ -26,9 +26,9 @@ class ChCarousel extends PureComponent {
         <div onClick={this.props.onClick} className="ChCarousel" width={formData.imgWidth} height={formData.imgHeight}>
           {formData.imgList ? formData.imgList.map( (v, id) => {
             if (v.href) {
-              return <a key={id} data-href={v.href} className={(this.state.count%formData.imgList.length) === id ? null : 'hidden'}><img src={v.imgSrc} width="100%" alt="test" /></a>;
+              return <a key={id} data-href={v.href} className={(this.state.count%formData.imgList.length) === id ? null : 'hidden'}><img src={v.imgSrc} width={formData.imgWidth} height={formData.imgHeight} alt="test" /></a>;
             } else {
-              return <img key={id} src={v.imgSrc} width="100%" className={(this.state.count%formData.imgList.length) === id ? null : 'hidden'} alt="test" />;
+              return <img key={id} src={v.imgSrc} width={formData.imgWidth} height={formData.imgHeight} className={(this.state.count%formData.imgList.length) === id ? null : 'hidden'} alt="test" />;
             }
           }) : null}
         </div>

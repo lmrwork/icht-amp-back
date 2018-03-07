@@ -11,8 +11,8 @@ class ChImg2 extends PureComponent {
     return (
       <div onClick={this.props.onClick} className="ChImg2 homeBrand mb2"> 
         <ImgFix formData={formData} amp={this.props.amp} layout={'responsive'}/>
-        <span className={`pSize${formData.size}`} dangerouslySetInnerHTML={{__html:safe(formData.title)}}>
-        </span>
+        { formData.title ? <span className={`pSize${formData.size}`} dangerouslySetInnerHTML={{__html:safe(formData.title)}}>
+        </span> : null }
       </div>
     )
   }

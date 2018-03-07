@@ -98,17 +98,35 @@ class Header extends PureComponent {
 const schemaDef = `# TIP: 必须包含<script type="application/ld+json"> 如下栗子 #
 
 <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "url": "http://www.example.com",
-  "name": "Unlimited Ball Bearings Corp.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-401-555-1212",
-    "contactType": "Customer service"
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": "http://cdn.ampproject.org/article-metadata.html",
+    "headline": "Lorem Ipsum",
+    "datePublished": "1907-05-05T12:02:41Z",
+    "dateModified": "1907-05-05T12:02:41Z",
+    "description": "The Catiline Orations continue to beguile engineers and designers alike -- but can it stand the test of time?",
+    "author": {
+      "@type": "Person",
+      "name": "Jordan M Adler"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Google",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://cdn.ampproject.org/logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://cdn.ampproject.org/leader.jpg",
+      "height": 2000,
+      "width": 800
+    }
   }
-}
 </script>`;
 
 export default Header;
