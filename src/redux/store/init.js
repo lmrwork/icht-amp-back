@@ -279,13 +279,13 @@ export const init = {
           },
           imgWidth: {
             type: 'integer', 
-            title: '图片宽度（px）',
+            title: '图片原始宽度（px）',
             minimum: 0,
             maximum: 960
           },
           imgHeight: {
             type: 'integer', 
-            title: '图片高度（px）',
+            title: '图片原始高度（px）',
             minimum: 0,
             maximum: 640
           },
@@ -354,13 +354,13 @@ export const init = {
           },
           imgWidth: {
             type: 'integer', 
-            title: '图片宽度（px）',
+            title: '图片原始宽度（px）',
             minimum: 0,
             maximum: 960
           },
           imgHeight: {
             type: 'integer', 
-            title: '图片高度（px）',
+            title: '图片原始高度（px）',
             minimum: 0,
             maximum: 640
           },
@@ -418,13 +418,13 @@ export const init = {
           },
           imgWidth: {
             type: 'integer', 
-            title: '图片宽度（px）',
+            title: '图片原始宽度（px）',
             minimum: 0,
             maximum: 960
           },
           imgHeight: {
             type: 'integer', 
-            title: '图片高度（px）',
+            title: '图片原始高度（px）',
             minimum: 0,
             maximum: 640
           },
@@ -500,13 +500,13 @@ export const init = {
         properties: {
           imgWidth: {
             type: 'integer',
-            title: '图片宽度（px）',
+            title: '图片原始宽度（px）',
             minimum: 0,
             maximum: 960
           },
           imgHeight: {
             type: 'integer',
-            title: '图片高度（px）',
+            title: '图片原始高度（px）',
             minimum: 0,
             maximum: 640
           },
@@ -558,13 +558,13 @@ export const init = {
           },
           imgWidth: {
             type: 'integer', 
-            title: '图片宽度（px）',
+            title: '图片原始宽度（px）',
             minimum: 0,
             maximum: 960
           },
           imgHeight: {
             type: 'integer', 
-            title: '图片高度（px）',
+            title: '图片原始高度（px）',
             minimum: 0,
             maximum: 640
           },
@@ -652,13 +652,13 @@ export const init = {
           },
           imgWidth: {
             type: 'integer', 
-            title: '图片宽度（px）',
+            title: '图片原始宽度（px）',
             minimum: 0,
             maximum: 960
           },
           imgHeight: {
             type: 'integer', 
-            title: '图片高度（px）',
+            title: '图片原始高度（px）',
             minimum: 0,
             maximum: 640
           },
