@@ -469,7 +469,7 @@ export const init = {
         imgAlt: 'China tour 2018',
         title: 'How to Plan a First Trip to China — Step by Step',
         size: 9,
-        href: '/tours/top-to-do.htm'
+        href: ''
       }
     },
 
@@ -705,10 +705,10 @@ export const init = {
         imgAlt: 'The Yellow Mountains',
         imgTitle: 'HUANG SHAN',
         imgTitleSmall: 'Hiking . Sea of Clouds . Sunrise and Sunset',
-        imgTitleHref: '/huangshan/tours.htm',
+        imgTitleHref: '',
         list: [
-          {text: '3-Day Essence of Huangshan Tour', href: '/tour/huangshantour/hs-1/'},
-          {text: '4-Day Trekking in the Yellow Mountains', href: '/tour/huangshantour/hs-7/'},
+          {text: '3-Day Essence of Huangshan Tour', href: ''},
+          {text: '4-Day Trekking in the Yellow Mountains', href: ''},
         ]
       }
     },
