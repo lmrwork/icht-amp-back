@@ -187,7 +187,31 @@ body {
   width: 60%;
   margin: 0 auto;
 }
-
+.App .sopBtn {
+  right:11rem;
+}
+.App .sopDiv {
+  color: #333;
+}
+.App .sopDiv p {
+  font-size: 1rem;
+}
+.App .sopDiv p.col-11 {
+  padding: 0 0.5rem;
+}
+.App .sopDiv i {
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-style: normal;
+}
+.App .sopDiv b {
+  color: #069;
+}
+.App .sopDiv em {
+  color: #A31022;
+  font-style: normal;
+  padding: 0 0.5rem;
+}
 .App .ChLoading {
   width: 120px;
   margin: 9rem auto 0; 

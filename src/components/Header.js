@@ -7,7 +7,10 @@ import logo from '../svg/logo.svg';
 import history from '../svg/history.svg';
 import template from '../svg/all.svg';
 import schema from '../svg/json.svg';
+import sop from '../svg/sop.svg';
 import simple from '../redux/store/simple';
+
+import { HowPushinfpToAmp } from './Sop';
 
 @connect
 @load_info
@@ -88,6 +91,9 @@ class Header extends PureComponent {
             <a href="https://technicalseo.com/seo-tools/schema-markup-generator/" style={{color: '#000'}} target="_blank" rel="noopener noreferrer"> Schema </a>
           </div>
           <textarea className="schemaArea" placeholder={schemaDef} onChange={this.schema} value={this.props.state.schema}></textarea>
+        </Menu>
+        <Menu pageWrapId={ "Blackboard" } outerContainerId={ "root" } customBurgerIcon={<img src={sop} style={{height:'40px'}} alt="menu"/>} right width="auto" burgerButtonClassName="sopBtn" menuClassName="schemaMenu">
+          <HowPushinfpToAmp />
         </Menu>
 
       </header>
